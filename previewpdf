@@ -1,0 +1,11 @@
+#!/bin/sh
+#this will open the file argument with zathura
+#good for post compile of a tex document.
+stat=0
+if [ "$(pidof zathura)" ] ; then
+  stat=1
+else  
+  zathura "$1" &
+fi
+
+exit $stat

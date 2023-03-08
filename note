@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#take a note
+#open nvim with file ~/Documents/notes/$filename
+#no args will open a new file named as date: YYMMDD.md
+#note dogs.md will open the note file dogs.md oe create it if it doesnt exist
+#"notebook" functionalty can be handled simply with directories
+#notes could be a script that passes a list of existing notes to dmenu
+#could have a list of tags for note files
+
+#see https://devhints.io/bash 
+echo $(date '+%Y-%m-%d')
+
+while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
+  -V | --version )
+    echo $version
+    exit
+    ;;
+  -s | --string )
+    shift; string=$1
+    ;;
+  -f | --flag )
+    flag=1
+    ;;
+esac; shift; done
+if [[ "$1" == '--' ]]; then shift; fi
