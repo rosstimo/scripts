@@ -1,0 +1,101 @@
+#!/bin/sh
+
+# Function to display usage
+usage() {
+  echo "Usage: $0 [-o output_file] file_name"
+  echo "Options:"
+  echo "  -o <output_file>  Specify output file (optional)"
+  echo "  -h                Display this help message"
+  exit 1
+}
+
+# Extract function for different file types
+extract_file() {
+  local file="$1"
+  local tool="$2"
+  local options="$3"
+
+  if ! "$tool" $options "$file"; then
+    echo "Extraction failed or not possible for file '$file'."
+    exit 1
+  fi
+
+  echo "File '$file' extracted successfully."
+}
+
+# Check if any arguments provided
+if [ $# -eq 0 ]; then
+  usage
+fi
+
+# Variables for output file
+output_file=""
+
+# Parse command options
+while getopts "o:h" opt; do
+  case $opt in
+    o) output_file="$OPTARG" ;;
+    h) usage ;;
+    \?) usage ;;
+  esac
+done
+
+# Remove the options parsed from the argument list
+shift $((OPTIND - 1))
+
+# Check if a file name is provided as an argument
+if [ $# -eq 0 ]; then
+  echo "Please provide a file name."
+  usage
+fi
+
+file="$1"
+
+# Check if the file exists
+if [ ! -f "$file" ]; then
+  echo "File '$file' does not exist."
+  exit 1
+fi
+
+# Determine file extension and extract accordingly
+case "$file" in
+  *.tar.bz2)
+    extract_file "$file" "tar" "xjf"
+    ;;
+  *.tar.gz | *.tgz)
+    extract_file "$file" "tar" "xzf"
+    ;;
+  *.bz2)
+    extract_file "$file" "bunzip2" "-k"
+    ;;
+  *.rar)
+    extract_file "$file" "unrar" "x"
+    ;;
+  *.gz)
+    extract_file "$file" "gunzip" "-k"
+    ;;
+  *.tar)
+    extract_file "$file" "tar" "xf"
+    ;;
+  *.tbz2)
+    extract_file "$file" "tar" "xjf"
+    ;;
+  *.zip)
+    extract_file "$file" "unzip" "-q"
+    ;;
+  *.Z)
+    extract_file "$file" "uncompress" "-k"
+    ;;
+  *.7z)
+    extract_file "$file" "7z" "x"
+    ;;
+  *)
+    echo "File extension not supported for file '$file'."
+    exit 1
+    ;;
+esac
+
+# Rename extracted file if output file specified
+if [ -n "$output_file" ]; then
+  mv "$file" "$output_file"
+fi
