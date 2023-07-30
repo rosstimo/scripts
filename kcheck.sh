@@ -8,6 +8,6 @@ then
     echo "kmonad killed"
 else
     echo "kmonad is not running"
-    kmonad ~/.config/kmonad/tim-fw-test.kbd &
+    kmonad ~/.config/kmonad/tim-fw.kbd &
     echo "kmonad started"
 fi
