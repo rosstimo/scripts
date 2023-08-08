@@ -1,0 +1,8 @@
+#!/bin/sh
+# this script takes a Arch linux package name as an argument then installs all optional dependencies as dependencies
+# example: ./install.sh hplip
+# this script will not reinstall packages that are already installed.
+  package=$1
+  pacman --needed -Sy "$package"
+  echo "******  Here are the optional dependencies for $package:  ******"
+  pacman -S --asdeps --needed $(pacman -Si $package | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.* ://g' | awk '{print $1}' | sed 's/://')
