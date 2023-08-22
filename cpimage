@@ -1,0 +1,6 @@
+#!/bin/sh/
+
+#rsync -abhqP $src $dst/$filename # add n to optons here for dry run
+
+
+rsync -aXUNbhqP $src $dst/$filename # add n to optons here for dry run
