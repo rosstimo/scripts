@@ -4,22 +4,36 @@
 
 status=0
 #mount cloud drives
-if [[ -d "/home/tim/gdrive/work/" ]] ; then
-  rclone mount gdrivew: /home/tim/gdrive/work/ --daemon
+#if the directory already exists check to see if it mounted
+#if it didn't mount then mount it
+#if it did mount do nothing
+#if the directory doesn't exist then create it then mount it
+if [ -d "/home/tim/cloud/gdrivew/" ] ; then
+  if [ ! $(findmnt -rno SOURCE,TARGET "$HOME/cloud/gdrivew") ] ; then
+    rclone mount gdrivew: /home/tim/cloud/gdrivew/ --daemon
+  fi
 else
-  $status=1
+  mkdir -p /home/tim/cloud/gdrivew/
+  rclone mount gdrivew: /home/tim/cloud/gdrivew/ --daemon
 fi
-if [[ -d "/home/tim/gdrive/home/" ]] ; then
-  rclone mount gdriveh: /home/tim/gdrive/home/ --daemon
+
+if [ -d "/home/tim/cloud/gdriveh/" ] ; then
+  if [ ! $(findmnt -rno SOURCE,TARGET "$HOME/cloud/gdriveh") ] ; then
+    rclone mount gdriveh: /home/tim/cloud/gdriveh/ --daemon
+  fi
 else
-  $status=1
+  mkdir -p /home/tim/cloud/gdriveh/
+  rclone mount gdriveh: /home/tim/cloud/gdriveh/ --daemon
 fi
-if [[ -d "/home/tim/onedrive/" ]] ; then
-  rclone mount onedrive: /home/tim/onedrive --daemon
-else
-  $status=1
+
+if [ -d "/home/tim/cloud/onedrive/" ] ; then
+  if [ ! $(findmnt -rno SOURCE,TARGET "$HOME/onedrive") ] ; then
+    rclone mount onedrive: /home/tim/cloud/onedrive --daemon
+  fi
+
+  mkdir -p /home/tim/cloud/onedrive/
+  rclone mount onedrive: /home/tim/cloud/onedrive --daemon
 fi
 
 exit $status
-
 

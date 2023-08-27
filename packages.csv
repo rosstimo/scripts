@@ -1,0 +1,1190 @@
+Package Name,Dependencies,Optional Dependencies,Needed By,Config File Path
+a52dec,glibc,None,gst-plugins-ugly,/etc/a52dec.conf
+aalib,glibc  gpm  libx11  ncurses  slang,xorg-fonts-misc,gst-plugins-good,/etc/aalib.conf
+abseil-cpp,gcc-libs,None,re2,/etc/abseil-cpp.conf
+acl,None,None,coreutils  gettext  libarchive  libisofs  sed  shadow  spice-gtk  systemd  tar  udisks2  vim,/etc/acl.conf
+adobe-source-code-pro-fonts,None,None,gsettings-desktop-schemas,/etc/adobe-source-code-pro-fonts.conf
+adwaita-cursors,None,None,adwaita-icon-theme,/etc/adwaita-cursors.conf
+adwaita-icon-theme,hicolor-icon-theme  gtk-update-icon-cache  librsvg  adwaita-cursors,None,gtk3,/etc/adwaita-icon-theme.conf
+alacritty,freetype2  fontconfig  libxi  libxcursor  libxkbcommon  libxrandr,ncurses,None,/etc/alacritty.conf
+alsa-lib,alsa-topology-conf  alsa-ucm-conf  glibc,None,chromium  ffmpeg  gst-plugins-base  jack2  libcanberra  mpg123  onlyoffice-bin  portaudio  pulseaudio  visual-studio-code-bin,/etc/alsa-lib.conf
+alsa-topology-conf,None,None,alsa-lib,/etc/alsa-topology-conf.conf
+alsa-ucm-conf,None,None,alsa-lib,/etc/alsa-ucm-conf.conf
+amd-ucode,None,None,None,/etc/amd-ucode.conf
+aom,gcc-libs,None,electron22  ffmpeg  libavif  libheif,/etc/aom.conf
+arandr,gtk3  python-cairo  python-gobject  xorg-xrandr,None,None,/etc/arandr.conf
+archlinux-keyring,pacman,None,base  base-devel  chaotic-keyring,/etc/archlinux-keyring.conf
+archlinux-login-backgrounds-git,None,None,None,/etc/archlinux-login-backgrounds-git.conf
+archlinux-tweak-tool-git,python-gobject  polkit-gnome  python-distro  python-numpy  python-psutil  xerolinux-mirrorlist  arcolinux-mirrorlist-git  arcolinux-keyring  chaotic-mirrorlist  chaotic-keyring  endeavouros-keyring  endeavouros-mirrorlist  rebornos-keyring  rebornos-mirrorlist,alacritty [installed],None,/etc/archlinux-tweak-tool-git.conf
+archlinux-wallpaper,None,wallutils,None,/etc/archlinux-wallpaper.conf
+arcolinux-keyring,None,None,archlinux-tweak-tool-git,/etc/arcolinux-keyring.conf
+arcolinux-meta-sddm-themes,arcolinux-sddm-futuristic-git  arcolinux-sddm-materia-git  arcolinux-sddm-simplicity-git  arcolinux-sddm-slice-git  arcolinux-sddm-sugar-candy-git  arcolinux-sddm-urbanlifestyle-git,None,None,/etc/arcolinux-meta-sddm-themes.conf
+arcolinux-mirrorlist-git,None,None,archlinux-tweak-tool-git,/etc/arcolinux-mirrorlist-git.conf
+arcolinux-sddm-futuristic-git,None,None,arcolinux-meta-sddm-themes,/etc/arcolinux-sddm-futuristic-git.conf
+arcolinux-sddm-materia-git,qt5-graphicaleffects  qt5-quickcontrols2  qt5-virtualkeyboard,None,arcolinux-meta-sddm-themes,/etc/arcolinux-sddm-materia-git.conf
+arcolinux-sddm-simplicity-git,qt5-quickcontrols2  qt5-quickcontrols,None,arcolinux-meta-sddm-themes,/etc/arcolinux-sddm-simplicity-git.conf
+arcolinux-sddm-slice-git,qt5-graphicaleffects,ttf-roboto,arcolinux-meta-sddm-themes,/etc/arcolinux-sddm-slice-git.conf
+arcolinux-sddm-sugar-candy-git,qt5-graphicaleffects  qt5-quickcontrols2  qt5-svg  qt5-virtualkeyboard,None,arcolinux-meta-sddm-themes,/etc/arcolinux-sddm-sugar-candy-git.conf
+arcolinux-sddm-urbanlifestyle-git,None,None,arcolinux-meta-sddm-themes,/etc/arcolinux-sddm-urbanlifestyle-git.conf
+argon2,glibc,None,cryptsetup,/etc/argon2.conf
+at-spi2-core,dbus  glib2  gsettings-desktop-schemas  libx11  libxml2  libxtst  systemd  xorg-xprop,dbus-broker,atkmm  gtk2  gtk3,/etc/at-spi2-core.conf
+atkmm,atk  glibmm  libsigc-2.0.so=0-64  libglibmm-2.4.so=1-64,None,gtkmm  gtkmm3,/etc/atkmm.conf
+attr,glibc,None,coreutils  patch  shadow,/etc/attr.conf
+audit,glibc  krb5  libkrb5.so=3-64  libgssapi_krb5.so=2-64  libcap-ng  libcap-ng.so=0-64,libldap,dbus  networkmanager  pam  shadow  systemd,/etc/audit.conf
+autoconf,awk  m4  diffutils  perl  sh,None,base-devel,/etc/autoconf.conf
+automake,perl  bash,None,base-devel,/etc/automake.conf
+avahi,dbus  expat  gdbm  glib2  libcap  libdaemon  libdbus-1.so=3-64,gtk3,gvfs  libcups  pasystray  phodav,/etc/avahi.conf
+awesome,cairo  dbus  gdk-pixbuf2  imlib2  libxdg-basedir  libxkbcommon  libxkbcommon-x11  lua53  lua53-lgi  pango  startup-notification  xcb-util-cursor  xcb-util-keysyms  xcb-util-wm  xcb-util-xrm  xorg-xmessage,rlwrap,None,/etc/awesome.conf
+awesome-terminal-fonts,None,None,None,/etc/awesome-terminal-fonts.conf
+ayatana-ido,gtk3,None,libayatana-indicator,/etc/ayatana-ido.conf
+base,filesystem  gcc-libs  glibc  bash  coreutils  file  findutils  gawk  grep  procps-ng  sed  tar  gettext  pciutils  psmisc  shadow  util-linux  bzip2  gzip  xz  licenses  pacman  archlinux-keyring  systemd  systemd-sysvcompat  iputils  iproute2,linux,None,/etc/base.conf
+base-devel,archlinux-keyring  autoconf  automake  binutils  bison  debugedit  fakeroot  file  findutils  flex  gawk  gcc  gettext  grep  groff  gzip  libtool  m4  make  pacman  patch  pkgconf  sed  sudo  texinfo  which,None,None,/etc/base-devel.conf
+bash,readline  libreadline.so=8-64  glibc  ncurses,bash-completion,autoconf  automake  base  bash-completion  bison  bzip2  ca-certificates-utils  db  db5.3  diffutils  djvulibre  e2fsprogs  fakeroot  fftw  findutils  flex  freetype2  gawk  gdbm  gettext  gmp  gpm  grub  gzip  icu  ijs  iptables  java-runtime-common  keyutils  libassuan  libgpg-error  libksba  libnet  libpcap  libpng  libteam  libtool  lsb-release  lvm2  m4  man-db  mkinitcpio  nano  neofetch  npth  nspr  nss  os-prober  pacman  pcre  pcre2  pkgconf  smartmontools  systemd  texinfo  unzip  vte-common  which  xdg-utils  xfsprogs  xorg-xpr  xz,/etc/bash.conf
+bash-completion,bash,None,None,/etc/bash-completion.conf
+biber,perl-autovivification  perl-business-isbn  perl-business-ismn  perl-business-issn  perl-class-accessor  perl-data-compare  perl-data-dump  perl-data-uniqid  perl-datetime-calendar-julian  perl-datetime-format-builder  perl-file-slurper  perl-io-string  perl-ipc-run3  perl-lingua-translit  perl-list-allutils  perl-log-log4perl  perl-lwp-protocol-https  perl-mozilla-ca  perl-parse-recdescent  perl-perlio-utf8-strict  perl-regexp-common  perl-sort-key  perl-text-balanced  perl-text-bibtex  perl-text-csv  perl-text-roman  perl-unicode-linebreak  perl-xml-libxml-simple  perl-xml-libxslt  perl-xml-writer,None,None,/etc/biber.conf
+binutils,glibc  jansson  libelf  zlib  zstd,debuginfod,base-devel  gcc  mkinitcpio,/etc/binutils.conf
+bison,glibc  m4  sh  gettext,None,base-devel,/etc/bison.conf
+blas,gcc-libs,None,cblas  lapack,/etc/blas.conf
+bluez-libs,glibc,None,networkmanager,/etc/bluez-libs.conf
+brotli,glibc,None,curl  electron22  freetype2  gnutls  libjxl  libsoup  libsoup3  nodejs  woff2,/etc/brotli.conf
+btrfs-progs,glibc  util-linux-libs  lzo  zlib  zstd  libgcrypt  systemd-libs,python,None,/etc/btrfs-progs.conf
+bzip2,glibc  sh,None,base  ffmpeg  file  freetype2  gnupg  imlib2  libarchive  libelf  pcre  pcre2  python  unzip,/etc/bzip2.conf
+c-ares,glibc,None,electron22  nodejs,/etc/c-ares.conf
+ca-certificates,ca-certificates-mozilla,None,curl  perl-lwp-protocol-https  perl-mozilla-ca,/etc/ca-certificates.conf
+ca-certificates-mozilla,ca-certificates-utils>=20181109-3,None,ca-certificates,/etc/ca-certificates-mozilla.conf
+ca-certificates-utils,bash  coreutils  findutils  p11-kit>=0.24.0,None,ca-certificates-mozilla  curl  jre-openjdk-headless  perl-lwp-protocol-https  perl-mozilla-ca,/etc/ca-certificates-utils.conf
+cairo,fontconfig  freetype2  glib2  libpng  libx11  libxcb  libxext  libxrender  lzo  pixman  zlib,None,awesome  cairomm  ghostscript  gst-plugins-good  gtk2  gtk3  librsvg  pango  poppler  poppler-glib  python-cairo  spice-gtk  texlive-bin,/etc/cairo.conf
+cairomm,cairo  libsigc++  libsigc-2.0.so=0-64,None,gtkmm3  pangomm,/etc/cairomm.conf
+cantarell-fonts,None,None,gnome-themes-extra  gsettings-desktop-schemas  gtk3,/etc/cantarell-fonts.conf
+catimg,glibc,None,None,/etc/catimg.conf
+cblas,blas,None,python-numpy,/etc/cblas.conf
+cdparanoia,glibc,None,gst-plugins-base,/etc/cdparanoia.conf
+chafa,imagemagick  librsvg  libwebp  libxslt,None,None,/etc/chafa.conf
+chaotic-keyring,archlinux-keyring,pkgstats,archlinux-tweak-tool-git,/etc/chaotic-keyring.conf
+chaotic-mirrorlist,None,None,archlinux-tweak-tool-git,/etc/chaotic-mirrorlist.conf
+chromium,gtk3  nss  alsa-lib  xdg-utils  libxss  libcups  libgcrypt  ttf-liberation  systemd  dbus  libpulse  pciutils  libva  libffi  desktop-file-utils  hicolor-icon-theme  fontconfig  woff2  libjpeg  icu  dav1d  flac  snappy  libxml2  ffmpeg  libwebp  minizip  opus  harfbuzz  re2  jsoncpp  libxslt  libpng  freetype2,pipewire,None,/etc/chromium.conf
+colord,lcms2  libgusb  polkit  sqlite  dconf  dbus  libgudev  shared-mime-info  systemd  libcolord=1.4.6-1,argyllcms,xfce4-settings,/etc/colord.conf
+coreutils,glibc  acl  attr  gmp  libcap  openssl,None,base  ca-certificates-utils  gzip  java-runtime-common  linux  linux-lts  linux-zen  mkinitcpio  p11-kit  pacman  util-linux,/etc/coreutils.conf
+cpio,glibc,None,virt-install,/etc/cpio.conf
+cracklib,glibc  zlib,None,libpwquality,/etc/cracklib.conf
+cryptsetup,device-mapper  libdevmapper.so=1.02-64  openssl  popt  util-linux-libs  libuuid.so=1-64  json-c  libjson-c.so=5-64  argon2  libargon2.so=1-64,None,libblockdev  systemd  volume_key,/etc/cryptsetup.conf
+curl,ca-certificates  brotli  libbrotlidec.so=1-64  krb5  libgssapi_krb5.so=2-64  libidn2  libidn2.so=0-64  libnghttp2  libpsl  libpsl.so=5-64  libssh2  libssh2.so=1-64  openssl  zlib  zstd  libzstd.so=1-64,None,feh  git  jp2a  libelf  libproxy  networkmanager  onlyoffice-bin  pacman  poppler  tpm2-tss,/etc/curl.conf
+dav1d,glibc,dav1d-doc,chromium  electron22  ffmpeg  libavif  libheif,/etc/dav1d.conf
+db,gcc-libs  sh,None,perl,/etc/db.conf
+db5.3,gcc-libs  sh,None,jack2  perl,/etc/db5.3.conf
+dbus,audit  expat  systemd-libs  libaudit.so=1-64  libsystemd.so=0-64,None,at-spi2-core  avahi  awesome  chromium  colord  dbus-glib  dbus-python  dropbox  jack2  libpcap  libpulse  libteam  picom  rtkit  systemd  wpa_supplicant  xorg-server,/etc/dbus.conf
+dbus-glib,dbus  expat  glib2  glibc,None,firefox  parole  xfce4-screensaver,/etc/dbus-glib.conf
+dbus-python,dbus  glib2  glibc  python,python-gobject,solaar,/etc/dbus-python.conf
+dconf,glib2,None,colord  gsettings-desktop-schemas  gtk3  gvfs  libnma-common,/etc/dconf.conf
+debugedit,glibc  libelf,None,base-devel,/etc/debugedit.conf
+default-cursors,None,adwaita-cursors,libxcursor  wayland,/etc/default-cursors.conf
+desktop-file-utils,glib2  libglib-2.0.so=0-64,None,chromium  gtk2  gtk3  mousepad  onlyoffice-bin  thunar  xfburn  xfce4-panel  zathura  zathura-cb  zathura-djvu  zathura-pdf-poppler  zathura-ps,/etc/desktop-file-utils.conf
+device-mapper,glibc  systemd-libs  libudev.so=1-64,None,cryptsetup  dmraid  grub  libblockdev  lvm2  parted  xfsprogs,/etc/device-mapper.conf
+diffutils,glibc  bash,None,autoconf  mkinitcpio,/etc/diffutils.conf
+djvulibre,bash  gcc-libs  glibc  hicolor-icon-theme  libjpeg-turbo  libtiff,None,zathura-djvu,/etc/djvulibre.conf
+dmraid,device-mapper>=2.0.54,None,None,/etc/dmraid.conf
+dnssec-anchors,None,None,ldns,/etc/dnssec-anchors.conf
+docbook-xml,libxml2,None,docbook-xsl  gtk-doc,/etc/docbook-xml.conf
+docbook-xsl,libxml2  libxslt  docbook-xml,None,gtk-doc,/etc/docbook-xsl.conf
+docx2txt,perl  unzip,None,None,/etc/docx2txt.conf
+dosfstools,glibc,None,None,/etc/dosfstools.conf
+double-conversion,gcc-libs,None,qt5-base,/etc/double-conversion.conf
+dropbox,libsm  libxslt  libxmu  libxdamage  libxrender  libxxf86vm  libxcomposite  fontconfig  dbus,ufw-extras,None,/etc/dropbox.conf
+duktape,glibc,None,libproxy  polkit,/etc/duktape.conf
+dvisvgm,texlive-bin  woff2  ghostscript,None,texlive-binextra  texlive-latex,/etc/dvisvgm.conf
+e2fsprogs,sh  util-linux-libs,lvm2,krb5  libblockdev,/etc/e2fsprogs.conf
+efibootmgr,glibc  popt  libefiboot.so=1-64  libefivar.so=1-64,None,None,/etc/efibootmgr.conf
+efivar,glibc,None,efibootmgr,/etc/efivar.conf
+electron22,c-ares  gtk3  libevent  nss  wayland  fontconfig  woff2  aom  brotli  libjpeg  icu  dav1d  flac  snappy  libxml2  ffmpeg  libwebp  minizip  opus  harfbuzz  jsoncpp  libxslt  libpng  freetype2,kde-cli-tools,None,/etc/electron22.conf
+elementary-icon-theme,hicolor-icon-theme,None,xfce4-settings,/etc/elementary-icon-theme.conf
+ell,gcc-libs,None,iwd,/etc/ell.conf
+endeavouros-keyring,None,None,archlinux-tweak-tool-git,/etc/endeavouros-keyring.conf
+endeavouros-mirrorlist,None,None,archlinux-tweak-tool-git,/etc/endeavouros-mirrorlist.conf
+exo,libxfce4ui,None,thunar  xfburn  xfce4-panel  xfce4-settings  xfdesktop,/etc/exo.conf
+expat,glibc,None,avahi  dbus  dbus-glib  fontconfig  git  libarchive  libva-mesa-driver  perl-xml-parser  polkit  python  wayland,/etc/expat.conf
+fakeroot,glibc  filesystem  sed  util-linux  sh,None,base-devel  pacman-contrib,/etc/fakeroot.conf
+feh,curl  file  imlib2  libexif  libxinerama,imagemagick,None,/etc/feh.conf
+ffcall,glibc,None,texlive-bin,/etc/ffcall.conf
+ffmpeg,alsa-lib  aom  bzip2  fontconfig  fribidi  gmp  gnutls  gsm  jack  lame  libass.so=9-64  libavc1394  libbluray.so=2-64  libbs2b.so=0-64  libdav1d.so=6-64  libdrm  libfreetype.so=6-64  libgl  libiec61883  libjxl.so=0.8-64  libmfx  libmodplug  libopenmpt.so=0-64  libpulse  librav1e.so=0-64  libraw1394  librsvg-2.so=2-64  libsoxr  libssh  libtheora  libva.so=2-64  libva-drm.so=2-64  libva-x11.so=2-64  libvdpau  libvidstab.so=1.2-64  libvorbisenc.so=2-64  libvorbis.so=0-64  libvpx.so=8-64  libwebp  libx11  libx264.so=164-64  libx265.so=199-64  libxcb  libxext  libxml2  libxv  libxvidcore.so=4-64  libzimg.so=2-64  ocl-icd  opencore-amr  openjpeg2  opus  sdl2  speex  srt  svt-av1  v4l-utils  vmaf  vulkan-icd-loader  xz  zlib,avisynthplus,chromium  electron22  firefox,/etc/ffmpeg.conf
+fftw,bash  gcc-libs  glibc  openmpi,None,imagemagick  pulseaudio,/etc/fftw.conf
+file,glibc  zlib  xz  bzip2  libseccomp  libseccomp.so=2-64  zstd  libzstd.so=1-64,None,base  base-devel  feh  nano  ristretto  util-linux  xdg-utils  zathura,/etc/file.conf
+filesystem,iana-etc,None,base  fakeroot  glibc  mkinitcpio,/etc/filesystem.conf
+findutils,glibc  sh,None,base  base-devel  ca-certificates-utils  java-runtime-common  mkinitcpio,/etc/findutils.conf
+firefox,dbus-glib  ffmpeg  gtk3  libpulse  libxss  libxt  mime-types  nss  ttf-font,hunspell-en_US,None,/etc/firefox.conf
+flac,gcc-libs  libogg,None,chromium  electron22  gst-plugins-good  libopenmpt  libsndfile,/etc/flac.conf
+flex,glibc  m4  sh,None,base-devel,/etc/flex.conf
+fontconfig,expat  freetype2  libexpat.so=1-64  libfreetype.so=6-64,None,alacritty  cairo  chromium  dropbox  electron22  ffmpeg  gd  ghostscript  gtk3  imagemagick  libass  libbluray  libxft  poppler  qt5-base,/etc/fontconfig.conf
+freeglut,libxi  libxrandr  libgl,None,libcaca,/etc/freeglut.conf
+freetype2,brotli  bzip2  libpng  sh  zlib  harfbuzz,None,alacritty  cairo  chromium  electron22  ffmpeg  fontconfig  harfbuzz  imlib2  jre-openjdk-headless  libass  libbluray  libraqm  librsvg  libxfont2  poppler  poppler-glib  texlive-bin  xorg-mkfontscale,/etc/freetype2.conf
+fribidi,glibc,None,ffmpeg  gtk3  libass  libraqm  pango  vte3,/etc/fribidi.conf
+fuse-common,None,None,fuse3,/etc/fuse-common.conf
+fuse3,fuse-common  glibc,None,gvfs  libvirt,/etc/fuse3.conf
+garcon,libxfce4ui,None,xfce4-appfinder  xfce4-panel  xfce4-screensaver  xfce4-settings  xfce4-whiskermenu-plugin  xfdesktop,/etc/garcon.conf
+gawk,sh  glibc  mpfr,None,autoconf  base  base-devel  mkinitcpio  pacman,/etc/gawk.conf
+gc,gcc-libs,None,guile  w3m,/etc/gc.conf
+gcc,gcc-libs=13.2.1-3  binutils>=2.28  libmpc  zstd  libisl.so=23-64,lib32-gcc-libs,base-devel,/etc/gcc.conf
+gcc-libs,glibc>=2.27,None,abseil-cpp  aom  base  blas  db  db5.3  djvulibre  double-conversion  ell  fftw  flac  gc  gcc  gettext  glu  gmp  gnutls  gperftools  gptfdisk  graphite  groff  highway  hunspell  icu  imath  intel-gmmlib  intel-media-driver  iwd  jack2  jre-openjdk  jre-openjdk-headless  jsoncpp  libblockdev  libbs2b  libcaca  libcap  libcdio  libconfig  libde265  libelf  libinih  libmfx  libmodplug  libnl  libopenmpt  libosinfo  libplist  libsigc++  libsoxr  libusbmuxd  libvpx  libyuv  llvm-libs  lsd  luajit  ncurses  openmpi  pcre  poppler  poppler-glib  portaudio  rav1e  re2  ripgrep  smartmontools  snappy  speex  speexdsp  srt  systemd-libs  taglib  thin-provisioning-tools  tree-sitter  udisks2  v4l-utils  vid.stab  visual-studio-code-bin  vmaf  webrtc-audio-processing  x265  zeromq  zimg  zstd,/etc/gcc-libs.conf
+gcr,gtk3  libgcrypt  libsecret  openssh  p11-kit,None,gnome-keyring  gvfs  seahorse,/etc/gcr.conf
+gcr-4,glib2  libgcrypt  libsecret  openssh  p11-kit  systemd,gtk4,gnome-keyring  libnma-common,/etc/gcr-4.conf
+gd,fontconfig  libxpm  libwebp  libavif  libheif,perl,texlive-bin,/etc/gd.conf
+gdbm,glibc  sh  readline  libreadline.so=8-64,None,avahi  libsasl  man-db  perl  python,/etc/gdbm.conf
+gdk-pixbuf2,glib2  libpng  libtiff  libjpeg  shared-mime-info,libwmf,awesome  ghostscript  gst-plugins-good  gtk-update-icon-cache  gtk3  libnotify  librsvg  spice-gtk  tumbler  xscreensaver,/etc/gdk-pixbuf2.conf
+gettext,gcc-libs  acl  sh  libunistring  libxml2,git,base  base-devel  bison  grub  pacman,/etc/gettext.conf
+ghc-libs,gmp  libffi  numactl  perl,None,haskell-aeson  haskell-aeson-pretty  haskell-ansi-terminal  haskell-ansi-wl-pprint  haskell-appar  haskell-asn1-encoding  haskell-asn1-parse  haskell-asn1-types  haskell-assoc  haskell-async  haskell-attoparsec  haskell-attoparsec-iso8601  haskell-auto-update  haskell-base-compat  haskell-base-compat-batteries  haskell-base-orphans  haskell-base-unicode-symbols  haskell-base16-bytestring  haskell-base64  haskell-base64-bytestring  haskell-basement  haskell-bifunctors  haskell-bitvec  haskell-blaze-builder  haskell-blaze-html  haskell-blaze-markup  haskell-boring  haskell-bsb-http-chunked  haskell-byteorder  haskell-call-stack  haskell-case-insensitive  haskell-cereal  haskell-citeproc  haskell-cmdargs  haskell-colour  haskell-commonmark  haskell-commonmark-extensions  haskell-commonmark-pandoc  haskell-comonad  haskell-conduit  haskell-conduit-extra  haskell-constraints  haskell-contravariant  haskell-cookie  haskell-crypton  haskell-crypton-connection  haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-system  haskell-crypton-x509-validation  haskell-cryptonite  haskell-data-array-byte  haskell-data-default  haskell-data-default-class  haskell-data-default-instances-containers  haskell-data-default-instances-dlist  haskell-data-default-instances-old-locale  haskell-data-fix  haskell-dec  haskell-digest  haskell-distributive  haskell-dlist  haskell-doclayout  haskell-doctemplates  haskell-easy-file  haskell-emojis  haskell-erf  haskell-fast-logger  haskell-file-embed  haskell-generically  haskell-ghc-bignum-orphans  haskell-glob  haskell-gridtables  haskell-haddock-library  haskell-hashable  haskell-hourglass  haskell-hslua  haskell-hslua-aeson  haskell-hslua-classes  haskell-hslua-core  haskell-hslua-list  haskell-hslua-marshalling  haskell-hslua-module-doclayout  haskell-hslua-module-path  haskell-hslua-module-system  haskell-hslua-module-text  haskell-hslua-module-version  haskell-hslua-module-zip  haskell-hslua-objectorientation  haskell-hslua-packaging  haskell-hslua-repl  haskell-hslua-typing  haskell-http-api-data  haskell-http-client  haskell-http-client-tls  haskell-http-date  haskell-http-media  haskell-http-types  haskell-http2  haskell-hunit  haskell-indexed-traversable  haskell-indexed-traversable-instances  haskell-integer-logarithms  haskell-iproute  haskell-ipynb  haskell-isocline  haskell-jira-wiki-markup  haskell-juicypixels  haskell-lexer  haskell-libyaml  haskell-lpeg  haskell-lua  haskell-memory  haskell-mime-types  haskell-mmorph  haskell-monad-control  haskell-mono-traversable  haskell-network  haskell-network-byte-order  haskell-network-uri  haskell-old-locale  haskell-old-time  haskell-onetuple  haskell-optparse-applicative  haskell-pandoc  haskell-pandoc-lua-engine  haskell-pandoc-lua-marshal  haskell-pandoc-server  haskell-pandoc-types  haskell-pem  haskell-pretty-show  haskell-primitive  haskell-psqueues  haskell-quickcheck  haskell-random  haskell-recv  haskell-resourcet  haskell-safe  haskell-safe-exceptions  haskell-scientific  haskell-semialign  haskell-semigroupoids  haskell-servant  haskell-servant-server  haskell-sha  haskell-simple-sendfile  haskell-singleton-bool  haskell-skylighting  haskell-skylighting-core  haskell-skylighting-format-ansi  haskell-skylighting-format-blaze-html  haskell-skylighting-format-context  haskell-skylighting-format-latex  haskell-socks  haskell-some  haskell-sop-core  haskell-split  haskell-splitmix  haskell-statevar  haskell-streaming-commons  haskell-strict  haskell-string-conversions  haskell-syb  haskell-tagged  haskell-tagsoup  haskell-temporary  haskell-texmath  haskell-text-conversions  haskell-text-icu  haskell-text-short  haskell-th-abstraction  haskell-th-compat  haskell-th-lift  haskell-th-lift-instances  haskell-these  haskell-time-compat  haskell-time-manager  haskell-tls  haskell-transformers-base  haskell-transformers-compat  haskell-type-equality  haskell-typed-process  haskell-typst-symbols  haskell-unicode-collation  haskell-unicode-data  haskell-unicode-transforms  haskell-uniplate  haskell-unix-compat  haskell-unix-time  haskell-unliftio  haskell-unliftio-core  haskell-unordered-containers  haskell-utf8-string  haskell-uuid-types  haskell-vault  haskell-vector  haskell-vector-algorithms  haskell-vector-stream  haskell-wai  haskell-wai-app-static  haskell-wai-cors  haskell-wai-extra  haskell-wai-logger  haskell-warp  haskell-witherable  haskell-word8  haskell-xml  haskell-xml-conduit  haskell-xml-types  haskell-yaml  haskell-zip-archive  haskell-zlib  hslua-cli  pandoc-cli,/etc/ghc-libs.conf
+ghostscript,libxt  libcups  fontconfig  zlib  libpng  libjpeg  jbig2dec  libtiff  lcms2  libpaper  ijs  openjpeg2  libidn  poppler-data  cairo  glibc  libx11  gdk-pixbuf2  glib2,gtk3,dvisvgm  libspectre,/etc/ghostscript.conf
+giflib,glibc,None,imlib2  jre-openjdk  libjxl  libwebp,/etc/giflib.conf
+girara,gtk3  glib2  json-glib  pango,None,zathura,/etc/girara.conf
+git,curl  expat  perl  perl-error  perl-mailtools  openssl  pcre2  grep  shadow  zlib,tk,yay,/etc/git.conf
+glib-networking,glib2  gnutls  gsettings-desktop-schemas  libproxy,None,libsoup  libsoup3,/etc/glib-networking.conf
+glib2,libffi  libsysprof-capture  pcre2  util-linux-libs  zlib  libffi.so=8-64  libmount.so=1-64,gvfs,at-spi2-core  avahi  cairo  dbus-glib  dbus-python  dconf  desktop-file-utils  gcr-4  gdk-pixbuf2  ghostscript  girara  glib-networking  glibmm  graphene  gsettings-desktop-schemas  gstreamer  gtk3  harfbuzz  json-glib  libass  libblockdev  libcacard  libcloudproviders  libcolord  libdbusmenu-glib  libgirepository  libgtop  libgudev  libgusb  libhandy  liblqr  libmm-glib  libmpd  libnm  libnotify  libosinfo  libproxy  librsvg  libsecret  libsoup  libsoup3  libwacom  libxfce4util  libxklavier  lightdm  lua53-lgi  phodav  pinentry  polkit  poppler-glib  shared-mime-info  spice-gtk  tracker3  udisks2  upower  usbredir  volume_key  xfce4-dev-tools  xscreensaver,/etc/glib2.conf
+glib2-docs,None,None,gtk-doc,/etc/glib2-docs.conf
+glibc,linux-api-headers>=4.10  tzdata  filesystem,gd,a52dec  aalib  alsa-lib  argon2  attr  audit  base  bash  binutils  bison  bluez-libs  brotli  btrfs-progs  bzip2  c-ares  catimg  cdparanoia  coreutils  cpio  cracklib  dav1d  dbus-glib  dbus-python  debugedit  device-mapper  diffutils  djvulibre  dosfstools  duktape  efibootmgr  efivar  expat  fakeroot  ffcall  fftw  file  findutils  flex  fribidi  fuse3  gawk  gcc-libs  gdbm  ghostscript  giflib  glu  gnupg  gnutls  gperftools  grep  gsm  gumbo-parser  gzip  hwloc  icu  ijs  iniparser  iproute2  iwd  jack2  jansson  jre-openjdk  jre-openjdk-headless  json-c  kbd  keyutils  kmod  krb5  l-smash  less  libaio  libass  libassuan  libasyncns  libatasmart  libavc1394  libavif  libblockdev  libbpf  libburn  libcaca  libcap  libcap-ng  libcdio-paranoia  libconfig  libcups  libdatrie  libdv  libdvdread  libedit  libelf  libepoxy  libev  libevdev  libexif  libffi  libgpg-error  libgtop  libice  libidn  libimobiledevice  libinih  libjpeg-turbo  libksba  libmnl  libmpeg2  libndp  libnet  libnfnetlink  libnghttp2  libnl  libnsl  libogg  libomxil-bellagio  libopenmpt  libosinfo  libp11-kit  libpaper  libpcap  libpciaccess  libpgm  libpipeline  libplist  libpwquality  libraw1394  libsamplerate  libsasl  libseccomp  libsigsegv  libsndfile  libsodium  libstemmer  libsynctex  libtasn1  libthai  libtheora  libtiff  libtool  libtraceevent  libtracefs  libunistring  liburcu  libusb  libusbmuxd  libutempter  libuv  libverto  libvterm  libx11  libxau  libxcb  libxcrypt  libxcvt  libxdg-basedir  libxdmcp  libxklavier  libxshmfence  libyaml  lsof  lua53-lgi  lz4  lzo  m4  make  md4c  mdadm  mkinitcpio-busybox  mpfr  msgpack-c  mtdev  ncurses  nettle  npth  nspr  numactl  ocl-icd  opencore-amr  openmpi  openpmix  openssh  openssl  opus  orc  pacman  pam  patch  pciutils  pcre  perl  pinentry  pixman  pkgconf  poppler  poppler-glib  popt  portaudio  procps-ng  python-yaml  rav1e  rclone  readline  sdl2  sed  shadow  snappy  startup-notification  sudo  svt-av1  syncthing  systemd-libs  tar  tdb  tree  tslib  twolame  udisks2  unibilium  usbutils  util-linux-libs  vid.stab  vim  visual-studio-code-bin  volume_key  vulkan-icd-loader  wavpack  wayland  wget  which  xorg-bdftopcf  xorg-sessreg  xorg-xrdb  xorg-xwd  xscreensaver  xvidcore  yajl  zeromq  zimg  zlib  zstd,/etc/glibc.conf
+glibmm,glib2  libsigc++  libsigc-2.0.so=0-64,None,atkmm  gtkmm3  pangomm,/etc/glibmm.conf
+glu,libgl  gcc-libs  glibc,None,libcaca  xscreensaver,/etc/glu.conf
+gmp,gcc-libs  sh,None,coreutils  ffmpeg  ghc-libs  gnutls  guile  libisl  mpfr  nettle,/etc/gmp.conf
+gnome-keyring,gcr  gcr-4  pam  openssh,None,seahorse,/etc/gnome-keyring.conf
+gnome-themes-extra,cantarell-fonts,gtk-engines,xfce4-settings,/etc/gnome-themes-extra.conf
+gnupg,bzip2  libbz2.so=1.0-64  glibc  gnutls  libgcrypt  libgpg-error  libksba  libassuan  libassuan.so=0-64  npth  libnpth.so=0-64  pinentry  readline  libreadline.so=8-64  sqlite  zlib,libldap,gpgme  pacman  visual-studio-code-bin,/etc/gnupg.conf
+gnutls,glibc  gcc-libs  gmp  libtasn1  readline  zlib  nettle  libp11-kit  libidn2  zstd  libidn2.so=0-64  libunistring  brotli,tpm2-tss,ffmpeg  glib-networking  gnupg  gtk-vnc  libcups  libvirt  vte3  wget  xfce4-mailwatch-plugin  zeromq,/etc/gnutls.conf
+go,None,None,None,/etc/go.conf
+gobject-introspection-runtime,libgirepository=1.76.1-3,None,lua53-lgi  python-gobject,/etc/gobject-introspection-runtime.conf
+gperftools,gcc-libs  glibc  libunwind,graphviz,libjxl,/etc/gperftools.conf
+gpgme,libgpg-error  gnupg>=2,None,pacman  poppler  seahorse  volume_key,/etc/gpgme.conf
+gpm,bash  procps-ng,None,aalib  libnewt  vim  w3m,/etc/gpm.conf
+gptfdisk,gcc-libs  popt  libuuid.so=1-64  libncursesw.so=6-64,None,libblockdev,/etc/gptfdisk.conf
+graphene,libglib-2.0.so=0-64  libgobject-2.0.so=0-64,None,gst-plugins-base,/etc/graphene.conf
+graphite,gcc-libs,graphite-docs,harfbuzz  texlive-bin,/etc/graphite.conf
+grep,glibc  pcre2,None,base  base-devel  git  gzip  mkinitcpio  pacman,/etc/grep.conf
+groff,perl  gcc-libs,netpbm,base-devel  man-db,/etc/groff.conf
+grub,sh  xz  gettext  device-mapper,freetype2,None,/etc/grub.conf
+gsettings-desktop-schemas,adobe-source-code-pro-fonts  cantarell-fonts  dconf  glib2,None,at-spi2-core  glib-networking  gvfs,/etc/gsettings-desktop-schemas.conf
+gsm,glibc,None,ffmpeg,/etc/gsm.conf
+gst-plugins-base,gst-plugins-base-libs=1.22.5  alsa-lib  cdparanoia  graphene  libjpeg  libpng  libtheora  libvorbis  opus  pango,None,parole  spice-gtk,/etc/gst-plugins-base.conf
+gst-plugins-base-libs,gstreamer=1.22.5  iso-codes  libgl  libgudev  libxi  libxv  mesa  orc  wayland,None,gst-plugins-base  gst-plugins-good  gst-plugins-ugly  onlyoffice-bin  xfburn,/etc/gst-plugins-base-libs.conf
+gst-plugins-good,gst-plugins-base-libs=1.22.5  aalib  cairo  flac  gdk-pixbuf2  gst-plugins-base-libs  lame  libavc1394  libcaca  libdv  libgudev  libiec61883  libpulse  libraw1394  libshout  libsoup3  libvpx  libxdamage  mpg123  nettle  speex  taglib  twolame  v4l-utils  wavpack  libjack.so=0-64,None,parole  spice-gtk,/etc/gst-plugins-good.conf
+gst-plugins-ugly,gst-plugins-base-libs=1.22.5  a52dec  libcdio  libdvdread  libmpeg2  opencore-amr  x264,None,onlyoffice-bin,/etc/gst-plugins-ugly.conf
+gstreamer,glib2  libcap  libelf  libunwind  libxml2,python,gst-plugins-base-libs  onlyoffice-bin  spice-gtk,/etc/gstreamer.conf
+gtk-doc,docbook-xml  docbook-xsl  glib2-docs  python-lxml  python-pygments,dblatex,xfce4-dev-tools,/etc/gtk-doc.conf
+gtk-update-icon-cache,gdk-pixbuf2  librsvg  hicolor-icon-theme,None,adwaita-icon-theme  gtk2  gtk3  lightdm-gtk-greeter-settings,/etc/gtk-update-icon-cache.conf
+gtk-vnc,libgcrypt  gtk3  gnutls  libpulse,None,virt-manager,/etc/gtk-vnc.conf
+gtk2,atk  cairo  desktop-file-utils  gtk-update-icon-cache  libcups  librsvg  libxcomposite  libxcursor  libxdamage  libxi  libxinerama  libxrandr  pango  shared-mime-info,adwaita-icon-theme,gtkmm  lxappearance,/etc/gtk2.conf
+gtk3,adwaita-icon-theme  atk  cairo  cantarell-fonts  dconf  desktop-file-utils  fontconfig  fribidi  gdk-pixbuf2  glib2  harfbuzz  iso-codes  libcloudproviders  libcolord  libcups  libegl  libepoxy  libgl  librsvg  libxcomposite  libx11  libxcursor  libxdamage  libxext  libxfixes  libxi  libxinerama  libxkbcommon  libxrandr  libxrender  pango  shared-mime-info  tracker3  wayland  gtk-update-icon-cache,evince,arandr  ayatana-ido  chromium  electron22  firefox  gcr  girara  gtk-vnc  gtkmm3  gtksourceview4  libdbusmenu-gtk3  libhandy  libindicator-gtk3  libkeybinder3  libnma  libwnck3  libxfce4ui  lightdm-gtk-greeter  onlyoffice-bin  pasystray  polkit-gnome  seahorse  solaar  spice-gtk  visual-studio-code-bin  vte3  xarchiver  xfburn  xfce4-whiskermenu-plugin  xscreensaver  zenity,/etc/gtk3.conf
+gtkmm,gtk2  pangomm  atkmm,None,nitrogen,/etc/gtkmm.conf
+gtkmm3,atkmm  gtk3  pangomm  libatkmm-1.6.so=1-64  libcairomm-1.0.so=1-64  libglibmm-2.4.so=1-64  libpangomm-1.4.so=1-64  libsigc-2.0.so=0-64,None,paprefs  pavucontrol,/etc/gtkmm3.conf
+gtksourceview4,gtk3  libxml2,None,mousepad  virt-manager,/etc/gtksourceview4.conf
+guile,gmp  ncurses  libunistring  gc  libffi  libxcrypt,None,make,/etc/guile.conf
+gumbo-parser,glibc,None,None,/etc/gumbo-parser.conf
+gvfs,avahi  dconf  fuse3  gcr  gsettings-desktop-schemas  libarchive  libbluray  libcdio-paranoia  libgudev  libsecret  libsoup3  psmisc  udisks2,gtk3,None,/etc/gvfs.conf
+gzip,glibc  bash  coreutils  sed  grep,less,base  base-devel  texinfo,/etc/gzip.conf
+harfbuzz,libfreetype.so=6-64  libgraphite2.so=3-64  libglib-2.0.so=0-64  libgobject-2.0.so=0-64,harfbuzz-utils,chromium  electron22  freetype2  gtk3  harfbuzz-icu  jre-openjdk-headless  libass  librsvg  pango,/etc/harfbuzz.conf
+harfbuzz-icu,libharfbuzz.so=0-64  libicuuc.so=73-64,None,texlive-bin,/etc/harfbuzz-icu.conf
+haskell-aeson,ghc-libs  haskell-onetuple  haskell-quickcheck  haskell-attoparsec  haskell-base-compat-batteries  haskell-data-fix  haskell-dlist  haskell-generically  haskell-hashable  haskell-indexed-traversable  haskell-primitive  haskell-scientific  haskell-semialign  haskell-strict  haskell-tagged  haskell-text-short  haskell-th-abstraction  haskell-these  haskell-time-compat  haskell-unordered-containers  haskell-uuid-types  haskell-vector  haskell-witherable,None,haskell-aeson-pretty  haskell-citeproc  haskell-doctemplates  haskell-hslua-aeson  haskell-ipynb  haskell-pandoc  haskell-pandoc-lua-engine  haskell-pandoc-lua-marshal  haskell-pandoc-server  haskell-pandoc-types  haskell-servant  haskell-servant-server  haskell-skylighting-core  haskell-wai-extra  haskell-yaml,/etc/haskell-aeson.conf
+haskell-aeson-pretty,ghc-libs  haskell-aeson  haskell-attoparsec  haskell-base-compat  haskell-cmdargs  haskell-scientific  haskell-unordered-containers  haskell-vector,None,haskell-citeproc  haskell-pandoc,/etc/haskell-aeson-pretty.conf
+haskell-ansi-terminal,ghc-libs  haskell-colour,None,haskell-ansi-wl-pprint  haskell-skylighting-format-ansi  haskell-wai-extra,/etc/haskell-ansi-terminal.conf
+haskell-ansi-wl-pprint,ghc-libs  haskell-ansi-terminal,None,haskell-optparse-applicative,/etc/haskell-ansi-wl-pprint.conf
+haskell-appar,ghc-libs,None,haskell-iproute,/etc/haskell-appar.conf
+haskell-asn1-encoding,ghc-libs  haskell-asn1-types  haskell-hourglass,None,haskell-asn1-parse  haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-validation  haskell-tls,/etc/haskell-asn1-encoding.conf
+haskell-asn1-parse,ghc-libs  haskell-asn1-encoding  haskell-asn1-types,None,haskell-crypton-x509,/etc/haskell-asn1-parse.conf
+haskell-asn1-types,ghc-libs  haskell-hourglass  haskell-memory,None,haskell-asn1-encoding  haskell-asn1-parse  haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-validation  haskell-tls,/etc/haskell-asn1-types.conf
+haskell-assoc,ghc-libs  haskell-bifunctors  haskell-tagged,None,haskell-strict  haskell-these,/etc/haskell-assoc.conf
+haskell-async,ghc-libs  haskell-hashable,None,haskell-conduit-extra  haskell-http-client  haskell-http2  haskell-streaming-commons  haskell-tls  haskell-typed-process  haskell-unliftio,/etc/haskell-async.conf
+haskell-attoparsec,ghc-libs  haskell-scientific,None,haskell-aeson  haskell-aeson-pretty  haskell-attoparsec-iso8601  haskell-citeproc  haskell-conduit-extra  haskell-http-api-data  haskell-http-date  haskell-pandoc  haskell-servant  haskell-skylighting-core  haskell-wai-cors  haskell-xml-conduit  haskell-yaml,/etc/haskell-attoparsec.conf
+haskell-attoparsec-iso8601,ghc-libs  haskell-attoparsec  haskell-base-compat-batteries  haskell-time-compat,None,haskell-http-api-data,/etc/haskell-attoparsec-iso8601.conf
+haskell-auto-update,ghc-libs,None,haskell-fast-logger  haskell-time-manager  haskell-warp,/etc/haskell-auto-update.conf
+haskell-base-compat,ghc-libs,None,haskell-aeson-pretty  haskell-base-compat-batteries  haskell-http-api-data  haskell-servant  haskell-servant-server,/etc/haskell-base-compat.conf
+haskell-base-compat-batteries,ghc-libs  haskell-base-compat,None,haskell-aeson  haskell-attoparsec-iso8601,/etc/haskell-base-compat-batteries.conf
+haskell-base-orphans,ghc-libs,None,haskell-bifunctors  haskell-distributive  haskell-hashable  haskell-onetuple  haskell-semigroupoids  haskell-time-compat  haskell-transformers-base  haskell-witherable,/etc/haskell-base-orphans.conf
+haskell-base-unicode-symbols,ghc-libs,None,haskell-wai-cors,/etc/haskell-base-unicode-symbols.conf
+haskell-base16-bytestring,ghc-libs,None,haskell-text-conversions,/etc/haskell-base16-bytestring.conf
+haskell-base64,ghc-libs  haskell-text-short,None,haskell-pandoc  haskell-pandoc-server,/etc/haskell-base64.conf
+haskell-base64-bytestring,ghc-libs,None,haskell-http-client  haskell-ipynb  haskell-servant-server  haskell-skylighting-core  haskell-text-conversions  haskell-wai-extra,/etc/haskell-base64-bytestring.conf
+haskell-basement,ghc-libs,None,haskell-crypton  haskell-crypton-connection  haskell-cryptonite  haskell-memory  haskell-pem  haskell-socks,/etc/haskell-basement.conf
+haskell-bifunctors,ghc-libs  haskell-base-orphans  haskell-comonad  haskell-tagged  haskell-th-abstraction,None,haskell-assoc  haskell-semigroupoids  haskell-servant,/etc/haskell-bifunctors.conf
+haskell-bitvec,ghc-libs  haskell-primitive  haskell-vector,None,haskell-vector-algorithms,/etc/haskell-bitvec.conf
+haskell-blaze-builder,ghc-libs,None,haskell-blaze-html  haskell-blaze-markup  haskell-http-client,/etc/haskell-blaze-builder.conf
+haskell-blaze-html,ghc-libs  haskell-blaze-builder  haskell-blaze-markup,None,haskell-pandoc  haskell-skylighting-format-blaze-html  haskell-wai-app-static  haskell-xml-conduit,/etc/haskell-blaze-html.conf
+haskell-blaze-markup,ghc-libs  haskell-blaze-builder,None,haskell-blaze-html  haskell-pandoc  haskell-wai-app-static  haskell-xml-conduit,/etc/haskell-blaze-markup.conf
+haskell-boring,ghc-libs  haskell-tagged,None,haskell-dec  haskell-singleton-bool,/etc/haskell-boring.conf
+haskell-bsb-http-chunked,ghc-libs,None,haskell-warp,/etc/haskell-bsb-http-chunked.conf
+haskell-byteorder,ghc-libs,None,haskell-iproute  haskell-wai-logger,/etc/haskell-byteorder.conf
+haskell-call-stack,ghc-libs,None,haskell-hunit  haskell-wai-extra,/etc/haskell-call-stack.conf
+haskell-case-insensitive,ghc-libs  haskell-hashable,None,haskell-citeproc  haskell-http-client  haskell-http-client-tls  haskell-http-media  haskell-http-types  haskell-http2  haskell-pandoc  haskell-servant  haskell-skylighting-core  haskell-wai-cors  haskell-wai-extra  haskell-warp,/etc/haskell-case-insensitive.conf
+haskell-cereal,ghc-libs,None,haskell-socks  haskell-tls,/etc/haskell-cereal.conf
+haskell-citeproc,ghc-libs  haskell-aeson  haskell-aeson-pretty  haskell-attoparsec  haskell-case-insensitive  haskell-data-default  haskell-file-embed  haskell-pandoc-types  haskell-safe  haskell-scientific  haskell-text-icu  haskell-unicode-collation  haskell-uniplate  haskell-vector  haskell-xml-conduit,None,haskell-pandoc  haskell-pandoc-lua-engine,/etc/haskell-citeproc.conf
+haskell-cmdargs,ghc-libs,None,haskell-aeson-pretty,/etc/haskell-cmdargs.conf
+haskell-colour,ghc-libs,None,haskell-ansi-terminal  haskell-skylighting-core  haskell-skylighting-format-ansi,/etc/haskell-colour.conf
+haskell-commonmark,ghc-libs  haskell-unicode-data  haskell-unicode-transforms,None,haskell-commonmark-extensions  haskell-commonmark-pandoc  haskell-pandoc,/etc/haskell-commonmark.conf
+haskell-commonmark-extensions,ghc-libs  haskell-commonmark  haskell-emojis  haskell-network-uri,None,haskell-commonmark-pandoc  haskell-pandoc,/etc/haskell-commonmark-extensions.conf
+haskell-commonmark-pandoc,ghc-libs  haskell-commonmark  haskell-commonmark-extensions  haskell-pandoc-types,None,haskell-pandoc,/etc/haskell-commonmark-pandoc.conf
+haskell-comonad,ghc-libs  haskell-distributive  haskell-indexed-traversable  haskell-tagged  haskell-transformers-compat,None,haskell-bifunctors  haskell-semigroupoids,/etc/haskell-comonad.conf
+haskell-conduit,ghc-libs  haskell-mono-traversable  haskell-primitive  haskell-resourcet  haskell-unliftio-core  haskell-vector,None,haskell-conduit-extra  haskell-libyaml  haskell-xml-conduit  haskell-yaml,/etc/haskell-conduit.conf
+haskell-conduit-extra,ghc-libs  haskell-async  haskell-attoparsec  haskell-conduit  haskell-network  haskell-primitive  haskell-resourcet  haskell-streaming-commons  haskell-typed-process  haskell-unliftio-core,None,haskell-xml-conduit,/etc/haskell-conduit-extra.conf
+haskell-constraints,ghc-libs  haskell-hashable  haskell-transformers-compat  haskell-type-equality,None,haskell-servant  haskell-servant-server,/etc/haskell-constraints.conf
+haskell-contravariant,ghc-libs  haskell-statevar,None,haskell-semigroupoids,/etc/haskell-contravariant.conf
+haskell-cookie,ghc-libs  haskell-data-default-class,None,haskell-http-api-data  haskell-http-client  haskell-wai-extra,/etc/haskell-cookie.conf
+haskell-crypton,ghc-libs  haskell-basement  haskell-memory,None,haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-validation  haskell-http-client-tls  haskell-tls,/etc/haskell-crypton.conf
+haskell-crypton-connection,ghc-libs  haskell-basement  haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-system  haskell-crypton-x509-validation  haskell-data-default-class  haskell-network  haskell-socks  haskell-tls,None,haskell-http-client-tls  haskell-pandoc,/etc/haskell-crypton-connection.conf
+haskell-crypton-x509,ghc-libs  haskell-asn1-encoding  haskell-asn1-parse  haskell-asn1-types  haskell-crypton  haskell-hourglass  haskell-memory  haskell-pem,None,haskell-crypton-connection  haskell-crypton-x509-store  haskell-crypton-x509-system  haskell-crypton-x509-validation  haskell-tls  haskell-warp,/etc/haskell-crypton-x509.conf
+haskell-crypton-x509-store,ghc-libs  haskell-asn1-encoding  haskell-asn1-types  haskell-crypton  haskell-crypton-x509  haskell-pem,None,haskell-crypton-connection  haskell-crypton-x509-system  haskell-crypton-x509-validation  haskell-tls,/etc/haskell-crypton-x509-store.conf
+haskell-crypton-x509-system,ghc-libs  haskell-crypton-x509  haskell-crypton-x509-store  haskell-pem,None,haskell-crypton-connection,/etc/haskell-crypton-x509-system.conf
+haskell-crypton-x509-validation,ghc-libs  haskell-asn1-encoding  haskell-asn1-types  haskell-crypton  haskell-crypton-x509  haskell-crypton-x509-store  haskell-data-default-class  haskell-hourglass  haskell-memory  haskell-pem,None,haskell-crypton-connection  haskell-tls,/etc/haskell-crypton-x509-validation.conf
+haskell-cryptonite,ghc-libs  haskell-basement  haskell-memory,None,haskell-wai-app-static,/etc/haskell-cryptonite.conf
+haskell-data-array-byte,ghc-libs,None,haskell-hashable,/etc/haskell-data-array-byte.conf
+haskell-data-default,ghc-libs  haskell-data-default-class  haskell-data-default-instances-containers  haskell-data-default-instances-dlist  haskell-data-default-instances-old-locale,None,haskell-citeproc  haskell-pandoc  haskell-pandoc-lua-engine  haskell-pandoc-server,/etc/haskell-data-default.conf
+haskell-data-default-class,ghc-libs,None,haskell-cookie  haskell-crypton-connection  haskell-crypton-x509-validation  haskell-data-default  haskell-data-default-instances-containers  haskell-data-default-instances-dlist  haskell-data-default-instances-old-locale  haskell-http-client-tls  haskell-tls  haskell-wai-extra  haskell-xml-conduit,/etc/haskell-data-default-class.conf
+haskell-data-default-instances-containers,ghc-libs  haskell-data-default-class,None,haskell-data-default,/etc/haskell-data-default-instances-containers.conf
+haskell-data-default-instances-dlist,ghc-libs  haskell-data-default-class  haskell-dlist,None,haskell-data-default,/etc/haskell-data-default-instances-dlist.conf
+haskell-data-default-instances-old-locale,ghc-libs  haskell-data-default-class  haskell-old-locale,None,haskell-data-default,/etc/haskell-data-default-instances-old-locale.conf
+haskell-data-fix,ghc-libs  haskell-hashable,None,haskell-aeson,/etc/haskell-data-fix.conf
+haskell-dec,ghc-libs  haskell-boring,None,haskell-singleton-bool,/etc/haskell-dec.conf
+haskell-digest,ghc-libs  zlib,None,haskell-zip-archive,/etc/haskell-digest.conf
+haskell-distributive,ghc-libs  haskell-base-orphans  haskell-tagged,None,haskell-comonad  haskell-semigroupoids,/etc/haskell-distributive.conf
+haskell-dlist,ghc-libs,None,haskell-aeson  haskell-data-default-instances-dlist  haskell-glob,/etc/haskell-dlist.conf
+haskell-doclayout,ghc-libs  haskell-emojis  haskell-safe,None,haskell-doctemplates  haskell-gridtables  haskell-hslua-module-doclayout  haskell-pandoc  haskell-pandoc-lua-engine,/etc/haskell-doclayout.conf
+haskell-doctemplates,ghc-libs  haskell-aeson  haskell-doclayout  haskell-safe  haskell-scientific  haskell-text-conversions  haskell-vector,None,haskell-pandoc  haskell-pandoc-lua-engine  haskell-pandoc-server,/etc/haskell-doctemplates.conf
+haskell-easy-file,ghc-libs,None,haskell-fast-logger,/etc/haskell-easy-file.conf
+haskell-emojis,ghc-libs,None,haskell-commonmark-extensions  haskell-doclayout  haskell-pandoc,/etc/haskell-emojis.conf
+haskell-erf,ghc-libs,None,haskell-quickcheck,/etc/haskell-erf.conf
+haskell-fast-logger,ghc-libs  haskell-auto-update  haskell-easy-file  haskell-unix-compat  haskell-unix-time,None,haskell-wai-extra  haskell-wai-logger,/etc/haskell-fast-logger.conf
+haskell-file-embed,ghc-libs,None,haskell-citeproc  haskell-pandoc  haskell-wai-app-static,/etc/haskell-file-embed.conf
+haskell-generically,ghc-libs,None,haskell-aeson,/etc/haskell-generically.conf
+haskell-ghc-bignum-orphans,ghc-libs,None,haskell-hashable,/etc/haskell-ghc-bignum-orphans.conf
+haskell-glob,ghc-libs  haskell-dlist  haskell-transformers-compat,None,haskell-pandoc,/etc/haskell-glob.conf
+haskell-gridtables,ghc-libs  haskell-doclayout,None,haskell-pandoc,/etc/haskell-gridtables.conf
+haskell-haddock-library,ghc-libs,None,haskell-pandoc,/etc/haskell-haddock-library.conf
+haskell-hashable,ghc-libs  haskell-base-orphans  haskell-data-array-byte  haskell-ghc-bignum-orphans,None,haskell-aeson  haskell-async  haskell-case-insensitive  haskell-constraints  haskell-data-fix  haskell-hslua-aeson  haskell-http-api-data  haskell-mono-traversable  haskell-psqueues  haskell-scientific  haskell-semialign  haskell-semigroupoids  haskell-strict  haskell-text-short  haskell-these  haskell-time-compat  haskell-uniplate  haskell-unordered-containers  haskell-uuid-types  haskell-vault  haskell-warp  haskell-witherable,/etc/haskell-hashable.conf
+haskell-hourglass,ghc-libs,None,haskell-asn1-encoding  haskell-asn1-types  haskell-crypton-x509  haskell-crypton-x509-validation,/etc/haskell-hourglass.conf
+haskell-hslua,ghc-libs  haskell-hslua-aeson  haskell-hslua-classes  haskell-hslua-core  haskell-hslua-marshalling  haskell-hslua-objectorientation  haskell-hslua-packaging  haskell-hslua-typing,None,haskell-hslua-module-doclayout  haskell-hslua-module-path  haskell-hslua-module-version  haskell-pandoc-lua-engine  haskell-pandoc-lua-marshal,/etc/haskell-hslua.conf
+haskell-hslua-aeson,ghc-libs  haskell-aeson  haskell-hashable  haskell-hslua-core  haskell-hslua-marshalling  haskell-scientific  haskell-unordered-containers  haskell-vector,None,haskell-hslua,/etc/haskell-hslua-aeson.conf
+haskell-hslua-classes,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling,None,haskell-hslua,/etc/haskell-hslua-classes.conf
+haskell-hslua-core,ghc-libs  haskell-lua,None,haskell-hslua  haskell-hslua-aeson  haskell-hslua-classes  haskell-hslua-list  haskell-hslua-marshalling  haskell-hslua-module-system  haskell-hslua-module-text  haskell-hslua-module-zip  haskell-hslua-objectorientation  haskell-hslua-packaging  haskell-hslua-repl  haskell-hslua-typing  hslua-cli,/etc/haskell-hslua-core.conf
+haskell-hslua-list,ghc-libs  haskell-hslua-core,None,haskell-hslua-module-zip  haskell-pandoc-lua-marshal,/etc/haskell-hslua-list.conf
+haskell-hslua-marshalling,ghc-libs  haskell-hslua-core,None,haskell-hslua  haskell-hslua-aeson  haskell-hslua-classes  haskell-hslua-module-path  haskell-hslua-module-system  haskell-hslua-module-text  haskell-hslua-module-version  haskell-hslua-module-zip  haskell-hslua-objectorientation  haskell-hslua-packaging  haskell-hslua-typing  haskell-pandoc-lua-marshal  hslua-cli,/etc/haskell-hslua-marshalling.conf
+haskell-hslua-module-doclayout,ghc-libs  haskell-doclayout  haskell-hslua,None,haskell-pandoc-lua-engine,/etc/haskell-hslua-module-doclayout.conf
+haskell-hslua-module-path,ghc-libs  haskell-hslua  haskell-hslua-marshalling  haskell-hslua-packaging,None,haskell-pandoc-lua-engine,/etc/haskell-hslua-module-path.conf
+haskell-hslua-module-system,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling  haskell-hslua-packaging  haskell-temporary,None,haskell-pandoc-lua-engine,/etc/haskell-hslua-module-system.conf
+haskell-hslua-module-text,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling  haskell-hslua-packaging,None,haskell-pandoc-lua-engine,/etc/haskell-hslua-module-text.conf
+haskell-hslua-module-version,ghc-libs  haskell-hslua  haskell-hslua-marshalling  haskell-hslua-packaging,None,haskell-pandoc-lua-engine,/etc/haskell-hslua-module-version.conf
+haskell-hslua-module-zip,ghc-libs  haskell-hslua-core  haskell-hslua-list  haskell-hslua-marshalling  haskell-hslua-packaging  haskell-hslua-typing  haskell-zip-archive,None,haskell-pandoc-lua-engine,/etc/haskell-hslua-module-zip.conf
+haskell-hslua-objectorientation,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling  haskell-hslua-typing,None,haskell-hslua  haskell-hslua-packaging,/etc/haskell-hslua-objectorientation.conf
+haskell-hslua-packaging,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling  haskell-hslua-objectorientation  haskell-hslua-typing,None,haskell-hslua  haskell-hslua-module-path  haskell-hslua-module-system  haskell-hslua-module-text  haskell-hslua-module-version  haskell-hslua-module-zip,/etc/haskell-hslua-packaging.conf
+haskell-hslua-repl,ghc-libs  haskell-hslua-core  haskell-isocline  haskell-lua,None,haskell-pandoc-lua-engine  hslua-cli,/etc/haskell-hslua-repl.conf
+haskell-hslua-typing,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling,None,haskell-hslua  haskell-hslua-module-zip  haskell-hslua-objectorientation  haskell-hslua-packaging,/etc/haskell-hslua-typing.conf
+haskell-http-api-data,ghc-libs  haskell-attoparsec  haskell-attoparsec-iso8601  haskell-base-compat  haskell-cookie  haskell-hashable  haskell-http-types  haskell-tagged  haskell-time-compat  haskell-unordered-containers  haskell-uuid-types,None,haskell-servant  haskell-servant-server,/etc/haskell-http-api-data.conf
+haskell-http-client,ghc-libs  haskell-async  haskell-base64-bytestring  haskell-blaze-builder  haskell-case-insensitive  haskell-cookie  haskell-http-types  haskell-iproute  haskell-mime-types  haskell-network  haskell-network-uri  haskell-random  haskell-streaming-commons,None,haskell-http-client-tls  haskell-pandoc,/etc/haskell-http-client.conf
+haskell-http-client-tls,ghc-libs  haskell-case-insensitive  haskell-crypton  haskell-crypton-connection  haskell-data-default-class  haskell-http-client  haskell-http-types  haskell-memory  haskell-network  haskell-network-uri  haskell-tls,None,haskell-pandoc,/etc/haskell-http-client-tls.conf
+haskell-http-date,ghc-libs  haskell-attoparsec,None,haskell-wai-app-static  haskell-warp,/etc/haskell-http-date.conf
+haskell-http-media,ghc-libs  haskell-case-insensitive  haskell-utf8-string,None,haskell-servant  haskell-servant-server,/etc/haskell-http-media.conf
+haskell-http-types,ghc-libs  haskell-case-insensitive,None,haskell-http-api-data  haskell-http-client  haskell-http-client-tls  haskell-http2  haskell-pandoc  haskell-servant  haskell-servant-server  haskell-wai  haskell-wai-app-static  haskell-wai-cors  haskell-wai-extra  haskell-wai-logger  haskell-warp,/etc/haskell-http-types.conf
+haskell-http2,ghc-libs  haskell-async  haskell-case-insensitive  haskell-http-types  haskell-network  haskell-network-byte-order  haskell-psqueues  haskell-time-manager  haskell-unix-time,None,haskell-warp,/etc/haskell-http2.conf
+haskell-hunit,ghc-libs  haskell-call-stack,None,haskell-wai-extra,/etc/haskell-hunit.conf
+haskell-indexed-traversable,ghc-libs,None,haskell-aeson  haskell-comonad  haskell-indexed-traversable-instances  haskell-semialign  haskell-witherable,/etc/haskell-indexed-traversable.conf
+haskell-indexed-traversable-instances,ghc-libs  haskell-indexed-traversable  haskell-onetuple  haskell-tagged  haskell-unordered-containers  haskell-vector,None,haskell-semialign  haskell-witherable,/etc/haskell-indexed-traversable-instances.conf
+haskell-integer-logarithms,ghc-libs,None,haskell-scientific,/etc/haskell-integer-logarithms.conf
+haskell-iproute,ghc-libs  haskell-appar  haskell-byteorder  haskell-network,None,haskell-http-client  haskell-wai-extra  haskell-warp,/etc/haskell-iproute.conf
+haskell-ipynb,ghc-libs  haskell-aeson  haskell-base64-bytestring  haskell-unordered-containers,None,haskell-pandoc,/etc/haskell-ipynb.conf
+haskell-isocline,ghc-libs,None,haskell-hslua-repl,/etc/haskell-isocline.conf
+haskell-jira-wiki-markup,ghc-libs,None,haskell-pandoc,/etc/haskell-jira-wiki-markup.conf
+haskell-juicypixels,ghc-libs  haskell-primitive  haskell-vector  haskell-zlib,None,haskell-pandoc,/etc/haskell-juicypixels.conf
+haskell-lexer,ghc-libs,None,haskell-pretty-show,/etc/haskell-lexer.conf
+haskell-libyaml,ghc-libs  libyaml  haskell-conduit  haskell-resourcet,None,haskell-yaml,/etc/haskell-libyaml.conf
+haskell-lpeg,ghc-libs  haskell-lua  lua-lpeg,None,haskell-pandoc-lua-engine,/etc/haskell-lpeg.conf
+haskell-lua,ghc-libs  lua,None,haskell-hslua-core  haskell-hslua-repl  haskell-lpeg  haskell-pandoc-lua-marshal  hslua-cli,/etc/haskell-lua.conf
+haskell-memory,ghc-libs  haskell-basement,None,haskell-asn1-types  haskell-crypton  haskell-crypton-x509  haskell-crypton-x509-validation  haskell-cryptonite  haskell-http-client-tls  haskell-pem  haskell-tls  haskell-wai-app-static,/etc/haskell-memory.conf
+haskell-mime-types,ghc-libs,None,haskell-http-client  haskell-pandoc  haskell-wai-app-static,/etc/haskell-mime-types.conf
+haskell-mmorph,ghc-libs  haskell-transformers-compat,None,haskell-servant,/etc/haskell-mmorph.conf
+haskell-monad-control,ghc-libs  haskell-transformers-base  haskell-transformers-compat,None,haskell-servant-server,/etc/haskell-monad-control.conf
+haskell-mono-traversable,ghc-libs  haskell-hashable  haskell-split  haskell-unordered-containers  haskell-vector  haskell-vector-algorithms,None,haskell-conduit,/etc/haskell-mono-traversable.conf
+haskell-network,ghc-libs,None,haskell-conduit-extra  haskell-crypton-connection  haskell-http-client  haskell-http-client-tls  haskell-http2  haskell-iproute  haskell-pandoc  haskell-recv  haskell-servant-server  haskell-simple-sendfile  haskell-socks  haskell-streaming-commons  haskell-tls  haskell-wai  haskell-wai-extra  haskell-wai-logger  haskell-warp,/etc/haskell-network.conf
+haskell-network-byte-order,ghc-libs,None,haskell-http2,/etc/haskell-network-byte-order.conf
+haskell-network-uri,ghc-libs  haskell-th-compat,None,haskell-commonmark-extensions  haskell-http-client  haskell-http-client-tls  haskell-pandoc  haskell-servant  haskell-servant-server  haskell-texmath,/etc/haskell-network-uri.conf
+haskell-old-locale,ghc-libs,None,haskell-data-default-instances-old-locale  haskell-old-time  haskell-wai-app-static,/etc/haskell-old-locale.conf
+haskell-old-time,ghc-libs  haskell-old-locale,None,haskell-unix-time  haskell-zip-archive,/etc/haskell-old-time.conf
+haskell-onetuple,ghc-libs  haskell-base-orphans,None,haskell-aeson  haskell-indexed-traversable-instances,/etc/haskell-onetuple.conf
+haskell-optparse-applicative,ghc-libs  haskell-ansi-wl-pprint  haskell-transformers-compat,None,haskell-wai-app-static  haskell-yaml,/etc/haskell-optparse-applicative.conf
+haskell-pandoc,ghc-libs  haskell-glob  haskell-juicypixels  haskell-sha  haskell-aeson  haskell-aeson-pretty  haskell-attoparsec  haskell-base64  haskell-blaze-html  haskell-blaze-markup  haskell-case-insensitive  haskell-citeproc  haskell-commonmark  haskell-commonmark-extensions  haskell-commonmark-pandoc  haskell-crypton-connection  haskell-data-default  haskell-doclayout  haskell-doctemplates  haskell-emojis  haskell-file-embed  haskell-gridtables  haskell-haddock-library  haskell-http-client  haskell-http-client-tls  haskell-http-types  haskell-ipynb  haskell-jira-wiki-markup  haskell-mime-types  haskell-network  haskell-network-uri  haskell-pandoc-types  haskell-pretty-show  haskell-random  haskell-safe  haskell-scientific  haskell-skylighting  haskell-skylighting-core  haskell-split  haskell-syb  haskell-tagsoup  haskell-temporary  haskell-texmath  haskell-text-conversions  haskell-unicode-collation  haskell-unicode-transforms  haskell-xml  haskell-xml-conduit  haskell-xml-types  haskell-yaml  haskell-zip-archive  haskell-zlib,pandoc-crossref,haskell-pandoc-lua-engine  haskell-pandoc-server  pandoc-cli,/etc/haskell-pandoc.conf
+haskell-pandoc-lua-engine,ghc-libs  haskell-sha  haskell-aeson  haskell-citeproc  haskell-data-default  haskell-doclayout  haskell-doctemplates  haskell-hslua  haskell-hslua-module-doclayout  haskell-hslua-module-path  haskell-hslua-module-system  haskell-hslua-module-text  haskell-hslua-module-version  haskell-hslua-module-zip  haskell-hslua-repl  haskell-lpeg  haskell-pandoc  haskell-pandoc-lua-marshal  haskell-pandoc-types,None,pandoc-cli,/etc/haskell-pandoc-lua-engine.conf
+haskell-pandoc-lua-marshal,ghc-libs  haskell-aeson  haskell-hslua  haskell-hslua-list  haskell-hslua-marshalling  haskell-lua  haskell-pandoc-types  haskell-safe,None,haskell-pandoc-lua-engine,/etc/haskell-pandoc-lua-marshal.conf
+haskell-pandoc-server,ghc-libs  haskell-aeson  haskell-base64  haskell-data-default  haskell-doctemplates  haskell-pandoc  haskell-pandoc-types  haskell-servant-server  haskell-skylighting  haskell-unicode-collation  haskell-wai  haskell-wai-cors,None,pandoc-cli,/etc/haskell-pandoc-server.conf
+haskell-pandoc-types,ghc-libs  haskell-aeson  haskell-quickcheck  haskell-syb,None,haskell-citeproc  haskell-commonmark-pandoc  haskell-pandoc  haskell-pandoc-lua-engine  haskell-pandoc-lua-marshal  haskell-pandoc-server  haskell-texmath,/etc/haskell-pandoc-types.conf
+haskell-pem,ghc-libs  haskell-basement  haskell-memory,None,haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-system  haskell-crypton-x509-validation,/etc/haskell-pem.conf
+haskell-pretty-show,ghc-libs  haskell-lexer,None,haskell-pandoc,/etc/haskell-pretty-show.conf
+haskell-primitive,ghc-libs,None,haskell-aeson  haskell-bitvec  haskell-conduit  haskell-conduit-extra  haskell-juicypixels  haskell-resourcet  haskell-scientific  haskell-vector  haskell-vector-algorithms,/etc/haskell-primitive.conf
+haskell-psqueues,ghc-libs  haskell-hashable,None,haskell-http2,/etc/haskell-psqueues.conf
+haskell-quickcheck,ghc-libs  haskell-erf  haskell-random  haskell-splitmix,None,haskell-aeson  haskell-pandoc-types  haskell-servant,/etc/haskell-quickcheck.conf
+haskell-random,ghc-libs  haskell-splitmix,None,haskell-http-client  haskell-pandoc  haskell-quickcheck  haskell-streaming-commons  haskell-temporary  haskell-uuid-types,/etc/haskell-random.conf
+haskell-recv,ghc-libs  haskell-network,None,haskell-warp,/etc/haskell-recv.conf
+haskell-resourcet,ghc-libs  haskell-primitive  haskell-unliftio-core,None,haskell-conduit  haskell-conduit-extra  haskell-libyaml  haskell-servant-server  haskell-wai-extra  haskell-xml-conduit  haskell-yaml,/etc/haskell-resourcet.conf
+haskell-safe,ghc-libs,None,haskell-citeproc  haskell-doclayout  haskell-doctemplates  haskell-pandoc  haskell-pandoc-lua-marshal  haskell-skylighting-core  pandoc-cli,/etc/haskell-safe.conf
+haskell-safe-exceptions,ghc-libs,None,haskell-unliftio,/etc/haskell-safe-exceptions.conf
+haskell-scientific,ghc-libs  haskell-hashable  haskell-integer-logarithms  haskell-primitive,None,haskell-aeson  haskell-aeson-pretty  haskell-attoparsec  haskell-citeproc  haskell-doctemplates  haskell-hslua-aeson  haskell-pandoc  haskell-yaml,/etc/haskell-scientific.conf
+haskell-semialign,ghc-libs  haskell-hashable  haskell-indexed-traversable  haskell-indexed-traversable-instances  haskell-semigroupoids  haskell-tagged  haskell-these  haskell-unordered-containers  haskell-vector,None,haskell-aeson,/etc/haskell-semialign.conf
+haskell-semigroupoids,ghc-libs  haskell-base-orphans  haskell-bifunctors  haskell-comonad  haskell-contravariant  haskell-distributive  haskell-hashable  haskell-tagged  haskell-transformers-compat  haskell-unordered-containers,None,haskell-semialign,/etc/haskell-semigroupoids.conf
+haskell-servant,ghc-libs  haskell-base-compat  haskell-aeson  haskell-attoparsec  haskell-bifunctors  haskell-case-insensitive  haskell-constraints  haskell-http-api-data  haskell-http-media  haskell-http-types  haskell-mmorph  haskell-network-uri  haskell-quickcheck  haskell-tagged  haskell-sop-core  haskell-singleton-bool  haskell-string-conversions  haskell-vault,None,haskell-servant-server,/etc/haskell-servant.conf
+haskell-servant-server,ghc-libs  haskell-base-compat  haskell-aeson  haskell-base64-bytestring  haskell-constraints  haskell-http-api-data  haskell-http-media  haskell-http-types  haskell-network-uri  haskell-monad-control  haskell-network  haskell-servant  haskell-sop-core  haskell-string-conversions  haskell-resourcet  haskell-tagged  haskell-transformers-base  haskell-wai  haskell-wai-app-static  haskell-warp  haskell-word8,None,haskell-pandoc-server,/etc/haskell-servant-server.conf
+haskell-sha,ghc-libs,None,haskell-pandoc  haskell-pandoc-lua-engine,/etc/haskell-sha.conf
+haskell-simple-sendfile,ghc-libs  haskell-network,None,haskell-warp,/etc/haskell-simple-sendfile.conf
+haskell-singleton-bool,ghc-libs  haskell-boring  haskell-dec  haskell-some,None,haskell-servant,/etc/haskell-singleton-bool.conf
+haskell-skylighting,ghc-libs  haskell-skylighting-core  haskell-skylighting-format-ansi  haskell-skylighting-format-blaze-html  haskell-skylighting-format-context  haskell-skylighting-format-latex,None,haskell-pandoc  haskell-pandoc-server,/etc/haskell-skylighting.conf
+haskell-skylighting-core,ghc-libs  haskell-aeson  haskell-attoparsec  haskell-base64-bytestring  haskell-case-insensitive  haskell-colour  haskell-safe  haskell-utf8-string  haskell-xml-conduit,None,haskell-pandoc  haskell-skylighting  haskell-skylighting-format-ansi  haskell-skylighting-format-blaze-html  haskell-skylighting-format-context  haskell-skylighting-format-latex,/etc/haskell-skylighting-core.conf
+haskell-skylighting-format-ansi,ghc-libs  haskell-ansi-terminal  haskell-colour  haskell-skylighting-core,None,haskell-skylighting,/etc/haskell-skylighting-format-ansi.conf
+haskell-skylighting-format-blaze-html,ghc-libs  haskell-blaze-html  haskell-skylighting-core,None,haskell-skylighting,/etc/haskell-skylighting-format-blaze-html.conf
+haskell-skylighting-format-context,ghc-libs  haskell-skylighting-core,None,haskell-skylighting,/etc/haskell-skylighting-format-context.conf
+haskell-skylighting-format-latex,ghc-libs  haskell-skylighting-core,None,haskell-skylighting,/etc/haskell-skylighting-format-latex.conf
+haskell-socks,ghc-libs  haskell-basement  haskell-cereal  haskell-network,None,haskell-crypton-connection,/etc/haskell-socks.conf
+haskell-some,ghc-libs,None,haskell-singleton-bool,/etc/haskell-some.conf
+haskell-sop-core,ghc-libs,None,haskell-servant  haskell-servant-server,/etc/haskell-sop-core.conf
+haskell-split,ghc-libs,None,haskell-mono-traversable  haskell-pandoc  haskell-texmath,/etc/haskell-split.conf
+haskell-splitmix,ghc-libs,None,haskell-quickcheck  haskell-random,/etc/haskell-splitmix.conf
+haskell-statevar,ghc-libs,None,haskell-contravariant,/etc/haskell-statevar.conf
+haskell-streaming-commons,ghc-libs  haskell-async  haskell-network  haskell-random  haskell-zlib,None,haskell-conduit-extra  haskell-http-client  haskell-wai-extra  haskell-warp,/etc/haskell-streaming-commons.conf
+haskell-strict,ghc-libs  haskell-assoc  haskell-hashable  haskell-these,None,haskell-aeson,/etc/haskell-strict.conf
+haskell-string-conversions,ghc-libs  haskell-utf8-string,None,haskell-servant  haskell-servant-server,/etc/haskell-string-conversions.conf
+haskell-syb,ghc-libs,None,haskell-pandoc  haskell-pandoc-types  haskell-texmath  haskell-uniplate,/etc/haskell-syb.conf
+haskell-tagged,ghc-libs,None,haskell-aeson  haskell-assoc  haskell-bifunctors  haskell-boring  haskell-comonad  haskell-distributive  haskell-http-api-data  haskell-indexed-traversable-instances  haskell-semialign  haskell-semigroupoids  haskell-servant  haskell-servant-server,/etc/haskell-tagged.conf
+haskell-tagsoup,ghc-libs,None,haskell-pandoc,/etc/haskell-tagsoup.conf
+haskell-temporary,ghc-libs  haskell-random,None,haskell-hslua-module-system  haskell-pandoc  haskell-zip-archive  pandoc-cli,/etc/haskell-temporary.conf
+haskell-texmath,ghc-libs  haskell-network-uri  haskell-pandoc-types  haskell-split  haskell-syb  haskell-typst-symbols  haskell-xml,None,haskell-pandoc,/etc/haskell-texmath.conf
+haskell-text-conversions,ghc-libs  haskell-base16-bytestring  haskell-base64-bytestring,None,haskell-doctemplates  haskell-pandoc,/etc/haskell-text-conversions.conf
+haskell-text-icu,ghc-libs  icu,None,haskell-citeproc,/etc/haskell-text-icu.conf
+haskell-text-short,ghc-libs  haskell-hashable,None,haskell-aeson  haskell-base64,/etc/haskell-text-short.conf
+haskell-th-abstraction,ghc-libs,None,haskell-aeson  haskell-bifunctors  haskell-th-lift,/etc/haskell-th-abstraction.conf
+haskell-th-compat,ghc-libs,None,haskell-network-uri,/etc/haskell-th-compat.conf
+haskell-th-lift,ghc-libs  haskell-th-abstraction,None,haskell-th-lift-instances,/etc/haskell-th-lift.conf
+haskell-th-lift-instances,ghc-libs  haskell-th-lift  haskell-vector,None,haskell-unicode-collation,/etc/haskell-th-lift-instances.conf
+haskell-these,ghc-libs  haskell-assoc  haskell-hashable,None,haskell-aeson  haskell-semialign  haskell-strict,/etc/haskell-these.conf
+haskell-time-compat,ghc-libs  haskell-base-orphans  haskell-hashable,None,haskell-aeson  haskell-attoparsec-iso8601  haskell-http-api-data,/etc/haskell-time-compat.conf
+haskell-time-manager,ghc-libs  haskell-auto-update  haskell-unliftio,None,haskell-http2  haskell-warp,/etc/haskell-time-manager.conf
+haskell-tls,ghc-libs  haskell-asn1-encoding  haskell-asn1-types  haskell-async  haskell-cereal  haskell-crypton  haskell-crypton-x509  haskell-crypton-x509-store  haskell-crypton-x509-validation  haskell-data-default-class  haskell-memory  haskell-network  haskell-unix-time,None,haskell-crypton-connection  haskell-http-client-tls,/etc/haskell-tls.conf
+haskell-transformers-base,ghc-libs  haskell-base-orphans  haskell-transformers-compat,None,haskell-monad-control  haskell-servant-server,/etc/haskell-transformers-base.conf
+haskell-transformers-compat,ghc-libs,None,haskell-comonad  haskell-constraints  haskell-glob  haskell-mmorph  haskell-monad-control  haskell-optparse-applicative  haskell-semigroupoids  haskell-transformers-base,/etc/haskell-transformers-compat.conf
+haskell-type-equality,ghc-libs,None,haskell-constraints,/etc/haskell-type-equality.conf
+haskell-typed-process,ghc-libs  haskell-async  haskell-unliftio-core,None,haskell-conduit-extra,/etc/haskell-typed-process.conf
+haskell-typst-symbols,ghc-libs,None,haskell-texmath,/etc/haskell-typst-symbols.conf
+haskell-unicode-collation,ghc-libs  haskell-th-lift-instances,None,haskell-citeproc  haskell-pandoc  haskell-pandoc-server,/etc/haskell-unicode-collation.conf
+haskell-unicode-data,ghc-libs,None,haskell-commonmark  haskell-unicode-transforms,/etc/haskell-unicode-data.conf
+haskell-unicode-transforms,ghc-libs  haskell-unicode-data,None,haskell-commonmark  haskell-pandoc,/etc/haskell-unicode-transforms.conf
+haskell-uniplate,ghc-libs  haskell-hashable  haskell-syb  haskell-unordered-containers,None,haskell-citeproc,/etc/haskell-uniplate.conf
+haskell-unix-compat,ghc-libs,None,haskell-fast-logger  haskell-wai-app-static,/etc/haskell-unix-compat.conf
+haskell-unix-time,ghc-libs  haskell-old-time,None,haskell-fast-logger  haskell-http2  haskell-tls,/etc/haskell-unix-time.conf
+haskell-unliftio,ghc-libs  haskell-async  haskell-safe-exceptions  haskell-unliftio-core,None,haskell-time-manager  haskell-warp,/etc/haskell-unliftio.conf
+haskell-unliftio-core,ghc-libs,None,haskell-conduit  haskell-conduit-extra  haskell-resourcet  haskell-typed-process  haskell-unliftio,/etc/haskell-unliftio-core.conf
+haskell-unordered-containers,ghc-libs  haskell-hashable,None,haskell-aeson  haskell-aeson-pretty  haskell-hslua-aeson  haskell-http-api-data  haskell-indexed-traversable-instances  haskell-ipynb  haskell-mono-traversable  haskell-semialign  haskell-semigroupoids  haskell-uniplate  haskell-vault  haskell-wai-app-static  haskell-witherable  haskell-yaml,/etc/haskell-unordered-containers.conf
+haskell-utf8-string,ghc-libs,None,haskell-http-media  haskell-skylighting-core  haskell-string-conversions,/etc/haskell-utf8-string.conf
+haskell-uuid-types,ghc-libs  haskell-hashable  haskell-random,None,haskell-aeson  haskell-http-api-data,/etc/haskell-uuid-types.conf
+haskell-vault,ghc-libs  haskell-hashable  haskell-unordered-containers,None,haskell-servant  haskell-wai  haskell-wai-extra  haskell-warp,/etc/haskell-vault.conf
+haskell-vector,ghc-libs  haskell-primitive  haskell-vector-stream,None,haskell-aeson  haskell-aeson-pretty  haskell-bitvec  haskell-citeproc  haskell-conduit  haskell-doctemplates  haskell-hslua-aeson  haskell-indexed-traversable-instances  haskell-juicypixels  haskell-mono-traversable  haskell-semialign  haskell-th-lift-instances  haskell-vector-algorithms  haskell-witherable  haskell-yaml,/etc/haskell-vector.conf
+haskell-vector-algorithms,ghc-libs  haskell-bitvec  haskell-primitive  haskell-vector,None,haskell-mono-traversable,/etc/haskell-vector-algorithms.conf
+haskell-vector-stream,ghc-libs,None,haskell-vector,/etc/haskell-vector-stream.conf
+haskell-wai,ghc-libs  haskell-http-types  haskell-network  haskell-vault,None,haskell-pandoc-server  haskell-servant-server  haskell-wai-app-static  haskell-wai-cors  haskell-wai-extra  haskell-wai-logger  haskell-warp,/etc/haskell-wai.conf
+haskell-wai-app-static,ghc-libs  haskell-blaze-html  haskell-blaze-markup  haskell-cryptonite  haskell-file-embed  haskell-http-date  haskell-http-types  haskell-memory  haskell-mime-types  haskell-old-locale  haskell-optparse-applicative  haskell-unix-compat  haskell-unordered-containers  haskell-wai  haskell-wai-extra  haskell-warp  haskell-zlib,None,haskell-servant-server,/etc/haskell-wai-app-static.conf
+haskell-wai-cors,ghc-libs  haskell-attoparsec  haskell-base-unicode-symbols  haskell-case-insensitive  haskell-http-types  haskell-wai,None,haskell-pandoc-server,/etc/haskell-wai-cors.conf
+haskell-wai-extra,ghc-libs  haskell-aeson  haskell-ansi-terminal  haskell-base64-bytestring  haskell-case-insensitive  haskell-cookie  haskell-data-default-class  haskell-fast-logger  haskell-http-types  haskell-iproute  haskell-network  haskell-resourcet  haskell-streaming-commons  haskell-vault  haskell-wai  haskell-wai-logger  haskell-warp  haskell-word8  haskell-hunit  haskell-call-stack,None,haskell-wai-app-static  pandoc-cli,/etc/haskell-wai-extra.conf
+haskell-wai-logger,ghc-libs  haskell-byteorder  haskell-fast-logger  haskell-http-types  haskell-network  haskell-wai,None,haskell-wai-extra,/etc/haskell-wai-logger.conf
+haskell-warp,ghc-libs  haskell-auto-update  haskell-bsb-http-chunked  haskell-case-insensitive  haskell-crypton-x509  haskell-hashable  haskell-http-date  haskell-http-types  haskell-http2  haskell-iproute  haskell-network  haskell-recv  haskell-simple-sendfile  haskell-streaming-commons  haskell-time-manager  haskell-unliftio  haskell-vault  haskell-wai  haskell-word8,None,haskell-servant-server  haskell-wai-app-static  haskell-wai-extra  pandoc-cli,/etc/haskell-warp.conf
+haskell-witherable,ghc-libs  haskell-base-orphans  haskell-hashable  haskell-indexed-traversable  haskell-indexed-traversable-instances  haskell-unordered-containers  haskell-vector,None,haskell-aeson,/etc/haskell-witherable.conf
+haskell-word8,ghc-libs,None,haskell-servant-server  haskell-wai-extra  haskell-warp,/etc/haskell-word8.conf
+haskell-xml,ghc-libs,None,haskell-pandoc  haskell-texmath,/etc/haskell-xml.conf
+haskell-xml-conduit,ghc-libs  haskell-attoparsec  haskell-blaze-markup  haskell-conduit  haskell-conduit-extra  haskell-data-default-class  haskell-resourcet  haskell-blaze-html  haskell-xml-types,None,haskell-citeproc  haskell-pandoc  haskell-skylighting-core,/etc/haskell-xml-conduit.conf
+haskell-xml-types,ghc-libs,None,haskell-pandoc  haskell-xml-conduit,/etc/haskell-xml-types.conf
+haskell-yaml,ghc-libs  haskell-aeson  haskell-attoparsec  haskell-conduit  haskell-libyaml  haskell-optparse-applicative  haskell-resourcet  haskell-scientific  haskell-unordered-containers  haskell-vector,None,haskell-pandoc,/etc/haskell-yaml.conf
+haskell-zip-archive,ghc-libs  haskell-digest  haskell-old-time  haskell-temporary  haskell-zlib,None,haskell-hslua-module-zip  haskell-pandoc,/etc/haskell-zip-archive.conf
+haskell-zlib,ghc-libs  zlib,None,haskell-juicypixels  haskell-pandoc  haskell-streaming-commons  haskell-wai-app-static  haskell-zip-archive,/etc/haskell-zlib.conf
+hicolor-icon-theme,None,None,adwaita-icon-theme  chromium  djvulibre  elementary-icon-theme  gtk-update-icon-cache  libxfce4ui  mousepad  nitrogen  onlyoffice-bin  picom  thunar  thunar-archive-plugin  thunar-volman  v4l-utils  xfce4-appfinder  xfce4-dict  xfce4-eyes-plugin  xfce4-genmon-plugin  xfce4-notes-plugin  xfce4-notifyd  xfce4-panel  xfce4-power-manager  xfce4-screenshooter  xfce4-sensors-plugin  xfce4-session  xfce4-terminal  xfce4-weather-plugin  xfdesktop  xfwm4,/etc/hicolor-icon-theme.conf
+hidapi,libusb  systemd-libs,None,sdl2,/etc/hidapi.conf
+highway,gcc-libs,None,libjxl,/etc/highway.conf
+hslua-cli,ghc-libs  haskell-hslua-core  haskell-hslua-marshalling  haskell-hslua-repl  haskell-lua,None,pandoc-cli,/etc/hslua-cli.conf
+htop,libcap  libcap.so=2-64  libnl  ncurses  libncursesw.so=6-64,lm_sensors,None,/etc/htop.conf
+hunspell,gcc-libs  readline,perl,qt5-virtualkeyboard,/etc/hunspell.conf
+hwdata,None,None,libosinfo  pciutils  systemd  usbutils,/etc/hwdata.conf
+hwloc,glibc  libtool  systemd-libs  libpciaccess,cairo [installed],openmpi  openpmix,/etc/hwloc.conf
+iana-etc,None,None,filesystem,/etc/iana-etc.conf
+icu,gcc-libs  glibc  sh,None,chromium  electron22  harfbuzz-icu  haskell-text-icu  libxml2  nodejs  tracker3,/etc/icu.conf
+ijs,glibc  sh,None,ghostscript,/etc/ijs.conf
+imagemagick,libltdl  lcms2  fontconfig  libxext  liblqr  libraqm  libpng  libxml2  fftw,ghostscript,chafa,/etc/imagemagick.conf
+imath,gcc-libs,python,openexr,/etc/imath.conf
+imlib2,bzip2  freetype2  giflib  libjpeg-turbo  libpng  libtiff  libxext  xz,libheif,awesome  feh  libcaca,/etc/imlib2.conf
+iniparser,glibc,None,ndctl,/etc/iniparser.conf
+intel-gmmlib,gcc-libs,None,intel-media-driver,/etc/intel-gmmlib.conf
+intel-media-driver,gcc-libs  intel-gmmlib  libva,None,None,/etc/intel-media-driver.conf
+intltool,perl-xml-parser,None,xfce4-dev-tools,/etc/intltool.conf
+iproute2,glibc  iptables  libcap  libelf  libbpf,db5.3,base  networkmanager,/etc/iproute2.conf
+iptables,libnftnl  libpcap  libnfnetlink  libnetfilter_conntrack  bash,None,iproute2  systemd,/etc/iptables.conf
+iputils,libcap  libidn2,None,base,/etc/iputils.conf
+iso-codes,None,None,gst-plugins-base-libs  gtk3  libnma-common  libxklavier,/etc/iso-codes.conf
+iw,libnl,None,None,/etc/iw.conf
+iwd,glibc  readline  libreadline.so=8-64  ell  gcc-libs,qrencode,None,/etc/iwd.conf
+jack2,alsa-lib  libasound.so=2-64  db5.3  dbus  libdbus-1.so=3-64  gcc-libs  glibc  libsamplerate  libsamplerate.so=0-64  opus  libopus.so=0-64  systemd-libs  libsystemd.so=0-64,a2jmidid,ffmpeg  gst-plugins-good  portaudio,/etc/jack2.conf
+jansson,glibc,None,binutils  libteam  networkmanager  nm-connection-editor,/etc/jansson.conf
+java-runtime-common,bash  findutils  coreutils,None,jre-openjdk-headless,/etc/java-runtime-common.conf
+jbig2dec,libpng,None,ghostscript,/etc/jbig2dec.conf
+jp2a,curl  libjpeg  libpng,None,None,/etc/jp2a.conf
+jre-openjdk,jre20-openjdk-headless=20.0.2.u9-3  giflib  libgif.so  glibc  gcc-libs  libpng,alsa-lib,None,/etc/jre-openjdk.conf
+jre-openjdk-headless,java-runtime-common>=3  ca-certificates-utils  nss  libjpeg-turbo  libjpeg.so=8-64  lcms2  liblcms2.so=2-64  libnet  freetype2  libfreetype.so=6-64  harfbuzz  libharfbuzz.so=0-64  glibc  gcc-libs,java-rhino,jre-openjdk,/etc/jre-openjdk-headless.conf
+json-c,glibc,None,cryptsetup  ndctl  tpm2-tss  v4l-utils,/etc/json-c.conf
+json-glib,glib2  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgio-2.0.so=0-64,None,girara  libgusb  pavucontrol  spice-gtk  tracker3,/etc/json-glib.conf
+jsoncpp,gcc-libs,jsoncpp-doc,chromium  electron22,/etc/jsoncpp.conf
+kbd,glibc  pam,None,systemd,/etc/kbd.conf
+keyutils,glibc  sh,None,krb5  ndctl,/etc/keyutils.conf
+kmod,glibc  zlib  openssl  xz  zstd,None,libblockdev  linux  linux-lts  linux-zen  mkinitcpio  ndctl  pciutils  systemd,/etc/kmod.conf
+krb5,glibc  e2fsprogs  libldap  keyutils  libverto-module-base  libkeyutils.so=1-64  libss.so=2-64  libcom_err.so=2-64  libverto.so=1-64,None,audit  curl  libsoup  libsoup3  libtirpc  openssh,/etc/krb5.conf
+l-smash,glibc,None,x264,/etc/l-smash.conf
+lame,ncurses,None,ffmpeg  gst-plugins-good  libsndfile,/etc/lame.conf
+lapack,blas,None,python-numpy,/etc/lapack.conf
+lcms2,libtiff,None,colord  ghostscript  imagemagick  jre-openjdk-headless  libcolord  openjpeg2  poppler,/etc/lcms2.conf
+ldns,openssl  dnssec-anchors,libpcap,openssh,/etc/ldns.conf
+less,glibc  ncurses  pcre2,None,man-db,/etc/less.conf
+libaio,glibc,None,lvm2,/etc/libaio.conf
+libappindicator-gtk3,libdbusmenu-gtk3,None,network-manager-applet,/etc/libappindicator-gtk3.conf
+libarchive,acl  libacl.so=1-64  bzip2  expat  lz4  openssl  libcrypto.so=3-64  xz  zlib  zstd,None,gvfs  mkinitcpio  pacman  zathura-cb,/etc/libarchive.conf
+libass,fontconfig  fribidi  glib2  glibc  harfbuzz  libfreetype.so=6-64,None,ffmpeg,/etc/libass.conf
+libassuan,glibc  libgpg-error  sh,None,gnupg  pinentry,/etc/libassuan.conf
+libasyncns,glibc,None,libpulse,/etc/libasyncns.conf
+libatasmart,glibc  systemd-libs,None,udisks2,/etc/libatasmart.conf
+libavc1394,glibc  libraw1394,None,ffmpeg  gst-plugins-good,/etc/libavc1394.conf
+libavif,glibc  aom  dav1d  rav1e  svt-av1  zlib  libpng  libjpeg  libyuv,None,gd,/etc/libavif.conf
+libayatana-appindicator,libdbusmenu-gtk3  libayatana-indicator,None,None,/etc/libayatana-appindicator.conf
+libayatana-indicator,ayatana-ido,None,libayatana-appindicator,/etc/libayatana-indicator.conf
+libblockdev,cryptsetup  device-mapper  e2fsprogs  gcc-libs  glib2  glibc  gptfdisk  kmod  libbytesize  mdadm  nss  parted  systemd-libs  util-linux  volume_key,btrfs-progs,udisks2,/etc/libblockdev.conf
+libbluray,fontconfig  libfreetype.so=6-64  libxml2,java-runtime,ffmpeg  gvfs,/etc/libbluray.conf
+libbpf,glibc  libelf  linux-api-headers,None,iproute2,/etc/libbpf.conf
+libbs2b,libsndfile  gcc-libs  libsndfile.so=1-64,None,ffmpeg,/etc/libbs2b.conf
+libburn,glibc,None,libisoburn  xfburn,/etc/libburn.conf
+libbytesize,mpfr  pcre2,python-six,libblockdev,/etc/libbytesize.conf
+libcaca,freeglut  gcc-libs  glibc  glu  imlib2  libglvnd  libx11  ncurses  slang  zlib,python,gst-plugins-good,/etc/libcaca.conf
+libcacard,nss  glib2,None,spice-gtk,/etc/libcacard.conf
+libcanberra,libvorbis  libltdl  alsa-lib  libpulse  tdb  sound-theme-freedesktop,gtk3,pavucontrol  xfce4-notifyd  xfce4-pulseaudio-plugin  xfce4-settings,/etc/libcanberra.conf
+libcap,gcc-libs  glibc  pam,None,avahi  coreutils  gstreamer  htop  iproute2  iputils  pinentry  pulseaudio  systemd  systemd-libs,/etc/libcap.conf
+libcap-ng,glibc,None,audit  libvirt-glib  smartmontools  spice-gtk  util-linux,/etc/libcap-ng.conf
+libcdio,ncurses  gcc-libs,None,gst-plugins-ugly  libcdio-paranoia,/etc/libcdio.conf
+libcdio-paranoia,glibc  libcdio,None,gvfs,/etc/libcdio-paranoia.conf
+libcloudproviders,glib2,None,gtk3,/etc/libcloudproviders.conf
+libcolord,glib2  lcms2  systemd,None,colord  gtk3,/etc/libcolord.conf
+libconfig,gcc-libs  glibc,None,picom,/etc/libconfig.conf
+libcups,gnutls  avahi  glibc  zlib,None,chromium  ghostscript  gtk2  gtk3  qt5-base,/etc/libcups.conf
+libdaemon,None,None,avahi  libteam,/etc/libdaemon.conf
+libdatrie,glibc,None,libthai,/etc/libdatrie.conf
+libdbusmenu-glib,glib2,None,libdbusmenu-gtk3,/etc/libdbusmenu-glib.conf
+libdbusmenu-gtk3,libdbusmenu-glib  gtk3,None,libappindicator-gtk3  libayatana-appindicator  xfce4-panel,/etc/libdbusmenu-gtk3.conf
+libde265,gcc-libs,ffmpeg,libheif,/etc/libde265.conf
+libdrm,libpciaccess,None,ffmpeg  libva  libva-intel-driver  libva-mesa-driver  mesa  vulkan-intel  vulkan-radeon  xorg-server,/etc/libdrm.conf
+libdv,glibc  popt,None,gst-plugins-good,/etc/libdv.conf
+libdvdread,glibc,libdvdcss,gst-plugins-ugly,/etc/libdvdread.conf
+libedit,glibc  ncurses  libncursesw.so=6-64,None,llvm-libs  openssh,/etc/libedit.conf
+libelf,bzip2  libbz2.so=1.0-64  curl  libcurl.so=4-64  gcc-libs  glibc  xz  liblzma.so=5-64  zlib  zstd  libzstd.so=1-64,None,binutils  debugedit  gstreamer  iproute2  libbpf  libva-mesa-driver  mesa  systemd  vulkan-radeon,/etc/libelf.conf
+libepoxy,glibc  libglvnd  libx11,None,gtk3  libxfce4ui  spice-gtk  xfwm4  xorg-server,/etc/libepoxy.conf
+libev,glibc,None,picom,/etc/libev.conf
+libevdev,glibc,None,libinput  xf86-input-evdev,/etc/libevdev.conf
+libevent,openssl,python,electron22  libverto  openmpi  openpmix,/etc/libevent.conf
+libexif,glibc,None,feh  ristretto  thunar,/etc/libexif.conf
+libffi,glibc,None,chromium  ghc-libs  glib2  guile  libgirepository  libp11-kit  llvm-libs  lua53-lgi  python  wayland,/etc/libffi.conf
+libfontenc,zlib  xorg-fonts-encodings,None,libxfont2  xorg-mkfontscale,/etc/libfontenc.conf
+libgcrypt,libgpg-error,None,btrfs-progs  chromium  gcr  gcr-4  gnupg  gtk-vnc  libsecret  libxslt  lightdm  systemd  systemd-libs  vim,/etc/libgcrypt.conf
+libgirepository,libffi.so=8-64  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgmodule-2.0.so=0-64  libgio-2.0.so=0-64,None,gobject-introspection-runtime,/etc/libgirepository.conf
+libglvnd,libxext  mesa  opengl-driver,None,ffmpeg  freeglut  glu  gst-plugins-base-libs  gtk3  libcaca  libepoxy  libva  mesa  picom  qt5-base  sdl2  xorg-server  xorg-xdriinfo  xscreensaver,/etc/libglvnd.conf
+libgpg-error,glibc  sh,None,gnupg  gpgme  libassuan  libgcrypt  libksba,/etc/libgpg-error.conf
+libgtop,glib2  glibc  libxau,None,libxfce4ui  xfce4-systemload-plugin,/etc/libgtop.conf
+libgudev,glib2  systemd  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libudev.so=1-64,None,colord  gst-plugins-base-libs  gst-plugins-good  gvfs  libwacom  thunar  udisks2  upower  xfburn,/etc/libgudev.conf
+libgusb,glib2  libjson-glib-1.0.so=0-64  libusb-1.0.so=0-64,None,colord,/etc/libgusb.conf
+libhandy,glib2  gtk3,None,seahorse,/etc/libhandy.conf
+libheif,libde265  x265  aom  dav1d,libjpeg,gd  wallutils,/etc/libheif.conf
+libice,glibc  xorgproto,None,libsm  xorg-iceauth,/etc/libice.conf
+libidn,glibc,None,ghostscript,/etc/libidn.conf
+libidn2,libunistring  libunistring.so=5-64,None,curl  gnutls  iputils  libpsl  systemd  wget,/etc/libidn2.conf
+libiec61883,libraw1394,None,ffmpeg  gst-plugins-good,/etc/libiec61883.conf
+libimobiledevice,glibc  libplist  libusbmuxd  openssl,python,upower  usbmuxd,/etc/libimobiledevice.conf
+libindicator-gtk3,gtk3,None,None,/etc/libindicator-gtk3.conf
+libinih,gcc-libs  glibc,None,xfsprogs,/etc/libinih.conf
+libinput,mtdev  systemd  libevdev  libwacom,gtk4,qt5-base  xf86-input-libinput,/etc/libinput.conf
+libisl,gmp,None,gcc,/etc/libisl.conf
+libisoburn,libburn  libisofs  readline,tk,virt-install,/etc/libisoburn.conf
+libisofs,acl  zlib,None,libisoburn  xfburn,/etc/libisofs.conf
+libjpeg-turbo,glibc,java-runtime>11,chromium  djvulibre  electron22  gdk-pixbuf2  ghostscript  gst-plugins-base  imlib2  jp2a  jre-openjdk-headless  libavif  libjxl  libtiff  libwebp  libyuv  poppler  qt5-base  spice-gtk  texlive-bin  v4l-utils  xscreensaver,/etc/libjpeg-turbo.conf
+libjxl,brotli  giflib  gperftools  highway  libjpeg-turbo  libpng  openexr,gdk-pixbuf2,ffmpeg,/etc/libjxl.conf
+libkeybinder3,gtk3,lua-lgi,xfce4-pulseaudio-plugin,/etc/libkeybinder3.conf
+libksba,bash  libgpg-error  glibc,None,gnupg,/etc/libksba.conf
+libldap,libsasl,None,krb5  sudo,/etc/libldap.conf
+liblqr,glib2,None,imagemagick,/etc/liblqr.conf
+libluv,libuv  luajit,None,neovim,/etc/libluv.conf
+libmfx,gcc-libs,None,ffmpeg,/etc/libmfx.conf
+libmm-glib,libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgio-2.0.so=0-64,None,network-manager-applet  networkmanager,/etc/libmm-glib.conf
+libmnl,glibc,None,libnetfilter_conntrack  libnftnl,/etc/libmnl.conf
+libmodplug,gcc-libs,None,ffmpeg,/etc/libmodplug.conf
+libmpc,mpfr,None,gcc,/etc/libmpc.conf
+libmpd,glib2,None,xfce4-mpc-plugin,/etc/libmpd.conf
+libmpeg2,glibc,libxv,gst-plugins-ugly,/etc/libmpeg2.conf
+libndp,glibc,None,networkmanager,/etc/libndp.conf
+libnet,glibc  sh,None,jre-openjdk-headless,/etc/libnet.conf
+libnetfilter_conntrack,libnfnetlink  libmnl,None,iptables,/etc/libnetfilter_conntrack.conf
+libnewt,gpm  popt  slang,python,networkmanager,/etc/libnewt.conf
+libnfnetlink,glibc,None,iptables  libnetfilter_conntrack,/etc/libnfnetlink.conf
+libnftnl,libmnl,None,iptables,/etc/libnftnl.conf
+libnghttp2,glibc,None,curl  libsoup3  nodejs,/etc/libnghttp2.conf
+libnl,glibc  gcc-libs,None,htop  iw  libpcap  libteam  openmpi  wpa_supplicant,/etc/libnl.conf
+libnm,glib2  nss  systemd-libs  util-linux-libs,None,libnma-common  networkmanager,/etc/libnm.conf
+libnma,libnma-common=1.10.6-2  gtk3,None,network-manager-applet  nm-connection-editor,/etc/libnma.conf
+libnma-common,dconf  gcr-4  iso-codes  libnm  mobile-broadband-provider-info,None,libnma,/etc/libnma-common.conf
+libnotify,gdk-pixbuf2  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgio-2.0.so=0-64  libgdk_pixbuf-2.0.so=0-64,None,parole  pasystray  solaar  thunar  visual-studio-code-bin  xfce4-notifyd  xfce4-power-manager  xfce4-pulseaudio-plugin  xfce4-sensors-plugin  xfce4-settings  xfce4-xkb-plugin  zenity,/etc/libnotify.conf
+libnsl,glibc  libtirpc,None,libuv  python,/etc/libnsl.conf
+libogg,glibc,None,flac  libopenmpt  libsndfile  libtheora  libvorbis  speex,/etc/libogg.conf
+libomxil-bellagio,glibc,None,mesa,/etc/libomxil-bellagio.conf
+libopenmpt,flac  gcc-libs  glibc  libogg  libpulse  libsndfile  libvorbis  mpg123  portaudio  zlib,None,ffmpeg,/etc/libopenmpt.conf
+libosinfo,gcc-libs  glib2  glibc  hwdata  libsoup3  libxml2  libxslt  osinfo-db,None,virt-install,/etc/libosinfo.conf
+libp11-kit,glibc  libffi  libtasn1,None,gnutls  p11-kit,/etc/libp11-kit.conf
+libpaper,glibc,None,ghostscript  texlive-bin,/etc/libpaper.conf
+libpcap,glibc  libnl  sh  libdbus-1.so=3-64,None,iptables,/etc/libpcap.conf
+libpciaccess,glibc  zlib,None,hwloc  libdrm  libvirt  xorg-server,/etc/libpciaccess.conf
+libpgm,glibc,None,zeromq,/etc/libpgm.conf
+libpipeline,glibc,None,man-db,/etc/libpipeline.conf
+libplist,gcc-libs  glibc,python,libimobiledevice  libusbmuxd  usbmuxd,/etc/libplist.conf
+libpng,zlib  sh,None,cairo  chromium  electron22  freetype2  gdk-pixbuf2  ghostscript  gst-plugins-base  imagemagick  imlib2  jbig2dec  jp2a  jre-openjdk  libavif  libjxl  libwebp  openjpeg2  poppler  qrencode  texlive-bin  thunar  xorg-xcursorgen,/etc/libpng.conf
+libproxy,curl  duktape  glib2,None,glib-networking  qt5-base,/etc/libproxy.conf
+libpsl,libidn2  libunistring  libidn2.so=0-64  libunistring.so=5-64,None,curl  libsoup  libsoup3  networkmanager  wget,/etc/libpsl.conf
+libpulse,dbus  libasyncns  libsndfile  libxcb  systemd,glib2,chromium  ffmpeg  firefox  gst-plugins-good  gtk-vnc  libcanberra  libopenmpt  onlyoffice-bin  pasystray  pulseaudio  xfce4-pulseaudio-plugin,/etc/libpulse.conf
+libpwquality,cracklib  glibc  pam,python,seahorse,/etc/libpwquality.conf
+libraqm,freetype2  fribidi,None,imagemagick,/etc/libraqm.conf
+libraw1394,glibc,None,ffmpeg  gst-plugins-good  libavc1394  libiec61883,/etc/libraw1394.conf
+librsvg,cairo  freetype2  gdk-pixbuf2  glib2  harfbuzz  libxml2  pango,None,adwaita-icon-theme  chafa  ffmpeg  gtk-update-icon-cache  gtk2  gtk3  nitrogen  xfce4-dict  xfce4-xkb-plugin,/etc/librsvg.conf
+libsamplerate,glibc,None,jack2,/etc/libsamplerate.conf
+libsasl,gdbm  libgdbm.so=6-64  glibc  openssl,None,libldap  spice-gtk,/etc/libsasl.conf
+libseccomp,glibc,None,file  man-db  systemd,/etc/libseccomp.conf
+libsecret,glib2  libgcrypt  tpm2-tss,org.freedesktop.secrets,gcr  gcr-4  gvfs  network-manager-applet  pinentry  seahorse  visual-studio-code-bin,/etc/libsecret.conf
+libshout,libvorbis  libtheora  speex  openssl,None,gst-plugins-good,/etc/libshout.conf
+libsigc++,gcc-libs,None,atkmm  cairomm  glibmm  gtkmm3  pangomm  paprefs  pavucontrol,/etc/libsigc++.conf
+libsigsegv,glibc,None,texlive-bin,/etc/libsigsegv.conf
+libsm,libice  util-linux-libs,None,dropbox  libxfce4ui  libxt  pulseaudio  xfce4-session  xorg-smproxy,/etc/libsm.conf
+libsndfile,glibc  flac  libFLAC.so=12-64  lame  libmp3lame.so=0-64  libogg  libogg.so=0-64  libvorbis  libvorbis.so=0-64  libvorbisenc.so=2-64  mpg123  libmpg123.so=0-64  opus  libopus.so=0-64,alsa-lib,libbs2b  libopenmpt  libpulse  twolame,/etc/libsndfile.conf
+libsodium,glibc,None,zeromq,/etc/libsodium.conf
+libsoup,brotli  glib-networking  glib2  krb5  libpsl  libsysprof-capture  libxml2  sqlite  libbrotlidec.so=1-64  libgssapi_krb5.so=2-64  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgio-2.0.so=0-64  libpsl.so=5-64,samba,xfce4-weather-plugin,/etc/libsoup.conf
+libsoup3,brotli  glib-networking  glib2  krb5  libnghttp2  libpsl  libsysprof-capture  sqlite  libbrotlidec.so=1-64  libgssapi_krb5.so=2-64  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgio-2.0.so=0-64  libpsl.so=5-64,samba,gst-plugins-good  gvfs  libosinfo  phodav  seahorse  spice-gtk  tracker3  xfce4-screenshooter,/etc/libsoup3.conf
+libsoxr,gcc-libs,None,ffmpeg  pulseaudio,/etc/libsoxr.conf
+libspectre,ghostscript,None,zathura-ps,/etc/libspectre.conf
+libssh,zlib  openssl,None,ffmpeg  libvirt,/etc/libssh.conf
+libssh2,openssl  zlib,None,curl,/etc/libssh2.conf
+libstemmer,glibc,None,tracker3,/etc/libstemmer.conf
+libsynctex,glibc  zlib,None,texlive-bin  zathura,/etc/libsynctex.conf
+libsysprof-capture,None,None,glib2  libsoup  libsoup3,/etc/libsysprof-capture.conf
+libtasn1,glibc,None,gnutls  libp11-kit,/etc/libtasn1.conf
+libteam,bash  jansson  libdaemon  libdbus  libnl  zeromq,None,networkmanager,/etc/libteam.conf
+libtermkey,unibilium  libunibilium.so=4-64,None,neovim,/etc/libtermkey.conf
+libthai,glibc  libdatrie,None,pango  perl-unicode-linebreak,/etc/libthai.conf
+libtheora,glibc  libogg,None,ffmpeg  gst-plugins-base  libshout,/etc/libtheora.conf
+libtiff,glibc  libjpeg-turbo  libjpeg.so=8-64  zlib  xz  zstd,freeglut,djvulibre  gdk-pixbuf2  ghostscript  imlib2  lcms2  libwebp  openjpeg2  poppler,/etc/libtiff.conf
+libtirpc,krb5,None,libnsl  lsof  pam,/etc/libtirpc.conf
+libtool,sh  tar  glibc,None,base-devel  hwloc  imagemagick  libcanberra  pulseaudio,/etc/libtool.conf
+libtraceevent,glibc,libtraceevent-docs,libtracefs  ndctl,/etc/libtraceevent.conf
+libtracefs,glibc  libtraceevent  libtraceevent.so=1-64,libtracefs-docs,ndctl,/etc/libtracefs.conf
+libunistring,glibc,None,gettext  gnutls  guile  libidn2  libpsl,/etc/libunistring.conf
+libunwind,xz  zlib,None,gperftools  gstreamer  mesa  xorg-server,/etc/libunwind.conf
+liburcu,glibc,None,xfsprogs,/etc/liburcu.conf
+libusb,glibc  systemd-libs  libudev.so=1-64,None,hidapi  libgusb  sdl2  spice-gtk  usbmuxd  usbredir  usbutils,/etc/libusb.conf
+libusbmuxd,gcc-libs  glibc  libplist,None,libimobiledevice,/etc/libusbmuxd.conf
+libutempter,glibc,None,util-linux,/etc/libutempter.conf
+libuv,glibc  libnsl,None,libluv  neovim  nodejs,/etc/libuv.conf
+libva,libdrm  libgl  libx11  libxext  libxfixes  wayland,intel-media-driver,chromium  ffmpeg  intel-media-driver  libva-intel-driver,/etc/libva.conf
+libva-intel-driver,libva  libdrm,None,None,/etc/libva-intel-driver.conf
+libva-mesa-driver,expat  libdrm  libelf  libx11  libxshmfence  llvm-libs  zstd,None,None,/etc/libva-mesa-driver.conf
+libvdpau,libxext,None,ffmpeg,/etc/libvdpau.conf
+libverto,glibc  libevent,None,krb5,/etc/libverto.conf
+libvirt,libpciaccess  yajl  fuse3  gnutls  parted  libssh  libxml2  numactl  polkit,libvirt-storage-gluster,libvirt-glib  libvirt-python,/etc/libvirt.conf
+libvirt-glib,libvirt  libcap-ng,python,virt-manager,/etc/libvirt-glib.conf
+libvirt-python,python  libvirt,None,virt-install,/etc/libvirt-python.conf
+libvorbis,libogg.so=0-64,None,ffmpeg  gst-plugins-base  libcanberra  libopenmpt  libshout  libsndfile,/etc/libvorbis.conf
+libvpx,gcc-libs,None,ffmpeg  gst-plugins-good,/etc/libvpx.conf
+libvterm,glibc,None,neovim,/etc/libvterm.conf
+libwacom,glib2  systemd  libgudev,python-libevdev,libinput,/etc/libwacom.conf
+libwebp,giflib  libjpeg  libpng  libtiff,None,chafa  chromium  electron22  ffmpeg  gd,/etc/libwebp.conf
+libwnck3,gtk3  startup-notification  libxres,None,xfce4-panel  xfce4-screensaver  xfce4-session  xfce4-taskmanager  xfce4-xkb-plugin  xfdesktop  xfwm4,/etc/libwnck3.conf
+libx11,libxcb  glibc  xorgproto,None,aalib  at-spi2-core  cairo  ffmpeg  ghostscript  gtk3  libcaca  libepoxy  libva  libva-mesa-driver  libxext  libxfixes  libxkbfile  libxklavier  libxrender  libxt  lightdm  pasystray  sdl2  spice-gtk  startup-notification  vulkan-intel  vulkan-radeon  wallutils  xorg-x11perf  xorg-xcmsdb  xorg-xcursorgen  xorg-xdpyinfo  xorg-xdriinfo  xorg-xev  xorg-xgamma  xorg-xhost  xorg-xinit  xorg-xinput  xorg-xkbutils  xorg-xkill  xorg-xmodmap  xorg-xpr  xorg-xprop  xorg-xrandr  xorg-xrdb  xorg-xrefresh  xorg-xsetroot  xorg-xvinfo  xorg-xwd  xorg-xwud  xscreensaver,/etc/libx11.conf
+libxau,glibc  xorgproto,None,libgtop  libxcb,/etc/libxau.conf
+libxaw,libxmu  libxpm,None,t1lib  xorg-xkbutils  xorg-xmessage,/etc/libxaw.conf
+libxcb,xcb-proto  libxdmcp  libxau  glibc,None,cairo  ffmpeg  libpulse  libx11  libxkbcommon-x11  lightdm  startup-notification  xcb-util  xcb-util-cursor  xcb-util-image  xcb-util-keysyms  xcb-util-renderutil  xcb-util-wm  xorg-xlsatoms  xorg-xlsclients  xorg-xwininfo,/etc/libxcb.conf
+libxcomposite,libxfixes,None,dropbox  gtk2  gtk3  xorg-xdpyinfo,/etc/libxcomposite.conf
+libxcrypt,glibc,None,guile  mkinitcpio-busybox  openssh  pam  perl  python  shadow  systemd  texlive-bin  util-linux  xscreensaver,/etc/libxcrypt.conf
+libxcursor,libxfixes  libxrender  default-cursors,None,alacritty  gtk2  gtk3  sdl2  xorg-xcursorgen  xorg-xsetroot,/etc/libxcursor.conf
+libxcvt,glibc,None,xorg-server,/etc/libxcvt.conf
+libxdamage,libxfixes,None,dropbox  gst-plugins-good  gtk2  gtk3  mesa,/etc/libxdamage.conf
+libxdg-basedir,glibc,None,awesome,/etc/libxdg-basedir.conf
+libxdmcp,glibc  xorgproto,None,libxcb  lightdm,/etc/libxdmcp.conf
+libxext,libx11,None,cairo  ffmpeg  gtk3  imagemagick  imlib2  libglvnd  libva  libvdpau  libxi  libxinerama  libxmu  libxpm  libxrandr  libxres  libxss  libxtst  libxv  libxxf86vm  sdl2  xorg-x11perf  xorg-xdpyinfo  xscreensaver,/etc/libxext.conf
+libxfce4ui,libxfce4util  gtk3  xfconf  libsm  startup-notification  libgtop  libepoxy  hicolor-icon-theme,None,exo  garcon  parole  ristretto  thunar  thunar-volman  xfburn  xfce4-appfinder  xfce4-notifyd  xfce4-panel  xfce4-power-manager  xfce4-session  xfce4-settings  xfce4-taskmanager  xfce4-terminal  xfdesktop  xfwm4,/etc/libxfce4ui.conf
+libxfce4util,glib2,None,libxfce4ui  thunar  tumbler  xfce4-notifyd  xfconf,/etc/libxfce4util.conf
+libxfixes,libx11,None,gtk3  libva  libxcomposite  libxcursor  libxdamage  libxi  libxpresent  libxtst,/etc/libxfixes.conf
+libxfont2,freetype2  libfontenc  xorgproto,None,xorg-server,/etc/libxfont2.conf
+libxft,fontconfig  libxrender,None,pango  xorg-x11perf  xscreensaver,/etc/libxft.conf
+libxi,libxext  libxfixes,None,alacritty  freeglut  gst-plugins-base-libs  gtk2  gtk3  libxklavier  libxtst  qt5-base  xf86-input-wacom  xorg-xinput  xscreensaver,/etc/libxi.conf
+libxinerama,libxext,None,feh  gtk2  gtk3  xdotool  xf86-input-wacom  xorg-xdpyinfo  xorg-xinput  xscreensaver,/etc/libxinerama.conf
+libxkbcommon,libxml2  xkeyboard-config,libxkbcommon-x11,alacritty  awesome  gtk3  libxkbcommon-x11  xdotool,/etc/libxkbcommon.conf
+libxkbcommon-x11,libxcb  libxkbcommon  libxkbcommon.so=0-64,None,awesome  qt5-base,/etc/libxkbcommon-x11.conf
+libxkbfile,libx11,None,libxklavier  visual-studio-code-bin  xorg-setxkbmap  xorg-xkbcomp  xorg-xkbevd  xorg-xkbprint  xorg-xwd,/etc/libxkbfile.conf
+libxklavier,glib2  glibc  iso-codes  libx11  libxi  libxkbfile  libxml2  xkeyboard-config  xorg-xkbcomp,None,lightdm  xfce4-screensaver  xfce4-settings  xfce4-xkb-plugin,/etc/libxklavier.conf
+libxml2,icu  ncurses  readline  xz  zlib,python,at-spi2-core  chromium  docbook-xml  docbook-xsl  electron22  ffmpeg  gettext  gstreamer  gtksourceview4  imagemagick  libbluray  libosinfo  librsvg  libsoup  libvirt  libxkbcommon  libxklavier  libxslt  llvm-libs  perl-alien-libxml2  phodav  shared-mime-info  tracker3  wayland  xfce4-weather-plugin,/etc/libxml2.conf
+libxmu,libxext  libxt,None,dropbox  libxaw  xclip  xfce4-taskmanager  xorg-smproxy  xorg-x11perf  xorg-xauth  xorg-xhost  xorg-xkill  xorg-xpr  xorg-xrdb  xorg-xset  xorg-xsetroot  xscreensaver,/etc/libxmu.conf
+libxpm,libxt  libxext,None,gd  libxaw  wallutils,/etc/libxpm.conf
+libxpresent,libxfixes  libxrandr,None,xfwm4,/etc/libxpresent.conf
+libxrandr,libxext  libxrender,None,alacritty  freeglut  gtk2  gtk3  libxpresent  xf86-input-wacom  xorg-setxkbmap  xorg-xev  xorg-xrandr  xscreensaver,/etc/libxrandr.conf
+libxrender,libx11,None,cairo  dropbox  gtk3  libxcursor  libxft  libxrandr  qt5-base  sdl2  xorg-x11perf  xorg-xdpyinfo,/etc/libxrender.conf
+libxres,libxext,None,libwnck3,/etc/libxres.conf
+libxshmfence,glibc,None,libva-mesa-driver  mesa  vulkan-intel  vulkan-radeon  xorg-server,/etc/libxshmfence.conf
+libxslt,libgcrypt  libxml2  xz,python,chafa  chromium  docbook-xsl  dropbox  electron22  libosinfo  perl-xml-libxslt  python-lxml,/etc/libxslt.conf
+libxss,libxext,None,chromium  firefox  onlyoffice-bin  visual-studio-code-bin  xfce4-screensaver,/etc/libxss.conf
+libxt,libsm  libx11,None,firefox  ghostscript  libxmu  libxpm  xorg-appres  xorg-smproxy  xorg-xkbutils  xscreensaver,/etc/libxt.conf
+libxtst,libxext  libxi  libxfixes,None,at-spi2-core  pulseaudio  xdotool  xfce4-clipman-plugin  xorg-xdpyinfo,/etc/libxtst.conf
+libxv,libxext,None,ffmpeg  gst-plugins-base-libs  xorg-xvinfo,/etc/libxv.conf
+libxxf86vm,libxext,None,dropbox  mesa  xorg-xdpyinfo  xorg-xgamma  xscreensaver,/etc/libxxf86vm.conf
+libyaml,glibc,None,haskell-libyaml  python-yaml,/etc/libyaml.conf
+libyuv,gcc-libs  libjpeg,None,libavif,/etc/libyuv.conf
+licenses,None,None,base,/etc/licenses.conf
+lightdm,glib2  libgcrypt  libx11  libxcb  libxdmcp  libxklavier  pam  polkit  xorg-server  xorg-xmodmap  xorg-xrdb,accountsservice,lightdm-gtk-greeter,/etc/lightdm.conf
+lightdm-gtk-greeter,gtk3  lightdm,None,lightdm-gtk-greeter-settings,/etc/lightdm-gtk-greeter.conf
+lightdm-gtk-greeter-settings,gtk-update-icon-cache  lightdm-gtk-greeter  python-gobject,None,None,/etc/lightdm-gtk-greeter-settings.conf
+linux,coreutils  initramfs  kmod,wireless-regdb,None,/etc/linux.conf
+linux-api-headers,None,None,glibc  libbpf,/etc/linux-api-headers.conf
+linux-firmware,linux-firmware-whence,None,None,/etc/linux-firmware.conf
+linux-firmware-whence,None,None,linux-firmware,/etc/linux-firmware-whence.conf
+linux-lts,coreutils  kmod  initramfs,wireless-regdb,None,/etc/linux-lts.conf
+linux-zen,coreutils  initramfs  kmod,wireless-regdb,None,/etc/linux-zen.conf
+llvm-libs,gcc-libs  zlib  zstd  libffi  libedit  ncurses  libxml2,None,libva-mesa-driver  mesa  vulkan-radeon,/etc/llvm-libs.conf
+lm_sensors,None,rrdtool,mesa  xfce4-sensors-plugin,/etc/lm_sensors.conf
+lsb-release,sh,None,None,/etc/lsb-release.conf
+lsd,gcc-libs,nerd-fonts,None,/etc/lsd.conf
+lsof,glibc  libtirpc,None,visual-studio-code-bin,/etc/lsof.conf
+lua,readline,None,haskell-lua  lua-lpeg,/etc/lua.conf
+lua-lpeg,lua,None,haskell-lpeg,/etc/lua-lpeg.conf
+lua53,readline,None,awesome  lua53-lgi,/etc/lua53.conf
+lua53-lgi,glibc  glib2  libffi  gobject-introspection-runtime  lua53,None,awesome,/etc/lua53-lgi.conf
+luajit,gcc-libs,None,libluv  neovim,/etc/luajit.conf
+lvm2,bash  device-mapper>=2.03.22  systemd-libs  libudev.so=1-64  util-linux-libs  libblkid.so=1-64  readline  libreadline.so=8-64  thin-provisioning-tools  libaio  libaio.so=1-64,None,None,/etc/lvm2.conf
+lxappearance,gtk2,None,None,/etc/lxappearance.conf
+lz4,glibc,None,libarchive  spice-gtk  systemd  systemd-libs  zstd,/etc/lz4.conf
+lzo,glibc,None,btrfs-progs  cairo,/etc/lzo.conf
+m4,glibc  bash,None,autoconf  base-devel  bison  flex,/etc/m4.conf
+mailcap,None,None,firefox,/etc/mailcap.conf
+make,glibc  guile,None,base-devel,/etc/make.conf
+man-db,bash  gdbm  zlib  groff  libpipeline  less  libseccomp,gzip [installed],None,/etc/man-db.conf
+man-pages,None,None,None,/etc/man-pages.conf
+md4c,glibc,None,qt5-base,/etc/md4c.conf
+mdadm,glibc  systemd,bash,libblockdev,/etc/mdadm.conf
+mesa,libdrm  libelf  libglvnd  libunwind  libxdamage  libxshmfence  libxxf86vm  llvm-libs  lm_sensors  vulkan-icd-loader  wayland  zstd  libomxil-bellagio,libva-mesa-driver,gst-plugins-base-libs  libglvnd  multimc-bin  qt5-base  xf86-video-amdgpu  xf86-video-ati  xf86-video-nouveau  xf86-video-vmware,/etc/mesa.conf
+minizip,zlib,None,chromium  electron22,/etc/minizip.conf
+mkinitcpio,awk  mkinitcpio-busybox>=1.19.4-2  kmod  util-linux>=2.23  libarchive  coreutils  bash  binutils  diffutils  findutils  grep  filesystem>=2011.10-1  zstd  systemd,gzip,linux  linux-lts  linux-zen,/etc/mkinitcpio.conf
+mkinitcpio-busybox,glibc  libxcrypt,None,mkinitcpio,/etc/mkinitcpio-busybox.conf
+mobile-broadband-provider-info,None,None,libnma-common  networkmanager,/etc/mobile-broadband-provider-info.conf
+mousepad,gtksourceview4  desktop-file-utils  hicolor-icon-theme,gspell,None,/etc/mousepad.conf
+mpfr,glibc  gmp,None,gawk  libbytesize  libmpc  texlive-bin,/etc/mpfr.conf
+mpg123,alsa-lib,sdl2,gst-plugins-good  libopenmpt  libsndfile,/etc/mpg123.conf
+msgpack-c,glibc,None,neovim,/etc/msgpack-c.conf
+mtdev,glibc,None,libinput  xf86-input-evdev,/etc/mtdev.conf
+multimc-bin,zlib  opengl-driver  qt5-base  qt5-x11extras  qt5-svg  xorg-xrandr  zenity  wget,None,None,/etc/multimc-bin.conf
+nano,ncurses  file  sh,None,None,/etc/nano.conf
+ncurses,glibc  gcc-libs,bash,aalib  bash  gptfdisk  guile  htop  lame  less  libcaca  libcdio  libedit  libxml2  llvm-libs  nano  pinentry  procps-ng  psmisc  readline  texinfo  util-linux  w3m,/etc/ncurses.conf
+ndctl,iniparser  json-c  keyutils  kmod  libtraceevent  libtracefs  systemd-libs  util-linux-libs,None,None,/etc/ndctl.conf
+neofetch,bash,catimg,None,/etc/neofetch.conf
+neovim,libtermkey  libuv  msgpack-c  unibilium  libvterm>0.1.4  luajit  libluv  tree-sitter,python-pynvim,None,/etc/neovim.conf
+nettle,glibc  gmp,None,gnutls  gst-plugins-good  wget  xorg-server,/etc/nettle.conf
+network-manager-applet,libappindicator-gtk3  libmm-glib  libnma  libsecret  networkmanager  nm-connection-editor,None,None,/etc/network-manager-applet.conf
+networkmanager,audit  bluez-libs  curl  iproute2  jansson  libmm-glib  libndp  libnewt  libnm  libpsl  libteam  mobile-broadband-provider-info  wpa_supplicant,bluez,network-manager-applet,/etc/networkmanager.conf
+nitrogen,gtkmm  hicolor-icon-theme  librsvg,None,None,/etc/nitrogen.conf
+nm-connection-editor,jansson  libnma,None,network-manager-applet,/etc/nm-connection-editor.conf
+node-gyp,nodejs  nodejs-nopt  python  semver,None,npm,/etc/node-gyp.conf
+nodejs,brotli  openssl  zlib  icu  libuv  libnghttp2  c-ares,npm,node-gyp  nodejs-nopt  npm  semver,/etc/nodejs.conf
+nodejs-nopt,nodejs,None,node-gyp  npm,/etc/nodejs-nopt.conf
+noto-fonts,None,noto-fonts-cjk,firefox  sddm,/etc/noto-fonts.conf
+npm,nodejs  node-gyp  nodejs-nopt  semver,git,None,/etc/npm.conf
+npth,glibc  sh,None,gnupg,/etc/npth.conf
+nspr,glibc  sh,None,nss  onlyoffice-bin  poppler  volume_key,/etc/nspr.conf
+nss,nspr>=4.35  p11-kit>=0.23.19  sqlite  zlib  sh,None,chromium  electron22  firefox  jre-openjdk-headless  libblockdev  libcacard  libnm  onlyoffice-bin  poppler  visual-studio-code-bin  volume_key,/etc/nss.conf
+numactl,glibc,None,ghc-libs  libvirt,/etc/numactl.conf
+ocl-icd,glibc,opencl-driver,ffmpeg,/etc/ocl-icd.conf
+onlyoffice-bin,curl  gtk3  alsa-lib  libpulse  gstreamer  gst-plugins-base-libs  gst-plugins-ugly  libxss  nss  nspr  ttf-dejavu  ttf-liberation  ttf-carlito  desktop-file-utils  hicolor-icon-theme,libreoffice,None,/etc/onlyoffice-bin.conf
+opencore-amr,glibc,None,ffmpeg  gst-plugins-ugly,/etc/opencore-amr.conf
+opendoas,pam,None,None,/etc/opendoas.conf
+openexr,zlib  imath,None,libjxl,/etc/openexr.conf
+openjpeg2,zlib  libpng  libtiff  lcms2,None,ffmpeg  ghostscript  poppler,/etc/openjpeg2.conf
+openmpi,gcc-libs  glibc  hwloc  libevent  libnl  openpmix  openssh  zlib  libpmix.so=2-64,cuda,fftw,/etc/openmpi.conf
+openpmix,glibc  hwloc  libevent  libevent_core-2.1.so=7-64  libevent_pthreads-2.1.so=7-64  zlib,openpmix-docs,openmpi,/etc/openpmix.conf
+openssh,glibc  krb5  libkrb5.so=3-64  libgssapi_krb5.so=2-64  ldns  libedit  libxcrypt  libcrypt.so=2-64  openssl  pam  libpam.so=0-64  zlib,libfido2,gcr  gcr-4  gnome-keyring  openmpi,/etc/openssh.conf
+openssl,glibc,ca-certificates [installed],coreutils  cryptsetup  curl  git  kmod  ldns  libarchive  libevent  libimobiledevice  libsasl  libshout  libssh  libssh2  nodejs  openssh  perl-net-ssleay  python  spice-gtk  srt  sudo  systemd  tpm2-tss  w3m  wpa_supplicant,/etc/openssl.conf
+opus,glibc,None,chromium  electron22  ffmpeg  gst-plugins-base  jack2  libsndfile  spice-gtk,/etc/opus.conf
+orc,glibc,None,gst-plugins-base-libs  pulseaudio,/etc/orc.conf
+os-prober,sh,None,None,/etc/os-prober.conf
+osinfo-db,None,None,libosinfo,/etc/osinfo-db.conf
+otf-aurulent-nerd,None,None,None,/etc/otf-aurulent-nerd.conf
+otf-codenewroman-nerd,None,None,None,/etc/otf-codenewroman-nerd.conf
+otf-comicshanns-nerd,None,None,None,/etc/otf-comicshanns-nerd.conf
+otf-droid-nerd,None,None,None,/etc/otf-droid-nerd.conf
+otf-firamono-nerd,None,None,None,/etc/otf-firamono-nerd.conf
+otf-font-awesome,None,None,None,/etc/otf-font-awesome.conf
+otf-hasklig-nerd,None,None,None,/etc/otf-hasklig-nerd.conf
+otf-hermit-nerd,None,None,None,/etc/otf-hermit-nerd.conf
+otf-opendyslexic-nerd,None,None,None,/etc/otf-opendyslexic-nerd.conf
+otf-overpass-nerd,None,None,None,/etc/otf-overpass-nerd.conf
+p11-kit,libp11-kit=0.25.0-1  coreutils  libp11-kit.so=0-64  libsystemd.so=0-64,None,ca-certificates-utils  gcr  gcr-4  nss,/etc/p11-kit.conf
+pacman,bash  glibc  libarchive  curl  gpgme  pacman-mirrorlist  gettext  gawk  coreutils  gnupg  grep,perl-locale-gettext,archlinux-keyring  base  base-devel  pacman-contrib  yay,/etc/pacman.conf
+pacman-contrib,fakeroot  pacman  perl,diffutils,None,/etc/pacman-contrib.conf
+pacman-mirrorlist,None,None,pacman,/etc/pacman-mirrorlist.conf
+pam,glibc  libtirpc  pambase  audit  libaudit.so=1-64  libxcrypt  libcrypt.so=2-64,None,gnome-keyring  kbd  libcap  libpwquality  lightdm  opendoas  openssh  polkit  shadow  sudo  systemd  util-linux  xscreensaver,/etc/pam.conf
+pambase,None,None,pam,/etc/pambase.conf
+pandoc-cli,ghc-libs  hslua-cli  haskell-pandoc  haskell-pandoc-lua-engine  haskell-pandoc-server  haskell-safe  haskell-temporary  haskell-wai-extra  haskell-warp,None,None,/etc/pandoc-cli.conf
+pango,cairo  fribidi  harfbuzz  libthai  libxft,None,awesome  girara  gst-plugins-base  gtk2  gtk3  librsvg  pangomm,/etc/pango.conf
+pangomm,pango  glibmm  cairomm  libsigc-2.0.so=0-64  libglibmm-2.4.so=1-64  libcairomm-1.0.so=1-64,None,gtkmm  gtkmm3,/etc/pangomm.conf
+paprefs,gtkmm3  libsigc++  pulseaudio,None,None,/etc/paprefs.conf
+parole,dbus-glib  gst-plugins-base  gst-plugins-good  libnotify  libxfce4ui,gst-libav,None,/etc/parole.conf
+parted,device-mapper  util-linux-libs,None,libblockdev  libvirt,/etc/parted.conf
+pasystray,libpulse  libnotify  avahi  libx11  gtk3,pulseaudio,None,/etc/pasystray.conf
+patch,glibc  attr,ed,base-devel,/etc/patch.conf
+pavucontrol,gtkmm3  json-glib  libcanberra  libsigc++,pulseaudio,None,/etc/pavucontrol.conf
+pciutils,glibc  hwdata  kmod,which,base  chromium,/etc/pciutils.conf
+pcre,glibc  gcc-libs  readline  zlib  bzip2  bash,None,picom  slang,/etc/pcre.conf
+pcre2,readline  zlib  bzip2  bash,None,git  glib2  grep  less  libbytesize  ripgrep  systemd  thunar  vte3  wget,/etc/pcre2.conf
+pcsclite,libsystemd.so=0-64  libudev.so=1-64  libpolkit-gobject-1.so=0-64,python,wpa_supplicant,/etc/pcsclite.conf
+perl,gdbm>=1.17  db5.3  db  glibc  libxcrypt  libcrypt.so=2-64,None,autoconf  automake  biber  docx2txt  ghc-libs  git  groff  pacman-contrib  perl-autovivification  perl-b-hooks-endofscope  perl-business-isbn  perl-business-isbn-data  perl-business-ismn  perl-business-issn  perl-capture-tiny  perl-class-accessor  perl-class-data-inheritable  perl-class-inspector  perl-class-load  perl-class-singleton  perl-clone  perl-data-dump  perl-data-optlist  perl-data-uniqid  perl-datetime-format-builder  perl-devel-stacktrace  perl-dist-checkconflicts  perl-encode-locale  perl-error  perl-exception-class  perl-exporter-tiny  perl-ffi-checklib  perl-file-chdir  perl-file-listing  perl-file-slurp-tiny  perl-file-slurper  perl-file-which  perl-html-tagset  perl-http-cookies  perl-http-daemon  perl-http-message  perl-http-negotiate  perl-io-html  perl-io-socket-ssl  perl-io-string  perl-ipc-run3  perl-libwww  perl-lingua-translit  perl-list-allutils  perl-list-moreutils-xs  perl-list-someutils  perl-list-utilsby  perl-log-log4perl  perl-lwp-mediatypes  perl-math-round  perl-mime-charset  perl-module-runtime  perl-mozilla-ca  perl-mro-compat  perl-namespace-clean  perl-net-http  perl-number-compare  perl-package-stash-xs  perl-params-util  perl-params-validate  perl-parse-recdescent  perl-path-tiny  perl-perlio-utf8-strict  perl-regexp-common  perl-role-tiny  perl-sort-key  perl-sub-exporter  perl-sub-identify  perl-sub-install  perl-text-bibtex  perl-text-csv  perl-text-glob  perl-text-roman  perl-tie-cycle  perl-timedate  perl-try-tiny  perl-unicode-linebreak  perl-uri  perl-variable-magic  perl-www-robotrules  perl-xml-libxml-simple  perl-xml-namespacesupport  perl-xml-sax  perl-xml-sax-base  perl-xml-writer  texinfo  vim,/etc/perl.conf
+perl-alien-build,perl-capture-tiny  perl-ffi-checklib  perl-file-chdir  perl-file-which  perl-path-tiny,None,perl-alien-libxml2,/etc/perl-alien-build.conf
+perl-alien-libxml2,libxml2  perl-alien-build,None,perl-xml-libxml,/etc/perl-alien-libxml2.conf
+perl-autovivification,perl>=5.8.3,None,biber,/etc/perl-autovivification.conf
+perl-b-hooks-endofscope,perl-module-implementation  perl-module-runtime  perl-sub-exporter  perl-sub-exporter-progressive  perl-try-tiny  perl-variable-magic>=0.34  perl>=5.5.0,None,perl-namespace-autoclean  perl-namespace-clean,/etc/perl-b-hooks-endofscope.conf
+perl-business-isbn,perl  perl-business-isbn-data,perl-libwww,biber,/etc/perl-business-isbn.conf
+perl-business-isbn-data,perl,None,perl-business-isbn,/etc/perl-business-isbn-data.conf
+perl-business-ismn,perl  perl-tie-cycle>=1.21,None,biber,/etc/perl-business-ismn.conf
+perl-business-issn,perl,None,biber,/etc/perl-business-issn.conf
+perl-capture-tiny,perl,None,perl-alien-build,/etc/perl-capture-tiny.conf
+perl-class-accessor,perl>=5.10.0,None,biber,/etc/perl-class-accessor.conf
+perl-class-data-inheritable,perl>=5.10.0,None,perl-exception-class,/etc/perl-class-data-inheritable.conf
+perl-class-inspector,perl,None,perl-file-sharedir,/etc/perl-class-inspector.conf
+perl-class-load,perl  perl-module-runtime  perl-data-optlist  perl-package-stash>=0.32  perl-try-tiny  perl-test-fatal  perl-module-implementation  perl-namespace-clean,None,perl-datetime-timezone,/etc/perl-class-load.conf
+perl-class-singleton,perl>=5.10.0,None,perl-datetime-timezone,/etc/perl-class-singleton.conf
+perl-clone,perl,None,perl-data-compare  perl-http-message,/etc/perl-clone.conf
+perl-data-compare,perl-file-find-rule>=0.1  perl-clone,None,biber,/etc/perl-data-compare.conf
+perl-data-dump,perl,None,biber,/etc/perl-data-dump.conf
+perl-data-optlist,perl-params-util  perl-scalar-list-utils  perl-sub-install,None,perl-class-load  perl-sub-exporter,/etc/perl-data-optlist.conf
+perl-data-uniqid,perl,None,biber,/etc/perl-data-uniqid.conf
+perl-datetime,perl-datetime-timezone>=0.59  perl-datetime-locale>=0.41  perl-params-validate>=0.76  perl-math-round  perl-namespace-autoclean  perl-specio  perl-eval-closure  perl-params-validationcompiler,None,perl-datetime-calendar-julian  perl-datetime-format-builder  perl-datetime-format-strptime,/etc/perl-datetime.conf
+perl-datetime-calendar-julian,perl-datetime,None,biber,/etc/perl-datetime-calendar-julian.conf
+perl-datetime-format-builder,perl  perl-datetime>=0.12  perl-datetime-format-strptime>=1.04  perl-params-validate>=0.72,None,biber,/etc/perl-datetime-format-builder.conf
+perl-datetime-format-strptime,perl-datetime>=0.72  perl-datetime-locale>=0.45  perl-datetime-timezone>=0.79  perl-params-validate>=0.64  perl-package-deprecationmanager,None,perl-datetime-format-builder,/etc/perl-datetime-format-strptime.conf
+perl-datetime-locale,perl-params-validate  perl-list-moreutils  perl-file-sharedir  perl-file-sharedir-install,None,perl-datetime  perl-datetime-format-strptime,/etc/perl-datetime-locale.conf
+perl-datetime-timezone,perl-class-singleton>=1.03  perl-params-validate>=0.72  perl-class-load  perl-list-allutils,None,perl-datetime  perl-datetime-format-strptime,/etc/perl-datetime-timezone.conf
+perl-devel-stacktrace,perl>=5.6,None,perl-exception-class  perl-specio,/etc/perl-devel-stacktrace.conf
+perl-dist-checkconflicts,perl-list-moreutils  perl-exporter,None,perl-package-stash,/etc/perl-dist-checkconflicts.conf
+perl-encode-locale,perl,None,perl-http-message  perl-libwww,/etc/perl-encode-locale.conf
+perl-error,perl,None,git,/etc/perl-error.conf
+perl-eval-closure,perl-try-tiny  perl-sub-exporter,None,perl-datetime  perl-params-validationcompiler,/etc/perl-eval-closure.conf
+perl-exception-class,perl>=5.8.1  perl-class-data-inheritable>=0.02  perl-devel-stacktrace>=2.00,None,perl-params-validationcompiler,/etc/perl-exception-class.conf
+perl-exporter-tiny,perl,None,perl-list-moreutils,/etc/perl-exporter-tiny.conf
+perl-ffi-checklib,perl,None,perl-alien-build,/etc/perl-ffi-checklib.conf
+perl-file-chdir,perl,None,perl-alien-build,/etc/perl-file-chdir.conf
+perl-file-find-rule,perl-number-compare  perl-text-glob>=0.07,None,perl-data-compare,/etc/perl-file-find-rule.conf
+perl-file-listing,perl  perl-http-date,None,perl-libwww,/etc/perl-file-listing.conf
+perl-file-sharedir,perl-class-inspector,None,perl-datetime-locale,/etc/perl-file-sharedir.conf
+perl-file-sharedir-install,None,None,perl-datetime-locale,/etc/perl-file-sharedir-install.conf
+perl-file-slurp-tiny,perl,None,perl-xml-libxml-simple,/etc/perl-file-slurp-tiny.conf
+perl-file-slurper,perl,None,biber,/etc/perl-file-slurper.conf
+perl-file-which,perl,None,perl-alien-build,/etc/perl-file-which.conf
+perl-html-parser,perl-html-tagset  perl-http-message  perl-uri,None,perl-libwww,/etc/perl-html-parser.conf
+perl-html-tagset,perl,None,perl-html-parser,/etc/perl-html-tagset.conf
+perl-http-cookies,perl  perl-http-date  perl-http-message,None,perl-libwww,/etc/perl-http-cookies.conf
+perl-http-daemon,perl  perl-http-date  perl-http-message  perl-lwp-mediatypes,None,perl-libwww,/etc/perl-http-daemon.conf
+perl-http-date,perl-timedate,None,perl-file-listing  perl-http-cookies  perl-http-daemon  perl-http-message  perl-libwww,/etc/perl-http-date.conf
+perl-http-message,perl  perl-clone  perl-encode-locale  perl-http-date  perl-io-html  perl-lwp-mediatypes  perl-uri,None,perl-html-parser  perl-http-cookies  perl-http-daemon  perl-http-negotiate,/etc/perl-http-message.conf
+perl-http-negotiate,perl  perl-http-message,None,perl-libwww,/etc/perl-http-negotiate.conf
+perl-io-html,perl,None,perl-http-message,/etc/perl-io-html.conf
+perl-io-socket-ssl,perl-net-ssleay  perl  perl-uri,None,perl-lwp-protocol-https,/etc/perl-io-socket-ssl.conf
+perl-io-string,perl>=5.10.0,None,biber,/etc/perl-io-string.conf
+perl-ipc-run3,perl,None,biber,/etc/perl-ipc-run3.conf
+perl-libwww,perl  perl-encode-locale  perl-file-listing  perl-html-parser  perl-http-cookies  perl-http-daemon  perl-http-date  perl-http-negotiate  perl-lwp-mediatypes  perl-net-http  perl-try-tiny  perl-uri  perl-www-robotrules,perl-lwp-protocol-https,perl-lwp-protocol-https  perl-xml-parser  xscreensaver,/etc/perl-libwww.conf
+perl-lingua-translit,perl,None,biber,/etc/perl-lingua-translit.conf
+perl-list-allutils,perl>=5.19.3  perl-list-moreutils>=0.28  perl-scalar-list-utils>=1.45  perl-list-someutils  perl-list-utilsby,None,biber  perl-datetime-timezone,/etc/perl-list-allutils.conf
+perl-list-moreutils,perl-exporter-tiny  perl-list-moreutils-xs,None,perl-datetime-locale  perl-dist-checkconflicts  perl-list-allutils,/etc/perl-list-moreutils.conf
+perl-list-moreutils-xs,perl,None,perl-list-moreutils,/etc/perl-list-moreutils-xs.conf
+perl-list-someutils,perl  perl-module-implementation,None,perl-list-allutils,/etc/perl-list-someutils.conf
+perl-list-utilsby,perl>=5.5.0,None,perl-list-allutils,/etc/perl-list-utilsby.conf
+perl-log-log4perl,perl,None,biber,/etc/perl-log-log4perl.conf
+perl-lwp-mediatypes,perl,None,perl-http-daemon  perl-http-message  perl-libwww,/etc/perl-lwp-mediatypes.conf
+perl-lwp-protocol-https,ca-certificates  perl-io-socket-ssl  perl-mozilla-ca  perl-net-http  perl-libwww,None,biber,/etc/perl-lwp-protocol-https.conf
+perl-mailtools,perl-timedate,None,git,/etc/perl-mailtools.conf
+perl-math-round,perl,None,perl-datetime,/etc/perl-math-round.conf
+perl-mime-charset,perl,None,perl-unicode-linebreak,/etc/perl-mime-charset.conf
+perl-module-implementation,perl-module-runtime>=0.012  perl-try-tiny,None,perl-b-hooks-endofscope  perl-class-load  perl-list-someutils  perl-package-deprecationmanager  perl-package-stash  perl-params-validate,/etc/perl-module-implementation.conf
+perl-module-runtime,perl,None,perl-b-hooks-endofscope  perl-class-load  perl-module-implementation,/etc/perl-module-runtime.conf
+perl-mozilla-ca,perl  ca-certificates,None,biber  perl-lwp-protocol-https,/etc/perl-mozilla-ca.conf
+perl-mro-compat,perl,None,perl-specio,/etc/perl-mro-compat.conf
+perl-namespace-autoclean,perl-b-hooks-endofscope  perl-sub-identify  perl-namespace-clean,None,perl-datetime  perl-package-deprecationmanager,/etc/perl-namespace-autoclean.conf
+perl-namespace-clean,perl>=5.5.0  perl-b-hooks-endofscope>=0.12  perl-package-stash>=0.23,None,perl-class-load  perl-namespace-autoclean,/etc/perl-namespace-clean.conf
+perl-net-http,perl,None,perl-libwww  perl-lwp-protocol-https,/etc/perl-net-http.conf
+perl-net-ssleay,openssl,None,perl-io-socket-ssl,/etc/perl-net-ssleay.conf
+perl-number-compare,perl,None,perl-file-find-rule,/etc/perl-number-compare.conf
+perl-package-deprecationmanager,perl-params-util  perl-sub-install  perl-package-stash  perl-module-implementation  perl-namespace-autoclean,None,perl-datetime-format-strptime,/etc/perl-package-deprecationmanager.conf
+perl-package-stash,perl-dist-checkconflicts  perl-package-stash-xs  perl-module-implementation,None,perl-class-load  perl-namespace-clean  perl-package-deprecationmanager,/etc/perl-package-stash.conf
+perl-package-stash-xs,perl,None,perl-package-stash,/etc/perl-package-stash-xs.conf
+perl-params-util,perl,None,perl-data-optlist  perl-package-deprecationmanager  perl-sub-exporter,/etc/perl-params-util.conf
+perl-params-validate,perl  perl-module-implementation,None,perl-datetime  perl-datetime-format-builder  perl-datetime-format-strptime  perl-datetime-locale  perl-datetime-timezone,/etc/perl-params-validate.conf
+perl-params-validationcompiler,perl-role-tiny  perl-eval-closure  perl-exception-class,None,perl-datetime,/etc/perl-params-validationcompiler.conf
+perl-parse-recdescent,perl>=5.10.0,None,biber,/etc/perl-parse-recdescent.conf
+perl-path-tiny,perl>=5.8.1,None,perl-alien-build,/etc/perl-path-tiny.conf
+perl-perlio-utf8-strict,perl,None,biber,/etc/perl-perlio-utf8-strict.conf
+perl-regexp-common,perl,None,biber,/etc/perl-regexp-common.conf
+perl-role-tiny,perl,None,perl-params-validationcompiler  perl-specio,/etc/perl-role-tiny.conf
+perl-sort-key,perl,None,biber,/etc/perl-sort-key.conf
+perl-specio,perl-role-tiny  perl-test-fatal  perl-mro-compat  perl-devel-stacktrace,None,perl-datetime,/etc/perl-specio.conf
+perl-sub-exporter,perl  perl-data-optlist  perl-params-util  perl-sub-install,None,perl-b-hooks-endofscope  perl-eval-closure,/etc/perl-sub-exporter.conf
+perl-sub-exporter-progressive,None,None,perl-b-hooks-endofscope,/etc/perl-sub-exporter-progressive.conf
+perl-sub-identify,perl,None,perl-namespace-autoclean,/etc/perl-sub-identify.conf
+perl-sub-install,perl,None,perl-data-optlist  perl-package-deprecationmanager  perl-sub-exporter,/etc/perl-sub-install.conf
+perl-test-fatal,perl-try-tiny,None,perl-class-load  perl-specio,/etc/perl-test-fatal.conf
+perl-text-bibtex,perl,None,biber,/etc/perl-text-bibtex.conf
+perl-text-csv,perl,None,biber,/etc/perl-text-csv.conf
+perl-text-glob,perl,None,perl-file-find-rule,/etc/perl-text-glob.conf
+perl-text-roman,perl,None,biber,/etc/perl-text-roman.conf
+perl-tie-cycle,perl,None,perl-business-ismn,/etc/perl-tie-cycle.conf
+perl-timedate,perl,None,perl-http-date  perl-mailtools,/etc/perl-timedate.conf
+perl-try-tiny,perl,None,perl-b-hooks-endofscope  perl-class-load  perl-eval-closure  perl-libwww  perl-module-implementation  perl-test-fatal,/etc/perl-try-tiny.conf
+perl-unicode-linebreak,perl  perl-mime-charset  libthai,None,biber,/etc/perl-unicode-linebreak.conf
+perl-uri,perl,None,perl-html-parser  perl-http-message  perl-io-socket-ssl  perl-libwww  perl-www-robotrules,/etc/perl-uri.conf
+perl-variable-magic,perl,None,perl-b-hooks-endofscope,/etc/perl-variable-magic.conf
+perl-www-robotrules,perl  perl-uri,None,perl-libwww,/etc/perl-www-robotrules.conf
+perl-xml-libxml,perl-alien-libxml2  perl-xml-sax  perl-xml-namespacesupport,None,perl-xml-libxml-simple  perl-xml-libxslt,/etc/perl-xml-libxml.conf
+perl-xml-libxml-simple,perl  perl-xml-libxml  perl-file-slurp-tiny,None,biber,/etc/perl-xml-libxml-simple.conf
+perl-xml-libxslt,perl-xml-libxml  libxslt,None,biber,/etc/perl-xml-libxslt.conf
+perl-xml-namespacesupport,perl,None,perl-xml-libxml  perl-xml-sax,/etc/perl-xml-namespacesupport.conf
+perl-xml-parser,perl-libwww  expat,None,intltool,/etc/perl-xml-parser.conf
+perl-xml-sax,perl  perl-xml-sax-base  perl-xml-namespacesupport,None,perl-xml-libxml,/etc/perl-xml-sax.conf
+perl-xml-sax-base,perl,None,perl-xml-sax,/etc/perl-xml-sax-base.conf
+perl-xml-writer,perl,None,biber,/etc/perl-xml-writer.conf
+phodav,avahi  glib2  libsoup3  libxml2  systemd,None,spice-gtk,/etc/phodav.conf
+picom,hicolor-icon-theme  libconfig  libdbus  libev  libgl  pcre  pixman  xcb-util-image  xcb-util-renderutil,dbus,None,/etc/picom.conf
+pinentry,glibc  ncurses  libcap  libassuan  libsecret  glib2  libsecret-1.so=0-64  libcap.so  libncursesw.so=6-64  libassuan.so=0-64  libglib-2.0.so=0-64,gtk2,gnupg,/etc/pinentry.conf
+pixman,glibc,None,cairo  picom  spice-gtk  texlive-bin  xorg-server,/etc/pixman.conf
+pkgconf,glibc  sh,None,base-devel,/etc/pkgconf.conf
+polkit,duktape  expat  glib2  pam  systemd,None,colord  libvirt  lightdm  pcsclite  polkit-gnome  rtkit  spice-gtk  udisks2  xfce4-session,/etc/polkit.conf
+polkit-gnome,gtk3  polkit,None,archlinux-tweak-tool-git  xfce4-session,/etc/polkit-gnome.conf
+poppler,libjpeg  gcc-libs  cairo  fontconfig  openjpeg2  lcms2  nss  curl  gpgme  nspr  libpng  freetype2  zlib  libtiff  glibc,poppler-data,poppler-glib  texlive-bin,/etc/poppler.conf
+poppler-data,None,None,ghostscript,/etc/poppler-data.conf
+poppler-glib,poppler=23.08.0  glib2  gcc-libs  freetype2  cairo  glibc,None,zathura-pdf-poppler,/etc/poppler-glib.conf
+popt,glibc,None,cryptsetup  efibootmgr  gptfdisk  libdv  libnewt,/etc/popt.conf
+portaudio,gcc-libs  glibc  alsa-lib  libasound.so=2-64  jack  libjack.so=0-64,None,libopenmpt,/etc/portaudio.conf
+potrace,None,None,texlive-bin,/etc/potrace.conf
+procps-ng,glibc  ncurses  libncursesw.so=6-64  systemd-libs,None,base  gpm,/etc/procps-ng.conf
+psmisc,ncurses,None,base  gvfs,/etc/psmisc.conf
+pulseaudio,alsa-lib  fftw  libcap  libltdl  libpulse=16.1-6  libsm  libsoxr  libxtst  orc  rtkit  speexdsp  tdb  webrtc-audio-processing,pulseaudio-alsa,paprefs,/etc/pulseaudio.conf
+python,bzip2  expat  gdbm  libffi  libnsl  libxcrypt  openssl  zlib,python-setuptools,dbus-python  libvirt-python  node-gyp  python-attrs  python-cairo  python-chardet  python-distro  python-evdev  python-gobject  python-idna  python-lxml  python-numpy  python-packaging  python-pip  python-ply  python-psutil  python-pygments  python-six  python-typing_extensions  python-urllib3  python-yaml  xfce4-screensaver,/etc/python.conf
+python-attrs,python,None,python-pip,/etc/python-attrs.conf
+python-cairo,cairo  python,None,arandr  virt-manager,/etc/python-cairo.conf
+python-cffi,python-pycparser,None,python-cryptography,/etc/python-cffi.conf
+python-chardet,python,None,python-requests,/etc/python-chardet.conf
+python-cryptography,python-cffi,None,python-pip,/etc/python-cryptography.conf
+python-distro,python,None,archlinux-tweak-tool-git,/etc/python-distro.conf
+python-evdev,python,None,solaar,/etc/python-evdev.conf
+python-gobject,gobject-introspection-runtime  python,cairo,arandr  archlinux-tweak-tool-git  lightdm-gtk-greeter-settings  solaar  virt-install  xfce4-screensaver,/etc/python-gobject.conf
+python-hid-parser,python-typing_extensions,None,solaar,/etc/python-hid-parser.conf
+python-idna,python,None,python-requests,/etc/python-idna.conf
+python-lxml,python  libxslt,python-beautifulsoup4,gtk-doc,/etc/python-lxml.conf
+python-numpy,cblas  lapack  python,openblas,archlinux-tweak-tool-git,/etc/python-numpy.conf
+python-packaging,python,None,python-wheel,/etc/python-packaging.conf
+python-pip,python  python-attrs  python-cryptography  python-wheel,None,None,/etc/python-pip.conf
+python-ply,python,None,python-pycparser,/etc/python-ply.conf
+python-psutil,python,None,archlinux-tweak-tool-git  solaar,/etc/python-psutil.conf
+python-pycparser,python-ply,None,python-cffi,/etc/python-pycparser.conf
+python-pygments,python,None,gtk-doc,/etc/python-pygments.conf
+python-pyudev,python-six  systemd,python-pyqt5,solaar,/etc/python-pyudev.conf
+python-requests,python-urllib3  python-chardet  python-idna,python-pysocks,virt-install,/etc/python-requests.conf
+python-six,python,None,python-pyudev  python-xlib,/etc/python-six.conf
+python-typing_extensions,python,None,python-hid-parser,/etc/python-typing_extensions.conf
+python-urllib3,python,python-brotli,python-requests,/etc/python-urllib3.conf
+python-wheel,python-packaging,python-keyring,python-pip,/etc/python-wheel.conf
+python-xlib,python-six,None,solaar,/etc/python-xlib.conf
+python-yaml,glibc  libyaml  python,None,solaar,/etc/python-yaml.conf
+qrencode,libpng,None,xfce4-clipman-plugin,/etc/qrencode.conf
+qt5-base,libjpeg-turbo  xcb-util-keysyms  xcb-util-renderutil  libgl  fontconfig  xdg-utils  shared-mime-info  xcb-util-wm  libxrender  libxi  sqlite  xcb-util-image  mesa  tslib  libinput  libxkbcommon-x11  libproxy  libcups  double-conversion  md4c  qt5-translations,qt5-svg,multimc-bin  qt5-declarative  qt5-svg  qt5-x11extras,/etc/qt5-base.conf
+qt5-declarative,qt5-base,None,qt5-graphicaleffects  qt5-quickcontrols  qt5-quickcontrols2  qt5-virtualkeyboard  sddm,/etc/qt5-declarative.conf
+qt5-graphicaleffects,qt5-declarative,None,arcolinux-sddm-materia-git  arcolinux-sddm-slice-git  arcolinux-sddm-sugar-candy-git,/etc/qt5-graphicaleffects.conf
+qt5-quickcontrols,qt5-declarative,None,arcolinux-sddm-simplicity-git,/etc/qt5-quickcontrols.conf
+qt5-quickcontrols2,qt5-declarative,qt5-graphicaleffects,arcolinux-sddm-materia-git  arcolinux-sddm-simplicity-git  arcolinux-sddm-sugar-candy-git,/etc/qt5-quickcontrols2.conf
+qt5-svg,qt5-base,None,arcolinux-sddm-sugar-candy-git  multimc-bin  qt5-virtualkeyboard,/etc/qt5-svg.conf
+qt5-translations,None,None,qt5-base,/etc/qt5-translations.conf
+qt5-virtualkeyboard,qt5-declarative  qt5-svg  hunspell,None,arcolinux-sddm-materia-git  arcolinux-sddm-sugar-candy-git,/etc/qt5-virtualkeyboard.conf
+qt5-x11extras,qt5-base,None,multimc-bin,/etc/qt5-x11extras.conf
+rav1e,gcc-libs  glibc,None,ffmpeg  libavif,/etc/rav1e.conf
+rclone,glibc,fuse3,None,/etc/rclone.conf
+re2,gcc-libs  abseil-cpp,None,chromium,/etc/re2.conf
+readline,glibc  ncurses  libncursesw.so=6-64,None,bash  gdbm  gnupg  gnutls  hunspell  iwd  libisoburn  libxml2  lua  lua53  lvm2  pcre  pcre2  sqlite  wpa_supplicant,/etc/readline.conf
+rebornos-keyring,None,None,archlinux-tweak-tool-git,/etc/rebornos-keyring.conf
+rebornos-mirrorlist,None,None,archlinux-tweak-tool-git,/etc/rebornos-mirrorlist.conf
+ripgrep,gcc-libs  pcre2,None,None,/etc/ripgrep.conf
+ristretto,libxfce4ui  xfconf  tumbler  libexif  file,None,None,/etc/ristretto.conf
+rtkit,dbus  polkit  systemd,None,pulseaudio,/etc/rtkit.conf
+sddm,qt5-declarative  xorg-xauth  xorg-server  ttf-font,None,None,/etc/sddm.conf
+sdl2,glibc  libxext  libxrender  libx11  libgl  libxcursor  hidapi  libusb,alsa-lib,ffmpeg,/etc/sdl2.conf
+seahorse,gcr  gpgme  gtk3  libhandy  libpwquality  libsecret  libsoup3  org.freedesktop.secrets,None,None,/etc/seahorse.conf
+sed,glibc  acl,None,base  base-devel  fakeroot  gzip,/etc/sed.conf
+semver,nodejs,None,node-gyp  npm,/etc/semver.conf
+shadow,acl  libacl.so=1-64  attr  libattr.so=1-64  audit  libaudit.so=1-64  glibc  libxcrypt  libcrypt.so=2-64  pam  libpam.so=0-64  libpam_misc.so=0-64,None,base  git  util-linux,/etc/shadow.conf
+shared-mime-info,libxml2  glib2,None,colord  gdk-pixbuf2  gtk2  gtk3  qt5-base  visual-studio-code-bin,/etc/shared-mime-info.conf
+slang,pcre,None,aalib  libcaca  libnewt,/etc/slang.conf
+smartmontools,gcc-libs  libcap-ng  bash  systemd-libs,s-nail,None,/etc/smartmontools.conf
+snappy,glibc  gcc-libs,None,chromium  electron22,/etc/snappy.conf
+solaar,gtk3  libnotify  python-dbus  python-evdev  python-gobject  python-hid-parser  python-psutil  python-pyudev  python-xlib  python-yaml,libayatana-appindicator,None,/etc/solaar.conf
+sound-theme-freedesktop,None,None,libcanberra,/etc/sound-theme-freedesktop.conf
+speex,gcc-libs  libogg  speexdsp  libogg.so=0-64  libspeexdsp.so=1-64,None,ffmpeg  gst-plugins-good  libshout,/etc/speex.conf
+speexdsp,gcc-libs,None,pulseaudio  speex,/etc/speexdsp.conf
+spice-gtk,acl  cairo  gdk-pixbuf2  glib2  gst-plugins-base  gst-plugins-good  gstreamer  gtk3  json-glib  libcacard  libcap-ng  libepoxy  libjpeg-turbo  libsasl  libsoup3  libusb  libx11  lz4  openssl  opus  phodav  pixman  polkit  spice-protocol  usbredir  wayland  zlib,None,virt-manager,/etc/spice-gtk.conf
+spice-protocol,None,None,spice-gtk,/etc/spice-protocol.conf
+sqlite,readline  zlib,None,colord  gnupg  libsoup  libsoup3  nss  qt5-base  tracker3  xfce4-notifyd  zathura,/etc/sqlite.conf
+srt,gcc-libs  openssl,None,ffmpeg,/etc/srt.conf
+startup-notification,glibc  libx11  libxcb  xcb-util,None,awesome  libwnck3  libxfce4ui,/etc/startup-notification.conf
+sudo,glibc  openssl  pam  libldap  zlib  libcrypto.so=3-64  libssl.so=3-64,None,base-devel,/etc/sudo.conf
+svt-av1,glibc,None,ffmpeg  libavif,/etc/svt-av1.conf
+syncthing,glibc,None,None,/etc/syncthing.conf
+systemd,acl  libacl.so=1-64  bash  cryptsetup  libcryptsetup.so=12-64  dbus  iptables  kbd  kmod  libkmod.so=2-64  hwdata  libcap  libcap.so=2-64  libgcrypt  libxcrypt  libcrypt.so=2-64  systemd-libs  libidn2  lz4  pam  libelf  libseccomp  libseccomp.so=2-64  util-linux  libblkid.so=1-64  libmount.so=1-64  xz  pcre2  audit  libaudit.so=1-64  openssl  libcrypto.so=3-64  libssl.so=3-64,libmicrohttpd,at-spi2-core  base  chromium  colord  gcr-4  libcolord  libgudev  libinput  libpulse  libwacom  mdadm  mkinitcpio  phodav  polkit  python-pyudev  rtkit  systemd-sysvcompat  upower  vte3  vulkan-intel  vulkan-radeon,/etc/systemd.conf
+systemd-libs,glibc  gcc-libs  libcap  libgcrypt  lz4  xz  zstd,None,btrfs-progs  dbus  device-mapper  hidapi  hwloc  jack2  libatasmart  libblockdev  libgudev  libnm  libusb  lvm2  ndctl  p11-kit  pcsclite  procps-ng  smartmontools  systemd  udisks2  usbutils  util-linux  v4l-utils  xf86-input-evdev  xf86-input-wacom  xf86-video-amdgpu  xf86-video-ati  xf86-video-nouveau  xf86-video-vmware  xscreensaver,/etc/systemd-libs.conf
+systemd-sysvcompat,systemd,None,base,/etc/systemd-sysvcompat.conf
+t1lib,libxaw,None,texlive-bin,/etc/t1lib.conf
+taglib,gcc-libs  zlib,None,gst-plugins-good  thunar-media-tags-plugin,/etc/taglib.conf
+tar,glibc  acl,None,base  libtool,/etc/tar.conf
+tdb,glibc,python,libcanberra  pulseaudio,/etc/tdb.conf
+texinfo,ncurses  gzip  perl  sh,perl-archive-zip,base-devel,/etc/texinfo.conf
+texlive-basic,texlive-bin,perl-tk,texlive-binextra  texlive-context  texlive-fontsextra  texlive-fontsrecommended  texlive-fontutils  texlive-formatsextra  texlive-latex  texlive-luatex  texlive-meta  texlive-metapost  texlive-pictures  texlive-plaingeneric  texlive-pstricks  texlive-xetex,/etc/texlive-basic.conf
+texlive-bibtexextra,texlive-bin  texlive-latex,None,texlive-meta,/etc/texlive-bibtexextra.conf
+texlive-bin,cairo  pixman  graphite  t1lib  gd  poppler  ffcall  libsigsegv  zziplib  libpng  libjpeg  freetype2  libxcrypt  harfbuzz-icu  mpfr  potrace  libpaper  libsynctex,psutils,dvisvgm  texlive-basic  texlive-bibtexextra  texlive-binextra  texlive-context  texlive-fontsextra  texlive-fontsrecommended  texlive-fontutils  texlive-formatsextra  texlive-games  texlive-humanities  texlive-latex  texlive-latexextra  texlive-latexrecommended  texlive-luatex  texlive-mathscience  texlive-meta  texlive-metapost  texlive-music  texlive-pictures  texlive-plaingeneric  texlive-pstricks  texlive-publishers  texlive-xetex,/etc/texlive-bin.conf
+texlive-binextra,texlive-bin  texlive-basic  dvisvgm,ed,texlive-meta,/etc/texlive-binextra.conf
+texlive-context,texlive-bin  texlive-basic,luametatex,texlive-meta,/etc/texlive-context.conf
+texlive-fontsextra,texlive-bin  texlive-basic,None,texlive-meta,/etc/texlive-fontsextra.conf
+texlive-fontsrecommended,texlive-bin  texlive-basic,None,texlive-formatsextra  texlive-mathscience  texlive-meta,/etc/texlive-fontsrecommended.conf
+texlive-fontutils,texlive-bin  texlive-basic,ghostscript,texlive-meta,/etc/texlive-fontutils.conf
+texlive-formatsextra,texlive-bin  texlive-basic  texlive-latex  texlive-plaingeneric  texlive-fontsrecommended,None,texlive-meta,/etc/texlive-formatsextra.conf
+texlive-games,texlive-bin  texlive-latex,None,texlive-meta,/etc/texlive-games.conf
+texlive-humanities,texlive-bin  texlive-latex,None,texlive-meta,/etc/texlive-humanities.conf
+texlive-latex,texlive-bin  texlive-basic  dvisvgm,None,texlive-bibtexextra  texlive-formatsextra  texlive-games  texlive-humanities  texlive-latexrecommended  texlive-mathscience  texlive-meta  texlive-music  texlive-publishers,/etc/texlive-latex.conf
+texlive-latexextra,texlive-bin  texlive-latexrecommended  texlive-pictures,java-runtime,texlive-meta,/etc/texlive-latexextra.conf
+texlive-latexrecommended,texlive-bin  texlive-latex,None,texlive-latexextra  texlive-meta,/etc/texlive-latexrecommended.conf
+texlive-luatex,texlive-bin  texlive-basic,None,texlive-meta,/etc/texlive-luatex.conf
+texlive-mathscience,texlive-bin  texlive-fontsrecommended  texlive-latex,None,texlive-meta,/etc/texlive-mathscience.conf
+texlive-meta,texlive-bin  texlive-basic  texlive-bibtexextra  texlive-binextra  texlive-context  texlive-fontsextra  texlive-fontsrecommended  texlive-fontutils  texlive-formatsextra  texlive-games  texlive-humanities  texlive-latex  texlive-latexextra  texlive-latexrecommended  texlive-luatex  texlive-mathscience  texlive-metapost  texlive-music  texlive-pictures  texlive-plaingeneric  texlive-pstricks  texlive-publishers  texlive-xetex,None,None,/etc/texlive-meta.conf
+texlive-metapost,texlive-bin  texlive-basic,None,texlive-meta,/etc/texlive-metapost.conf
+texlive-music,texlive-bin  texlive-latex,fontforge,texlive-meta,/etc/texlive-music.conf
+texlive-pictures,texlive-bin  texlive-basic,ghostscript,texlive-latexextra  texlive-meta,/etc/texlive-pictures.conf
+texlive-plaingeneric,texlive-bin  texlive-basic,None,texlive-formatsextra  texlive-meta  texlive-pstricks,/etc/texlive-plaingeneric.conf
+texlive-pstricks,texlive-bin  texlive-basic  texlive-plaingeneric,None,texlive-meta,/etc/texlive-pstricks.conf
+texlive-publishers,texlive-bin  texlive-latex,None,texlive-meta,/etc/texlive-publishers.conf
+texlive-xetex,texlive-bin  texlive-basic,None,texlive-meta,/etc/texlive-xetex.conf
+thin-provisioning-tools,gcc-libs,None,lvm2,/etc/thin-provisioning-tools.conf
+thunar,desktop-file-utils  libexif  hicolor-icon-theme  libnotify  pcre2  libgudev  exo  libxfce4util  libxfce4ui  libpng,gvfs,thunar-archive-plugin  thunar-media-tags-plugin  thunar-volman  xfdesktop,/etc/thunar.conf
+thunar-archive-plugin,thunar  hicolor-icon-theme,file-roller,None,/etc/thunar-archive-plugin.conf
+thunar-media-tags-plugin,taglib  thunar,None,None,/etc/thunar-media-tags-plugin.conf
+thunar-volman,thunar  libxfce4ui  hicolor-icon-theme,None,None,/etc/thunar-volman.conf
+tpm2-tss,curl  json-c  openssl  libjson-c.so=5-64,None,libsecret,/etc/tpm2-tss.conf
+tracker3,glib2  icu  json-glib  libsoup3  libstemmer  libxml2  sqlite,libsoup,gtk3,/etc/tracker3.conf
+tree,glibc,None,None,/etc/tree.conf
+tree-sitter,gcc-libs,None,neovim,/etc/tree-sitter.conf
+tslib,glibc,None,qt5-base,/etc/tslib.conf
+ttf-3270-nerd,None,None,None,/etc/ttf-3270-nerd.conf
+ttf-agave-nerd,None,None,None,/etc/ttf-agave-nerd.conf
+ttf-anonymouspro-nerd,None,None,None,/etc/ttf-anonymouspro-nerd.conf
+ttf-arimo-nerd,None,None,None,/etc/ttf-arimo-nerd.conf
+ttf-bigblueterminal-nerd,None,None,None,/etc/ttf-bigblueterminal-nerd.conf
+ttf-bitstream-vera-mono-nerd,None,None,None,/etc/ttf-bitstream-vera-mono-nerd.conf
+ttf-carlito,None,None,onlyoffice-bin,/etc/ttf-carlito.conf
+ttf-cascadia-code-nerd,None,None,None,/etc/ttf-cascadia-code-nerd.conf
+ttf-cousine-nerd,None,None,None,/etc/ttf-cousine-nerd.conf
+ttf-daddytime-mono-nerd,None,None,None,/etc/ttf-daddytime-mono-nerd.conf
+ttf-dejavu,None,None,firefox  onlyoffice-bin  sddm,/etc/ttf-dejavu.conf
+ttf-dejavu-nerd,None,None,None,/etc/ttf-dejavu-nerd.conf
+ttf-fantasque-nerd,None,None,None,/etc/ttf-fantasque-nerd.conf
+ttf-firacode-nerd,None,None,None,/etc/ttf-firacode-nerd.conf
+ttf-font-awesome,None,None,None,/etc/ttf-font-awesome.conf
+ttf-go-nerd,None,None,None,/etc/ttf-go-nerd.conf
+ttf-hack-nerd,None,None,None,/etc/ttf-hack-nerd.conf
+ttf-heavydata-nerd,None,None,None,/etc/ttf-heavydata-nerd.conf
+ttf-iawriter-nerd,None,None,None,/etc/ttf-iawriter-nerd.conf
+ttf-ibmplex-mono-nerd,None,None,None,/etc/ttf-ibmplex-mono-nerd.conf
+ttf-inconsolata-go-nerd,None,None,None,/etc/ttf-inconsolata-go-nerd.conf
+ttf-inconsolata-lgc-nerd,None,None,None,/etc/ttf-inconsolata-lgc-nerd.conf
+ttf-inconsolata-nerd,None,None,None,/etc/ttf-inconsolata-nerd.conf
+ttf-iosevka-nerd,None,None,None,/etc/ttf-iosevka-nerd.conf
+ttf-iosevkaterm-nerd,None,None,None,/etc/ttf-iosevkaterm-nerd.conf
+ttf-jetbrains-mono-nerd,None,None,None,/etc/ttf-jetbrains-mono-nerd.conf
+ttf-lekton-nerd,None,None,None,/etc/ttf-lekton-nerd.conf
+ttf-liberation,None,None,chromium  firefox  onlyoffice-bin  sddm,/etc/ttf-liberation.conf
+ttf-liberation-mono-nerd,None,None,None,/etc/ttf-liberation-mono-nerd.conf
+ttf-lilex-nerd,None,None,None,/etc/ttf-lilex-nerd.conf
+ttf-meslo-nerd,None,None,None,/etc/ttf-meslo-nerd.conf
+ttf-monofur-nerd,None,None,None,/etc/ttf-monofur-nerd.conf
+ttf-monoid-nerd,None,None,None,/etc/ttf-monoid-nerd.conf
+ttf-mononoki-nerd,None,None,None,/etc/ttf-mononoki-nerd.conf
+ttf-mplus-nerd,None,None,None,/etc/ttf-mplus-nerd.conf
+ttf-ms-fonts,None,None,firefox  sddm,/etc/ttf-ms-fonts.conf
+ttf-nerd-fonts-symbols,ttf-nerd-fonts-symbols-common,None,None,/etc/ttf-nerd-fonts-symbols.conf
+ttf-nerd-fonts-symbols-common,None,None,ttf-nerd-fonts-symbols  ttf-nerd-fonts-symbols-mono,/etc/ttf-nerd-fonts-symbols-common.conf
+ttf-nerd-fonts-symbols-mono,ttf-nerd-fonts-symbols-common,None,None,/etc/ttf-nerd-fonts-symbols-mono.conf
+ttf-noto-nerd,None,None,None,/etc/ttf-noto-nerd.conf
+ttf-profont-nerd,None,None,None,/etc/ttf-profont-nerd.conf
+ttf-proggyclean-nerd,None,None,None,/etc/ttf-proggyclean-nerd.conf
+ttf-roboto-mono-nerd,None,None,None,/etc/ttf-roboto-mono-nerd.conf
+ttf-sharetech-mono-nerd,None,None,None,/etc/ttf-sharetech-mono-nerd.conf
+ttf-sourcecodepro-nerd,None,None,None,/etc/ttf-sourcecodepro-nerd.conf
+ttf-space-mono-nerd,None,None,None,/etc/ttf-space-mono-nerd.conf
+ttf-terminus-nerd,None,None,None,/etc/ttf-terminus-nerd.conf
+ttf-tinos-nerd,None,None,None,/etc/ttf-tinos-nerd.conf
+ttf-ubuntu-mono-nerd,None,None,None,/etc/ttf-ubuntu-mono-nerd.conf
+ttf-ubuntu-nerd,None,None,None,/etc/ttf-ubuntu-nerd.conf
+ttf-victor-mono-nerd,None,None,None,/etc/ttf-victor-mono-nerd.conf
+tumbler,libxfce4util  gdk-pixbuf2,ffmpegthumbnailer,ristretto,/etc/tumbler.conf
+twolame,glibc  libsndfile,None,gst-plugins-good,/etc/twolame.conf
+tzdata,None,bash,glibc,/etc/tzdata.conf
+udisks2,acl  polkit  glib2  gcc-libs  glibc  libatasmart  libgudev  libblockdev  systemd-libs  util-linux-libs,None,gvfs,/etc/udisks2.conf
+unibilium,glibc,None,libtermkey  neovim,/etc/unibilium.conf
+unzip,bzip2  bash,None,docx2txt,/etc/unzip.conf
+upower,libgudev  libimobiledevice  systemd  usbmuxd  libglib-2.0.so=0-64  libgobject-2.0.so=0-64  libgio-2.0.so=0-64,None,xfce4-power-manager,/etc/upower.conf
+usbmuxd,libimobiledevice  libusb  libplist,None,upower,/etc/usbmuxd.conf
+usbredir,libusb  glib2,None,spice-gtk,/etc/usbredir.conf
+usbutils,glibc  hwdata  libusb  libusb-1.0.so=0-64  systemd-libs  libudev.so=1-64,coreutils,None,/etc/usbutils.conf
+util-linux,pam  shadow  coreutils  systemd-libs  libsystemd.so=0-64  libudev.so=1-64  libcap-ng  libutempter  libxcrypt  libcrypt.so=2-64  util-linux-libs  libmagic.so=1-64  libncursesw.so=6-64,words,base  fakeroot  libblockdev  mkinitcpio  systemd  zeromq,/etc/util-linux.conf
+util-linux-libs,glibc,python,btrfs-progs  cryptsetup  e2fsprogs  glib2  gptfdisk  libnm  libsm  lvm2  ndctl  parted  systemd  udisks2  util-linux  volume_key  wget  xfsprogs,/etc/util-linux-libs.conf
+v4l-utils,hicolor-icon-theme  gcc-libs  libjpeg-turbo  systemd-libs  json-c,qt5-base,ffmpeg  gst-plugins-good,/etc/v4l-utils.conf
+vid.stab,gcc-libs  glibc,None,ffmpeg,/etc/vid.stab.conf
+vim,vim-runtime=9.0.1736-1  gpm  acl  glibc  libgcrypt  zlib  perl,python,None,/etc/vim.conf
+vim-runtime,None,sh,vim,/etc/vim-runtime.conf
+virt-install,libosinfo  libvirt-python  python-gobject  python-requests  cpio  libisoburn,x11-ssh-askpass,virt-manager,/etc/virt-install.conf
+virt-manager,virt-install=4.1.0  gtk-vnc  libvirt-glib  spice-gtk  vte3  python-cairo  gtksourceview4,x11-ssh-askpass,None,/etc/virt-manager.conf
+visual-studio-code-bin,libxkbfile  gnupg  gtk3  libsecret  nss  gcc-libs  libnotify  libxss  glibc  lsof  shared-mime-info  xdg-utils  alsa-lib,glib2,None,/etc/visual-studio-code-bin.conf
+vmaf,gcc-libs,None,ffmpeg,/etc/vmaf.conf
+volume_key,cryptsetup  glib2  glibc  gpgme  nspr  nss  util-linux-libs,python-volume_key,libblockdev,/etc/volume_key.conf
+vte-common,sh,None,vte3,/etc/vte-common.conf
+vte3,fribidi  gnutls  gtk3  pcre2  systemd  vte-common,None,virt-manager  xfce4-terminal,/etc/vte3.conf
+vulkan-icd-loader,glibc,vulkan-driver,ffmpeg  mesa,/etc/vulkan-icd-loader.conf
+vulkan-intel,libdrm  libx11  libxshmfence  systemd  wayland  zstd,vulkan-mesa-layers,None,/etc/vulkan-intel.conf
+vulkan-radeon,libdrm  libelf  libx11  libxshmfence  llvm-libs  systemd  wayland  zstd,vulkan-mesa-layers,None,/etc/vulkan-radeon.conf
+w3m,openssl  gc  ncurses  gpm,imlib2,None,/etc/w3m.conf
+wallutils,libheif  libx11  libxpm  wayland,feh,None,/etc/wallutils.conf
+wavpack,glibc,None,gst-plugins-good,/etc/wavpack.conf
+wayland,glibc  libffi  expat  libxml2  default-cursors,None,electron22  gst-plugins-base-libs  gtk3  libva  mesa  spice-gtk  vulkan-intel  vulkan-radeon  wallutils,/etc/wayland.conf
+webrtc-audio-processing,gcc-libs,None,pulseaudio,/etc/webrtc-audio-processing.conf
+wget,glibc  zlib  gnutls  libidn2  libidn2.so=0-64  util-linux-libs  libuuid.so=1-64  libpsl  libpsl.so=5-64  pcre2  nettle  libnettle.so=8-64,ca-certificates,multimc-bin,/etc/wget.conf
+which,glibc  bash,None,base-devel,/etc/which.conf
+wireless_tools,None,None,None,/etc/wireless_tools.conf
+woff2,brotli,None,chromium  dvisvgm  electron22,/etc/woff2.conf
+wpa_supplicant,openssl  libdbus  readline  libnl  pcsclite,None,networkmanager,/etc/wpa_supplicant.conf
+x264,liblsmash.so=2-64,None,ffmpeg  gst-plugins-ugly,/etc/x264.conf
+x265,gcc-libs,None,ffmpeg  libheif,/etc/x265.conf
+xarchiver,gtk3,arj,None,/etc/xarchiver.conf
+xcb-proto,None,None,libxcb,/etc/xcb-proto.conf
+xcb-util,libxcb>=1.7,None,startup-notification  xcb-util-image  xcb-util-xrm  xorg-xbacklight,/etc/xcb-util.conf
+xcb-util-cursor,libxcb  xcb-util-renderutil  xcb-util-image,None,awesome,/etc/xcb-util-cursor.conf
+xcb-util-image,libxcb  xcb-util,None,picom  qt5-base  xcb-util-cursor,/etc/xcb-util-image.conf
+xcb-util-keysyms,libxcb,None,awesome  qt5-base,/etc/xcb-util-keysyms.conf
+xcb-util-renderutil,libxcb>=1.7,None,picom  qt5-base  xcb-util-cursor,/etc/xcb-util-renderutil.conf
+xcb-util-wm,libxcb,None,awesome  qt5-base,/etc/xcb-util-wm.conf
+xcb-util-xrm,xcb-util,None,awesome,/etc/xcb-util-xrm.conf
+xclip,libxmu,None,None,/etc/xclip.conf
+xdg-utils,sh  file  xorg-xset  xorg-xprop,kde-cli-tools,chromium  qt5-base  visual-studio-code-bin,/etc/xdg-utils.conf
+xdotool,libxtst  libxinerama  libxkbcommon,None,None,/etc/xdotool.conf
+xerolinux-mirrorlist,None,None,archlinux-tweak-tool-git,/etc/xerolinux-mirrorlist.conf
+xf86-input-evdev,systemd-libs  mtdev  libevdev,None,None,/etc/xf86-input-evdev.conf
+xf86-input-libinput,libinput,None,xorg-server,/etc/xf86-input-libinput.conf
+xf86-input-wacom,libxi  libxinerama  libxrandr  systemd-libs,None,None,/etc/xf86-input-wacom.conf
+xf86-video-amdgpu,systemd-libs  mesa,None,None,/etc/xf86-video-amdgpu.conf
+xf86-video-ati,systemd-libs  mesa,None,None,/etc/xf86-video-ati.conf
+xf86-video-nouveau,systemd-libs  mesa,None,None,/etc/xf86-video-nouveau.conf
+xf86-video-vmware,mesa  systemd-libs,None,None,/etc/xf86-video-vmware.conf
+xfburn,libburn  libisofs  gtk3  libxfce4ui  exo  gst-plugins-base-libs  libgudev  desktop-file-utils,None,None,/etc/xfburn.conf
+xfce4-appfinder,libxfce4ui  garcon  xfconf  hicolor-icon-theme,None,None,/etc/xfce4-appfinder.conf
+xfce4-artwork,None,None,None,/etc/xfce4-artwork.conf
+xfce4-battery-plugin,xfce4-panel,None,None,/etc/xfce4-battery-plugin.conf
+xfce4-clipman-plugin,xfce4-panel  libxtst  qrencode,None,None,/etc/xfce4-clipman-plugin.conf
+xfce4-cpufreq-plugin,xfce4-panel,None,None,/etc/xfce4-cpufreq-plugin.conf
+xfce4-cpugraph-plugin,xfce4-panel  xfconf,None,None,/etc/xfce4-cpugraph-plugin.conf
+xfce4-dev-tools,glib2  intltool  gtk-doc,docker,None,/etc/xfce4-dev-tools.conf
+xfce4-dict,xfce4-panel  librsvg  hicolor-icon-theme,None,None,/etc/xfce4-dict.conf
+xfce4-diskperf-plugin,xfce4-panel,None,None,/etc/xfce4-diskperf-plugin.conf
+xfce4-eyes-plugin,xfce4-panel  hicolor-icon-theme,None,None,/etc/xfce4-eyes-plugin.conf
+xfce4-fsguard-plugin,xfce4-panel,None,None,/etc/xfce4-fsguard-plugin.conf
+xfce4-genmon-plugin,xfce4-panel  hicolor-icon-theme,None,None,/etc/xfce4-genmon-plugin.conf
+xfce4-mailwatch-plugin,xfce4-panel  gnutls,None,None,/etc/xfce4-mailwatch-plugin.conf
+xfce4-mount-plugin,xfce4-panel,None,None,/etc/xfce4-mount-plugin.conf
+xfce4-mpc-plugin,xfce4-panel  libmpd,None,None,/etc/xfce4-mpc-plugin.conf
+xfce4-netload-plugin,xfce4-panel,None,None,/etc/xfce4-netload-plugin.conf
+xfce4-notes-plugin,xfce4-panel  hicolor-icon-theme,None,None,/etc/xfce4-notes-plugin.conf
+xfce4-notifyd,libxfce4ui  libxfce4util  libnotify  xfconf  sqlite  libcanberra  hicolor-icon-theme,None,xfce4-power-manager,/etc/xfce4-notifyd.conf
+xfce4-panel,exo  garcon  libxfce4ui  xfconf  libwnck3  libdbusmenu-gtk3  hicolor-icon-theme  desktop-file-utils,None,xfce4-battery-plugin  xfce4-clipman-plugin  xfce4-cpufreq-plugin  xfce4-cpugraph-plugin  xfce4-dict  xfce4-diskperf-plugin  xfce4-eyes-plugin  xfce4-fsguard-plugin  xfce4-genmon-plugin  xfce4-mailwatch-plugin  xfce4-mount-plugin  xfce4-mpc-plugin  xfce4-netload-plugin  xfce4-notes-plugin  xfce4-pulseaudio-plugin  xfce4-screenshooter  xfce4-sensors-plugin  xfce4-smartbookmark-plugin  xfce4-systemload-plugin  xfce4-time-out-plugin  xfce4-timer-plugin  xfce4-verve-plugin  xfce4-wavelan-plugin  xfce4-weather-plugin  xfce4-whiskermenu-plugin  xfce4-xkb-plugin,/etc/xfce4-panel.conf
+xfce4-power-manager,libxfce4ui  upower  libnotify  xfce4-notifyd  hicolor-icon-theme,None,None,/etc/xfce4-power-manager.conf
+xfce4-pulseaudio-plugin,xfce4-panel  libpulse  libkeybinder3  libnotify  libcanberra,pavucontrol,None,/etc/xfce4-pulseaudio-plugin.conf
+xfce4-screensaver,libxss  libxklavier  libwnck3  garcon  dbus-glib  python  python-gobject,None,None,/etc/xfce4-screensaver.conf
+xfce4-screenshooter,xfce4-panel  libsoup3  hicolor-icon-theme,None,None,/etc/xfce4-screenshooter.conf
+xfce4-sensors-plugin,xfce4-panel  lm_sensors  libnotify  hicolor-icon-theme,hddtemp,None,/etc/xfce4-sensors-plugin.conf
+xfce4-session,libxfce4ui  libwnck3  xfconf  libsm  polkit  xorg-iceauth  xorg-xinit  xorg-xrdb  polkit-gnome  hicolor-icon-theme,gnome-keyring,None,/etc/xfce4-session.conf
+xfce4-settings,exo  garcon  libxfce4ui  xfconf  libnotify  libcanberra  colord  libxklavier  elementary-icon-theme  gnome-themes-extra,python,None,/etc/xfce4-settings.conf
+xfce4-smartbookmark-plugin,xfce4-panel,None,None,/etc/xfce4-smartbookmark-plugin.conf
+xfce4-systemload-plugin,xfce4-panel  libgtop,None,None,/etc/xfce4-systemload-plugin.conf
+xfce4-taskmanager,libxfce4ui  xfconf  libxmu  libwnck3,None,None,/etc/xfce4-taskmanager.conf
+xfce4-terminal,libxfce4ui  vte3  hicolor-icon-theme,None,None,/etc/xfce4-terminal.conf
+xfce4-time-out-plugin,xfce4-panel,None,None,/etc/xfce4-time-out-plugin.conf
+xfce4-timer-plugin,xfce4-panel,None,None,/etc/xfce4-timer-plugin.conf
+xfce4-verve-plugin,xfce4-panel,None,None,/etc/xfce4-verve-plugin.conf
+xfce4-wavelan-plugin,xfce4-panel,None,None,/etc/xfce4-wavelan-plugin.conf
+xfce4-weather-plugin,xfce4-panel  libxml2  libsoup  hicolor-icon-theme,None,None,/etc/xfce4-weather-plugin.conf
+xfce4-whiskermenu-plugin,garcon  xfce4-panel  gtk3>=3.22,None,None,/etc/xfce4-whiskermenu-plugin.conf
+xfce4-xkb-plugin,xfce4-panel  libxklavier  librsvg  libwnck3  libnotify,xfce4-notifyd,None,/etc/xfce4-xkb-plugin.conf
+xfconf,libxfce4util,None,libxfce4ui  ristretto  xfce4-appfinder  xfce4-cpugraph-plugin  xfce4-notifyd  xfce4-panel  xfce4-session  xfce4-settings  xfce4-taskmanager  xfwm4,/etc/xfconf.conf
+xfdesktop,libxfce4ui  libwnck3  exo  thunar  garcon  hicolor-icon-theme,None,None,/etc/xfdesktop.conf
+xfsprogs,sh  util-linux-libs  device-mapper  libinih  liburcu,icu,None,/etc/xfsprogs.conf
+xfwm4,libxfce4ui  xfconf  libwnck3  libepoxy  libxpresent  hicolor-icon-theme,None,xfwm4-themes,/etc/xfwm4.conf
+xfwm4-themes,xfwm4,None,None,/etc/xfwm4-themes.conf
+xkeyboard-config,None,None,libxkbcommon  libxklavier  xorg-server-common,/etc/xkeyboard-config.conf
+xorg-appres,libxt,None,xscreensaver,/etc/xorg-appres.conf
+xorg-bdftopcf,glibc,None,None,/etc/xorg-bdftopcf.conf
+xorg-fonts-encodings,None,None,libfontenc,/etc/xorg-fonts-encodings.conf
+xorg-iceauth,libice,None,xfce4-session,/etc/xorg-iceauth.conf
+xorg-mkfontscale,freetype2  libfontenc,None,None,/etc/xorg-mkfontscale.conf
+xorg-server,libepoxy  libxfont2  pixman  xorg-server-common  libunwind  dbus  libgl  xf86-input-libinput  nettle  libpciaccess  libdrm  libxshmfence  libxcvt,None,lightdm  sddm,/etc/xorg-server.conf
+xorg-server-common,xkeyboard-config  xorg-xkbcomp  xorg-setxkbmap,None,xorg-server,/etc/xorg-server-common.conf
+xorg-sessreg,glibc,None,None,/etc/xorg-sessreg.conf
+xorg-setxkbmap,libxkbfile  libxrandr,None,xorg-server-common,/etc/xorg-setxkbmap.conf
+xorg-smproxy,libsm  libxt  libxmu,None,None,/etc/xorg-smproxy.conf
+xorg-x11perf,libx11  libxmu  libxrender  libxft  libxext,None,None,/etc/xorg-x11perf.conf
+xorg-xauth,libxmu,None,sddm  xorg-xinit,/etc/xorg-xauth.conf
+xorg-xbacklight,xcb-util,None,None,/etc/xorg-xbacklight.conf
+xorg-xcmsdb,libx11,None,None,/etc/xorg-xcmsdb.conf
+xorg-xcursorgen,libx11  libxcursor  libpng,None,None,/etc/xorg-xcursorgen.conf
+xorg-xdpyinfo,libx11  libxext  libxtst  libxxf86vm  libxrender  libxcomposite  libxinerama,None,None,/etc/xorg-xdpyinfo.conf
+xorg-xdriinfo,libx11  libgl,None,None,/etc/xorg-xdriinfo.conf
+xorg-xev,libx11  libxrandr,None,None,/etc/xorg-xev.conf
+xorg-xgamma,libx11  libxxf86vm,None,None,/etc/xorg-xgamma.conf
+xorg-xhost,libx11  libxmu,None,None,/etc/xorg-xhost.conf
+xorg-xinit,libx11  xorg-xauth  xorg-xrdb  xorg-xmodmap,xorg-twm,xfce4-session,/etc/xorg-xinit.conf
+xorg-xinput,libx11  libxi>=1.5.99.2  xorg-xrandr  libxinerama,None,None,/etc/xorg-xinput.conf
+xorg-xkbcomp,libxkbfile,None,libxklavier  xorg-server-common,/etc/xorg-xkbcomp.conf
+xorg-xkbevd,libxkbfile,None,None,/etc/xorg-xkbevd.conf
+xorg-xkbprint,libxkbfile,None,None,/etc/xorg-xkbprint.conf
+xorg-xkbutils,libxaw  libxt  libx11,None,None,/etc/xorg-xkbutils.conf
+xorg-xkill,libx11  libxmu,None,None,/etc/xorg-xkill.conf
+xorg-xlsatoms,libxcb,None,None,/etc/xorg-xlsatoms.conf
+xorg-xlsclients,libxcb,None,None,/etc/xorg-xlsclients.conf
+xorg-xmessage,libxaw,None,awesome,/etc/xorg-xmessage.conf
+xorg-xmodmap,libx11,None,lightdm  xorg-xinit,/etc/xorg-xmodmap.conf
+xorg-xpr,libx11  libxmu  sh,None,None,/etc/xorg-xpr.conf
+xorg-xprop,libx11,None,at-spi2-core  xdg-utils,/etc/xorg-xprop.conf
+xorg-xrandr,libxrandr  libx11,None,arandr  multimc-bin  xorg-xinput,/etc/xorg-xrandr.conf
+xorg-xrdb,libx11  libxmu  glibc,gcc,lightdm  xfce4-session  xorg-xinit,/etc/xorg-xrdb.conf
+xorg-xrefresh,libx11,None,None,/etc/xorg-xrefresh.conf
+xorg-xset,libxmu,None,xdg-utils,/etc/xorg-xset.conf
+xorg-xsetroot,libxmu  libx11  libxcursor,None,None,/etc/xorg-xsetroot.conf
+xorg-xvinfo,libx11  libxv,None,None,/etc/xorg-xvinfo.conf
+xorg-xwd,libxkbfile  libx11  glibc,None,None,/etc/xorg-xwd.conf
+xorg-xwininfo,libxcb,None,None,/etc/xorg-xwininfo.conf
+xorg-xwud,libx11,None,None,/etc/xorg-xwud.conf
+xorgproto,None,None,libice  libx11  libxau  libxdmcp  libxfont2,/etc/xorgproto.conf
+xscreensaver,gtk3  glu  xorg-appres  libglvnd  libjpeg-turbo  libjpeg.so=8-64  libsystemd.so=0-64  libx11  libxcrypt  libcrypt.so=2-64  libxext  libxft  libxi  libxinerama  libxmu  libxrandr  libxt  libxxf86vm  perl-libwww  pam  libpam.so=0-64  glibc  glib2  gdk-pixbuf2,gdm,None,/etc/xscreensaver.conf
+xvidcore,glibc,None,ffmpeg,/etc/xvidcore.conf
+xz,sh,None,base  ffmpeg  file  grub  imlib2  kmod  libarchive  libelf  libtiff  libunwind  libxml2  libxslt  systemd  systemd-libs  zstd,/etc/xz.conf
+yajl,glibc,None,libvirt,/etc/yajl.conf
+yay,pacman>5  git,sudo,None,/etc/yay.conf
+zathura,girara>=0.2.7  sqlite  desktop-file-utils  file  libsynctex  file,zathura-djvu,zathura-cb  zathura-djvu  zathura-pdf-poppler  zathura-ps,/etc/zathura.conf
+zathura-cb,zathura  libarchive  desktop-file-utils,None,None,/etc/zathura-cb.conf
+zathura-djvu,djvulibre  zathura  desktop-file-utils,None,None,/etc/zathura-djvu.conf
+zathura-pdf-poppler,poppler-glib  zathura  desktop-file-utils,None,None,/etc/zathura-pdf-poppler.conf
+zathura-ps,libspectre  zathura  desktop-file-utils,None,None,/etc/zathura-ps.conf
+zenity,gtk3  libnotify,perl,multimc-bin,/etc/zenity.conf
+zeromq,glibc  gnutls  gcc-libs  util-linux  libsodium  libpgm,cppzmq,libteam,/etc/zeromq.conf
+zimg,gcc-libs  glibc,None,ffmpeg,/etc/zimg.conf
+zlib,glibc,None,binutils  btrfs-progs  cairo  cracklib  curl  ffmpeg  file  freetype2  ghostscript  git  glib2  gnupg  gnutls  haskell-digest  haskell-zlib  kmod  libarchive  libavif  libcaca  libcups  libelf  libfontenc  libisofs  libopenmpt  libpciaccess  libpng  libssh  libssh2  libsynctex  libtiff  libunwind  libxml2  llvm-libs  man-db  minizip  multimc-bin  nodejs  nss  openexr  openjpeg2  openmpi  openpmix  openssh  pcre  pcre2  poppler  python  spice-gtk  sqlite  sudo  taglib  vim  wget  zstd  zziplib,/etc/zlib.conf
+zstd,glibc  gcc-libs  zlib  xz  lz4,None,binutils  btrfs-progs  curl  file  gcc  gnutls  kmod  libarchive  libelf  libtiff  libva-mesa-driver  llvm-libs  mesa  mkinitcpio  systemd-libs  vulkan-intel  vulkan-radeon,/etc/zstd.conf
+zziplib,zlib,None,texlive-bin,/etc/zziplib.conf
