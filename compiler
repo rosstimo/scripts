@@ -26,10 +26,14 @@ cd "$dir" || exit 1
 textype() { \
 	command="pdflatex -interaction=batchmode -recorder -file-line-error" # added batchmode to avoid prompt when file not found - Tim R
 	( head -n5 "$file" | grep -qi 'xelatex' ) && command="xelatex"
-	$command --output-directory="$dir" "$base" > /dev/null &&
-	grep -qi addbibresource "$file" &&
-	biber --input-directory "$dir" "$base" > /dev/null &&
-	$command --output-directory="$dir" "$base" > /dev/null &&
+	$command --output-directory="$dir" "$base" > /dev/null 
+  # if the current file contains "addbibresource" then run biber and recompile
+	# grep -i "addbibresource" "$file" && 
+
+	sleep 250m &&
+ 	grep -qi "addbibresource" "$file" &&
+    biber --input-directory "$dir" "$base" > /dev/null 
+   
 	sleep 250m &&
 	$command --output-directory="$dir" "$base" > /dev/null 
 }

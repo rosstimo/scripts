@@ -1,3 +1,7 @@
 #!/bin/bash
+# if it exists run the script mirrorAllDisplays.sh then Start the VM
+# [ -f $HOME/.local/bin/mirrorAllDisplays.sh ] &&
+# exec $HOME/.local/bin/mirrorAllDisplays.sh && 
 
+# Start the VM
 virsh --connect qemu:///system start win10 &&  virt-viewer --connect qemu:///system win10

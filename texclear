@@ -4,12 +4,13 @@
 # I have vim run this file whenever I exit a .tex file.
 # removed log extention - Tim R
 # removed .toc because table of contents not showing in pdf - TJR
+# removed .bcf to help with biblatex - TJR
 case "$1" in
 	*.tex)
 	file=$(readlink -f "$1")
 	dir=$(dirname "$file")
 	base="${file%.*}"
-	find "$dir"  -maxdepth 1 -type f -regextype gnu-awk -regex "^$base\\.(4tc|xref|tmp|pyc|pyg|pyo|fls|vrb|fdb_latexmk|bak|swp|toc|aux|synctex\\(busy\\)|lof|lot|maf|idx|mtc|mtc0|nav|out|snm|bcf|run\\.xml|synctex\\.gz|blg|bbl)" -delete
+	find "$dir"  -maxdepth 1 -type f -regextype gnu-awk -regex "^$base\\.(4tc|xref|tmp|pyc|pyg|pyo|fls|vrb|fdb_latexmk|bak|swp|toc|aux|synctex\\(busy\\)|lof|lot|maf|idx|mtc|mtc0|nav|out|snm|run\\.xml|synctex\\.gz|blg|bbl)" -delete
 	rm -rdf "$dir/_minted-$(basename -- $base)"
 	;;
 	*) printf "Give .tex file as argument.\\n" ;;
