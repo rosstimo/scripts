@@ -5,9 +5,9 @@ sudo pacman -Sy --needed neovim
 sudo pacman -S --asdeps --needed xclip ripgrep npm python-pip nerd-fonts tree-sitter
 
 # Check if the nvim dir exists and back it up if so
-# if [ -d "$HOME/.config/nvim/" ]; then
-#   mv -i $HOME/.config/nvim/ $HOME/.config/nvim~
-#   echo "your nvim folder was backed up to nvim~"
-# fi
-# git clone  https://github.com/NvChad/NvChad.git $HOME/.config/nvim/ &&
-# git clone $HOME/.config/nvim/lua/custom/ &&
+ if [ -d "$HOME/.config/nvim/" ]; then
+   mv -i $HOME/.config/nvim/ $HOME/.config/nvim~
+   echo "your nvim folder was backed up to nvim~"
+ fi
+ git clone  https://github.com/NvChad/NvChad.git $HOME/.config/nvim/ &&
+ git clone https://github.com/rosstimo/nvChadCustom.git $HOME/.config/nvim/lua/custom/ 
