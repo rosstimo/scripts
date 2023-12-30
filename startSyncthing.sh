@@ -2,4 +2,6 @@
 
 # wait 10 seconds then start syncthingtray
 sleep 10
-syncthingtray --replace
+syncthingtray --wait --single-instance &
+
+
