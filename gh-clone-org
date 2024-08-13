@@ -18,17 +18,24 @@ repos="$(gh repo list "$org" -L $limit)"
 
 repo_total="$(echo "$repos" | wc -l)"
 repos_complete=0
-
+current_dir=$(pwd)
 echo
 
 echo "$repos" | while read -r repo; do
         repo_name="$(echo "$repo" | cut -f1)"
-        echo -ne "\r\e[0K[ $repos_complete / $repo_total ] Cloning $repo_name"
-        gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null || (
-                cd "$repo_name"
-                git pull -q
-        )
+        echo "$repo_name"
+        # check if repo_name is a directory clone if no pull if yes
+        if [ -d "$repo_name" ]; then
+                echo "$repo_name exists pulling latest changes"
+                cd "$repo_name" &&
+                git pull &&
+                cd "$current_dir"
+        else
+                echo "cloning $repo_name"
+                gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null  
+        fi
+
         repos_complete=$((repos_complete + 1))
 done
 
-echo "Finished cloning all repos in $org."
+echo "Finished cloning/updating all $repo_total repos in $org."
