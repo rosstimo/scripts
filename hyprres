@@ -1,0 +1,135 @@
+#!/bin/bash
+
+# Function to display usage information
+usage() {
+  echo "Usage: $0 [-u|-d|-s resolution|default|-h]"
+  echo "  -u                Increase resolution to the next available mode"
+  echo "  -d                Decrease resolution to the previous available mode"
+  echo "  -s resolution     Set resolution to a specific available mode (e.g., 1920x1080@60)"
+  echo "  default           Reset all monitors to their preferred settings"
+  echo "  -h                Display this help message"
+}
+
+# Parse command-line options
+while getopts ":uds:h" opt; do
+  case $opt in
+    u) action="increase";;
+    d) action="decrease";;
+    s) manual_resolution="$OPTARG";;
+    h) usage; exit 0;;
+    \?) echo "Invalid option: -$OPTARG" >&2; usage; exit 1;;
+    :) echo "Option -$OPTARG requires an argument." >&2; usage; exit 1;;
+  esac
+done
+
+shift $((OPTIND -1))  # Shift positional parameters
+
+# Check for invalid combinations
+if [ -n "$manual_resolution" ] && [ -n "$action" ]; then
+  echo "Error: Cannot use -s with -u or -d."
+  usage
+  exit 1
+fi
+
+# Check if the default option is provided as the first argument
+if [ "$1" = "default" ]; then
+  default_mode=true
+fi
+
+# Retrieve monitor information in JSON format
+monitors=$(hyprctl monitors -j)
+
+# Check if monitors variable is empty
+if [ -z "$monitors" ]; then
+  echo "Error: Failed to retrieve monitor information. Please ensure hyprctl is working correctly."
+  exit 1
+fi
+
+# Ensure action or manual_resolution is set
+if [ -z "$action" ] && [ -z "$manual_resolution" ] && [ -z "$default_mode" ]; then
+  echo "No valid option specified. Use -u, -d, -s resolution, or 'default'."
+  usage
+  exit 1
+fi
+
+# Loop through each monitor
+echo "$monitors" | jq -c '.[]' | while read -r monitor; do
+  name=$(echo "$monitor" | jq -r '.name')
+  current_mode=$(echo "$monitor" | jq -r '.activeMode')
+  available_modes=$(echo "$monitor" | jq -r '.modes[]')
+
+  # If modes array is empty, get availableModes
+  if [ -z "$available_modes" ]; then
+    available_modes=$(echo "$monitor" | jq -r '.availableModes[]')
+  fi
+
+  # Build an array of available modes
+  IFS=$'\n' read -rd '' -a modes_array <<<"$available_modes"
+
+  # Remove duplicates and sort the modes
+  modes_array=($(printf "%s\n" "${modes_array[@]}" | sort -u))
+
+  # Find the index of the current mode
+  current_index=-1
+  for i in "${!modes_array[@]}"; do
+    if [ "${modes_array[i]}" = "$current_mode" ]; then
+      current_index=$i
+      break
+    fi
+  done
+
+  # If current mode not found, use the preferred mode as current mode
+  if [ "$current_index" -eq -1 ]; then
+    preferred_mode=$(echo "$monitor" | jq -r '.preferredMode')
+    current_mode="$preferred_mode"
+    for i in "${!modes_array[@]}"; do
+      if [ "${modes_array[i]}" = "$current_mode" ]; then
+        current_index=$i
+        break
+      fi
+    done
+  fi
+
+  if [ "$current_index" -eq -1 ]; then
+    echo "Error: Current mode '$current_mode' not found in available modes for monitor '$name'."
+    continue
+  fi
+
+  if [ "$default_mode" = true ]; then
+    # Reset to preferred settings
+    hyprctl keyword monitor "$name,preferred,auto,1"
+    echo "Reset monitor $name to preferred settings."
+  elif [ -n "$manual_resolution" ]; then
+    # Set to manual resolution
+    found_mode=false
+    for mode in "${modes_array[@]}"; do
+      if [ "$mode" = "$manual_resolution" ]; then
+        found_mode=true
+        break
+      fi
+    done
+    if [ "$found_mode" = true ]; then
+      hyprctl keyword monitor "$name,$manual_resolution,auto,1"
+      echo "Set monitor $name to resolution: $manual_resolution."
+    else
+      echo "Error: Resolution '$manual_resolution' is not available for monitor '$name'."
+    fi
+  else
+    # Increase or decrease resolution
+    if [ "$action" = "increase" ]; then
+      new_index=$((current_index + 1))
+      if [ "$new_index" -ge "${#modes_array[@]}" ]; then
+        new_index=$(( ${#modes_array[@]} - 1 ))
+      fi
+    elif [ "$action" = "decrease" ]; then
+      new_index=$((current_index - 1))
+      if [ "$new_index" -lt 0 ]; then
+        new_index=0
+      fi
+    fi
+    new_mode="${modes_array[new_index]}"
+    hyprctl keyword monitor "$name,$new_mode,auto,1"
+    echo "Set monitor $name to resolution: $new_mode."
+  fi
+done
+

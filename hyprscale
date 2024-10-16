@@ -1,0 +1,123 @@
+#!/bin/bash
+
+# Function to display usage information
+usage() {
+  echo "Usage: $0 [-u|-d|-s scale|default|-h]"
+  echo "  -u        Increase scale to the next acceptable value"
+  echo "  -d        Decrease scale to the previous acceptable value"
+  echo "  -s scale  Set scale to a specific acceptable value"
+  echo "  default   Reset all monitors to preferred settings with scale of 1"
+  echo "  -h        Display this help message"
+}
+
+# Acceptable scales
+acceptable_scales=( 1.0 2.0 )
+
+# Parse command-line options
+while getopts ":uds:h" opt; do
+  case $opt in
+    u) direction="up";;
+    d) direction="down";;
+    s) manual_scale="$OPTARG";;
+    h) usage; exit 0;;
+    \?) echo "Invalid option: -$OPTARG" >&2; usage; exit 1;;
+    :) echo "Option -$OPTARG requires an argument." >&2; usage; exit 1;;
+  esac
+done
+
+shift $((OPTIND -1))  # Shift positional parameters
+
+# Check for invalid combinations
+if [ -n "$manual_scale" ] && [ -n "$direction" ]; then
+  echo "Error: Cannot use -s with -u or -d."
+  usage
+  exit 1
+fi
+
+# Retrieve monitor information in JSON format
+monitors=$(hyprctl monitors -j)
+
+# Check if monitors variable is empty
+if [ -z "$monitors" ]; then
+  echo "Error: Failed to retrieve monitor information. Please ensure hyprctl is working correctly."
+  exit 1
+fi
+
+# Check if the default option is provided as the first argument
+if [ "$1" = "default" ]; then
+  # Loop through each monitor and reset to preferred settings with scale of 1
+  echo "$monitors" | jq -c '.[]' | while read -r monitor; do
+    name=$(echo "$monitor" | jq -r '.name')
+    hyprctl keyword monitor "$name,preferred,auto,1"
+    echo "Reset monitor $name to preferred settings with scale of 1."
+  done
+else
+  # Ensure either direction is set or manual_scale is provided
+  if [ -z "$direction" ] && [ -z "$manual_scale" ]; then
+    echo "No valid option specified. Use -u, -d, -s scale, or 'default'."
+    usage
+    exit 1
+  fi
+
+  # Loop through each monitor
+  echo "$monitors" | jq -c '.[]' | while read -r monitor; do
+    name=$(echo "$monitor" | jq -r '.name')
+    current_scale=$(echo "$monitor" | jq -r '.scale')
+
+    # Check if current_scale is a valid number
+    if ! [[ "$current_scale" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+      echo "Error: Invalid current scale value '$current_scale' for monitor '$name'."
+      continue
+    fi
+
+    # If manual_scale is provided
+    if [ -n "$manual_scale" ]; then
+      new_scale="$manual_scale"
+      # Check if new_scale is in acceptable_scales
+      found_scale=false
+      for scale in "${acceptable_scales[@]}"; do
+        if (( $(echo "$scale == $new_scale" | bc -l) )); then
+          found_scale=true
+          break
+        fi
+      done
+      if [ "$found_scale" = false ]; then
+        echo "Error: Scale $new_scale is not in the list of acceptable scales."
+        continue
+      fi
+    else
+      # Find the index of the current scale in acceptable_scales
+      index=-1
+      for i in "${!acceptable_scales[@]}"; do
+        if (( $(echo "${acceptable_scales[i]} == $current_scale" | bc -l) )); then
+          index=$i
+          break
+        fi
+      done
+
+      if [ "$index" -eq -1 ]; then
+        echo "Error: Current scale $current_scale is not in the list of acceptable scales."
+        continue
+      fi
+
+      if [ "$direction" = "up" ]; then
+        new_index=$((index + 1))
+        if [ "$new_index" -ge "${#acceptable_scales[@]}" ]; then
+          new_index=$(( ${#acceptable_scales[@]} - 1 ))
+        fi
+      elif [ "$direction" = "down" ]; then
+        new_index=$((index - 1))
+        if [ "$new_index" -lt 0 ]; then
+          new_index=0
+        fi
+      fi
+
+      new_scale="${acceptable_scales[new_index]}"
+    fi
+
+    # Apply new scale setting using hyprctl keyword command
+    hyprctl keyword monitor "$name,preferred,auto,$new_scale"
+    echo "Set monitor $name to new scale: $new_scale."
+  done
+fi
+
