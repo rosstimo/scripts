@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#this script will take a directory as an argument then will pass each sub directory as an argument to the script gh-clone-org
+
+#check if the argument is a directory
+if [ -d $1 ]; then
+    #loop through each sub directory
+    for dir in $1*; do
+        #check if the sub directory is a directory
+        if [ -d $dir ]; then
+            #pass the sub directory to the script gh-clone-org
+             exec gh-clone-org $dir
+            echo $dir
+        fi
+    done
+else
+    echo "The argument is not a directory"
+fi
+
+
+
