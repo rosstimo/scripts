@@ -11,6 +11,14 @@ USAGE="Usage: gh-clone-org <user|org>"
 
 [[ $# -eq 0 ]] && echo >&2 "missing arguments: ${USAGE}" && exit 1
 
+# get all the directories in the current directory then iterate through them and echo each
+dirs=$(ls -d */)
+for dir in $dirs; do
+  echo $dir
+done
+
+# this function takes the argument org and echo  it
+
 org=$1
 limit=9999
 
@@ -18,41 +26,69 @@ repos="$(gh repo list "$org" -L $limit)"
 
 repo_total="$(echo "$repos" | wc -l)"
 repos_complete=0
+repos_cloned=0
+repos_updated=0
 current_dir=$(pwd)
 echo
 
 echo "$repos" | while read -r repo; do
-        repo_name="$(echo "$repo" | cut -f1)"
-        echo "$repo_name"
-        # check if repo_name is a directory clone if no pull if yes
-        if [ -d "$repo_name" ]; then
-                echo "$repo_name exists pulling latest changes"
-                cd "$repo_name" 
-                # if on branch feedback add and commit changes
-                if git branch --show-current | grep -q feedback; then
-                        git commit -a -m "feedback" 
-                fi
-               # determine if branch main or master exists and switch to it
-                if git show-ref --verify --quiet refs/heads/main; then
-                        git switch main
-                elif git show-ref --verify --quiet refs/heads/master; then
-                        git switch master
-                fi
-                git pull &&
-                # determine if branch feedback exists if yes switch to it else create it and switch to it
-                if git show-ref --verify --quiet refs/heads/feedback; then
-                        git switch feedback
-                else
-                        git switch -c feedback
-                fi
-                cd "$current_dir"
-        else
-                echo "cloning $repo_name"
-                gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null &&
-                git switch -c feedback
-        fi
+repo_name="$(echo "$repo" | cut -f1)"
+echo "$repo_name"
+# check if repo_name is a directory clone if no pull if yes
+if [ -d "$repo_name" ]; then
 
-        repos_complete=$((repos_complete + 1))
+  echo "$repo_name exists pulling latest changes"
+  cd "$repo_name" && 
+  echo $(pwd)
+
+  # determine if branch feedback exists if yes switch to it else create it and switch to it
+  if git show-ref --verify --quiet refs/heads/feedback; then
+    echo "commiting changes on feedback branch"
+    git switch feedback
+    git commit -am "add feedback" &&
+    echo
+  else
+    echo "creating feedback branch"
+    git switch -c feedback
+    git commit -am "add feedback" &&
+    echo
+  fi
+
+  # determine if branch main or master exists and switch to it
+  if git show-ref --verify --quiet refs/heads/main; then
+    echo "switching to main branch"
+    git switch main &&
+    echo
+  elif git show-ref --verify --quiet refs/heads/master; then
+    echo "switching to master branch"
+    git switch master &&
+    echo
+  fi
+
+  echo "pulling latest changes"
+  git pull --all &&
+  echo "switch to feedback branch"
+  git switch feedback &&
+  cd "$current_dir" 
+  echo $(pwd)
+  repos_updated=$((repos_updated + 1))
+else
+  echo "cloning $repo_name to $(pwd)" 
+  gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null &&
+  repos_cloned=$((repos_cloned + 1))
+  cd "$repo_name" 
+  echo "create and switch to feedback branch"
+  git switch -c feedback &&
+  cd "$current_dir" 
+fi
+
+  repos_complete=$((repos_complete + 1))
+  echo
+  echo "Cloned $repos_cloned repos"
+  echo "Updated $repos_updated repos"
+  echo "Completed: $repos_complete/$repo_total repos"
+  echo
+  echo
 done
 
 echo "Finished cloning/updating all $repo_total repos in $org."
