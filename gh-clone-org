@@ -7,10 +7,6 @@
 
 set -euo pipefail
 
-# USAGE="Usage: gh-clone-org <user|org>"
-
-# [[ $# -eq 0 ]] && echo >&2 "missing arguments: ${USAGE}" && exit 1
-
 # get all the directories in the current directory then iterate through them and pass the current dir to the function process_org
 function process_dirs_as_orgs() {
   # get all the directories in the current directory strip the / from the end
@@ -18,101 +14,89 @@ function process_dirs_as_orgs() {
   # if iterate through the directories, check if the current directory exist if yes then pass the current directory to the function process_org
   for dir in $dirs; do
     if [ -d "$dir" ]; then
-      process_org $dir
+      limit=9999
+      # check if dir is a github organization if yes pass it to the function process_org if not skip
+      if repos="$(gh repo list "$dir" -L $limit)"; then
+        process_org "$dir"
+      else
+        echo "Skipping $dir: not a GitHub org"
+      fi
     fi
   done
 }
 
-# this function takes the argument org and echo it
 function process_org() {
   org=$1
-  echo $org
+  limit=9999
 
-# org=$1
-limit=9999
+  repos="$(gh repo list "$org" -L $limit)"
 
-repos="$(gh repo list "$org" -L $limit)"
+  repo_total="$(echo "$repos" | wc -l)"
+  repos_complete=0
+  repos_cloned=0
+  repos_updated=0
+  current_dir=$(pwd)
+  echo
 
-repo_total="$(echo "$repos" | wc -l)"
-repos_complete=0
-repos_cloned=0
-repos_updated=0
-current_dir=$(pwd)
-echo
+  echo "$repos" | while read -r repo; do
+  repo_name="$(echo "$repo" | cut -f1)"
+  echo
+  # check if repo_name is a directory clone if no pull if yes
+  if [ -d "$repo_name" ]; then
 
-echo "$repos" | while read -r repo; do
-repo_name="$(echo "$repo" | cut -f1)"
-echo "$repo_name"
-# check if repo_name is a directory clone if no pull if yes
-if [ -d "$repo_name" ]; then
+    cd "$repo_name" && 
+    echo "$repo_name exists pulling latest changes to:"
+    echo $(pwd)
 
-  echo "$repo_name exists pulling latest changes"
-  cd "$repo_name" && 
-  echo $(pwd)
+    # determine if branch feedback exists if yes switch to it else create it and switch to it
+    if git show-ref --verify --quiet refs/heads/feedback; then
+      git switch feedback > /dev/null 2>&1 &&
+      git commit -am "add feedback" > /dev/null 2>&1 &&
+      echo "updating feedback branch"
+    else
+      git switch -c feedback > /dev/null 2>&1 &&
+      git commit -am "add feedback" > /dev/null 2>&1 && 
+      echo "updating feedback branch"
+    fi
 
-  # determine if branch feedback exists if yes switch to it else create it and switch to it
-  if git show-ref --verify --quiet refs/heads/feedback; then
-    echo "commiting changes on feedback branch"
-    git switch feedback
-    git commit -am "add feedback" &&
-    echo
+    # determine if branch main or master exists and switch to it
+    if git show-ref --verify --quiet refs/heads/main; then
+      git switch main  > /dev/null 2>&1 && 
+      echo "Updating main branch"
+    elif git show-ref --verify --quiet refs/heads/master; then
+      git switch master  > /dev/null 2>&1 &&
+      echo "Updating to master branch"
+    fi
+
+    git pull --all > /dev/null 2>&1 &&
+    git switch feedback > /dev/null 2>&1 &&
+    cd "$current_dir" 
+    repos_updated=$((repos_updated + 1))
+
   else
-    echo "creating feedback branch"
-    git switch -c feedback
-    git commit -am "add feedback" &&
-    echo
+    echo "cloning $repo_name to:"
+    echo "$(pwd)" 
+    gh repo clone "$repo_name" "$repo_name" -- -q > /dev/null 2>&1 &&
+    repos_cloned=$((repos_cloned + 1))
+    cd "$repo_name" 
+    git switch -c feedback > /dev/null 2>&1 &&
+    cd "$current_dir" 
   fi
 
-  # determine if branch main or master exists and switch to it
-  if git show-ref --verify --quiet refs/heads/main; then
-    echo "switching to main branch"
-    git switch main &&
-    echo
-  elif git show-ref --verify --quiet refs/heads/master; then
-    echo "switching to master branch"
-    git switch master &&
-    echo
-  fi
+    repos_complete=$((repos_complete + 1))
+    echo "Cloned $repos_cloned repos"
+    echo "Updated $repos_updated repos"
+    echo "Completed: $repos_complete/$repo_total repos"
+  done
 
-  echo "pulling latest changes"
-  git pull --all &&
-  echo "switch to feedback branch"
-  git switch feedback &&
-  cd "$current_dir" 
-  echo $(pwd)
-  repos_updated=$((repos_updated + 1))
-else
-  echo "cloning $repo_name to $(pwd)" 
-  gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null &&
-  repos_cloned=$((repos_cloned + 1))
-  cd "$repo_name" 
-  echo "create and switch to feedback branch"
-  git switch -c feedback &&
-  cd "$current_dir" 
-fi
-
-  repos_complete=$((repos_complete + 1))
   echo
-  echo "Cloned $repos_cloned repos"
-  echo "Updated $repos_updated repos"
-  echo "Completed: $repos_complete/$repo_total repos"
+  echo "Finished cloning/updating all $repo_total repos in $org."
   echo
-  echo
-done
-
-echo "Finished cloning/updating all $repo_total repos in $org."
 }
-# if argument is passed into the script check if it a valid directory pass it to the function process_org else call function process_dirs_as_orgs
 
-# Check if an argument is provided
+# run on one org if an argument is passed or all orgs in the current directory
 if [ "${1:-}" ]; then
-  # Check if the argument is a valid directory
-  if [ -d "$1" ]; then
     process_org "$1"
-  else
-    echo "Invalid directory"
-  fi
 else
-  # No argument provided, call the default function
   process_dirs_as_orgs
 fi
