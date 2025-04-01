@@ -7,19 +7,28 @@
 
 set -euo pipefail
 
-USAGE="Usage: gh-clone-org <user|org>"
+# USAGE="Usage: gh-clone-org <user|org>"
 
-[[ $# -eq 0 ]] && echo >&2 "missing arguments: ${USAGE}" && exit 1
+# [[ $# -eq 0 ]] && echo >&2 "missing arguments: ${USAGE}" && exit 1
 
-# get all the directories in the current directory then iterate through them and echo each
-dirs=$(ls -d */)
-for dir in $dirs; do
-  echo $dir
-done
+# get all the directories in the current directory then iterate through them and pass the current dir to the function process_org
+function process_dirs_as_orgs() {
+  # get all the directories in the current directory strip the / from the end
+  dirs=$(ls -d */ | sed 's/[/]//')
+  # if iterate through the directories, check if the current directory exist if yes then pass the current directory to the function process_org
+  for dir in $dirs; do
+    if [ -d "$dir" ]; then
+      process_org $dir
+    fi
+  done
+}
 
-# this function takes the argument org and echo  it
+# this function takes the argument org and echo it
+function process_org() {
+  org=$1
+  echo $org
 
-org=$1
+# org=$1
 limit=9999
 
 repos="$(gh repo list "$org" -L $limit)"
@@ -92,3 +101,18 @@ fi
 done
 
 echo "Finished cloning/updating all $repo_total repos in $org."
+}
+# if argument is passed into the script check if it a valid directory pass it to the function process_org else call function process_dirs_as_orgs
+
+# Check if an argument is provided
+if [ "${1:-}" ]; then
+  # Check if the argument is a valid directory
+  if [ -d "$1" ]; then
+    process_org "$1"
+  else
+    echo "Invalid directory"
+  fi
+else
+  # No argument provided, call the default function
+  process_dirs_as_orgs
+fi
