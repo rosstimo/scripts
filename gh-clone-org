@@ -27,12 +27,29 @@ echo "$repos" | while read -r repo; do
         # check if repo_name is a directory clone if no pull if yes
         if [ -d "$repo_name" ]; then
                 echo "$repo_name exists pulling latest changes"
-                cd "$repo_name" &&
+                cd "$repo_name" 
+                # if on branch feedback add and commit changes
+                if git branch --show-current | grep -q feedback; then
+                        git commit -a -m "feedback" 
+                fi
+               # determine if branch main or master exists and switch to it
+                if git show-ref --verify --quiet refs/heads/main; then
+                        git switch main
+                elif git show-ref --verify --quiet refs/heads/master; then
+                        git switch master
+                fi
                 git pull &&
+                # determine if branch feedback exists if yes switch to it else create it and switch to it
+                if git show-ref --verify --quiet refs/heads/feedback; then
+                        git switch feedback
+                else
+                        git switch -c feedback
+                fi
                 cd "$current_dir"
         else
                 echo "cloning $repo_name"
-                gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null  
+                gh repo clone "$repo_name" "$repo_name" -- -q 2>/dev/null &&
+                git switch -c feedback
         fi
 
         repos_complete=$((repos_complete + 1))
