@@ -68,7 +68,7 @@ function process_org() {
       echo "Updating to master branch"
     fi
 
-    git pull --all > /dev/null 2>&1 &&
+    git pull --all && #> /dev/null 2>&1 &&
     git switch feedback > /dev/null 2>&1 &&
     cd "$current_dir" 
     repos_updated=$((repos_updated + 1))
@@ -76,7 +76,7 @@ function process_org() {
   else
     echo "cloning $repo_name to:"
     echo "$(pwd)" 
-    gh repo clone "$repo_name" "$repo_name" -- -q > /dev/null 2>&1 &&
+    gh repo clone "$repo_name" "$repo_name" && #-- -q > /dev/null 2>&1 &&
     repos_cloned=$((repos_cloned + 1))
     cd "$repo_name" 
     git switch -c feedback > /dev/null 2>&1 &&
