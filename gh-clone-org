@@ -43,50 +43,77 @@ function process_org() {
   echo
   # check if repo_name is a directory clone if no pull if yes
   if [ -d "$repo_name" ]; then
-
-    cd "$repo_name" && 
+    echo
     echo "$repo_name exists pulling latest changes to:"
-    echo $(pwd)
+    echo "$current_dir/$repo_name"
 
-    # determine if branch feedback exists if yes switch to it else create it and switch to it
-    if git show-ref --verify --quiet refs/heads/feedback; then
-      git switch feedback > /dev/null 2>&1 &&
-      git commit -am "add feedback" > /dev/null 2>&1 &&
-      echo "updating feedback branch"
-    else
-      git switch -c feedback > /dev/null 2>&1 &&
-      git commit -am "add feedback" > /dev/null 2>&1 && 
-      echo "updating feedback branch"
-    fi
+    # Run repo ops without leaking cwd even when something fails
+    (
+      cd "$repo_name" || exit 1
 
-    # determine if branch main or master exists and switch to it
-    if git show-ref --verify --quiet refs/heads/main; then
-      git switch main  > /dev/null 2>&1 && 
-      echo "Updating main branch"
-    elif git show-ref --verify --quiet refs/heads/master; then
-      git switch master  > /dev/null 2>&1 &&
-      echo "Updating to master branch"
-    fi
+      # If repo has no commits (empty GitHub repo), don't try to pull/switch branches
+      if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
+        echo "Repo has no commits yet (empty). Skipping pull/branch ops."
+        exit 0
+      fi
 
-    git pull --all && #> /dev/null 2>&1 &&
-    git switch feedback > /dev/null 2>&1 &&
-    cd "$current_dir" 
+      # Determine default branch from origin/HEAD when possible
+      default_branch="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')"
+      if [ -z "$default_branch" ]; then
+        # fallback guesses
+        if git show-ref --verify --quiet refs/heads/main; then
+          default_branch="main"
+        elif git show-ref --verify --quiet refs/heads/master; then
+          default_branch="master"
+        else
+          default_branch=""
+        fi
+      fi
+
+      git fetch --all --prune
+
+      if [ -n "$default_branch" ]; then
+        # Ensure local default branch exists & tracks origin
+        git switch "$default_branch" >/dev/null 2>&1 || \
+          git switch -c "$default_branch" --track "origin/$default_branch" >/dev/null 2>&1 || true
+
+          # Fast-forward only so you don’t create accidental merge commits
+          git pull --ff-only || echo "Pull failed (no upstream?) on $default_branch for $repo_name" >&2
+        else
+          echo "Could not determine default branch; skipping pull."
+      fi
+
+      # Ensure feedback branch exists, but don't die if commit does nothing
+      git switch feedback >/dev/null 2>&1 || git switch -c feedback >/dev/null 2>&1 || true
+      git commit -am "add feedback" >/dev/null 2>&1 || true
+    )
+
     repos_updated=$((repos_updated + 1))
-
   else
     echo "cloning $repo_name to:"
-    echo "$(pwd)" 
-    gh repo clone "$repo_name" "$repo_name" && #-- -q > /dev/null 2>&1 &&
+    echo "$current_dir/$repo_name"
+
+    # Make sure parent dirs exist when repo_name includes owner/repo
+    mkdir -p "$(dirname "$repo_name")"
+    gh repo clone "$repo_name" "$repo_name"   # gh supports optional destination dir 
     repos_cloned=$((repos_cloned + 1))
-    cd "$repo_name" 
-    git switch -c feedback > /dev/null 2>&1 &&
-    cd "$current_dir" 
+
+    # Create feedback only if repo isn’t empty
+    (
+      cd "$repo_name" || exit 1
+      if git rev-parse --verify HEAD >/dev/null 2>&1; then
+        git switch -c feedback >/dev/null 2>&1 || true
+      else
+        echo "Cloned empty repo; not creating feedback branch yet."
+      fi
+    )
   fi
 
-    repos_complete=$((repos_complete + 1))
-    echo "Cloned $repos_cloned repos"
-    echo "Updated $repos_updated repos"
-    echo "Completed: $repos_complete/$repo_total repos"
+  repos_complete=$((repos_complete + 1))
+  echo "Cloned $repos_cloned repos"
+  echo "Updated $repos_updated repos"
+  echo "Completed: $repos_complete/$repo_total repos"
+
   done
 
   echo
