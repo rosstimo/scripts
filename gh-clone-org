@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#thanks to https://gist.github.com/davegallant/277021b86161035e812082e73ae12fb7
+# thanks to https://gist.github.com/davegallant/277021b86161035e812082e73ae12fb7
 
 # This script clones all repos in a GitHub org
 # It requires the GH CLI: https://cli.github.com
@@ -7,15 +7,37 @@
 
 set -euo pipefail
 
+# Log file for repos we skip/abort (merge conflicts, dirty working tree, etc.)
+# Create a single abort log for this run in the current working directory.
+GLOBAL_TS="$(date +%Y%m%d-%H%M%S)"
+ABORT_LOG="${PWD}/aborted_all_${GLOBAL_TS}.tsv"
+printf "timestamp\trepo\treason\n" > "$ABORT_LOG"
+
+# Backwards-compatible per-org initializer (not used by default)
+function _init_abort_log() {
+  local org="$1"
+  local base_dir="$2"
+  local ts
+  ts="$(date +%Y%m%d-%H%M%S)"
+  ABORT_LOG="$base_dir/${org}_aborted_${ts}.tsv"
+  printf "timestamp\trepo\treason\n" > "$ABORT_LOG"
+}
+
+function _log_abort() {
+  # usage: _log_abort "owner/repo" "reason"
+  local repo="$1"
+  local reason="$2"
+  printf "%s\t%s\t%s\n" "$(date +%Y-%m-%dT%H:%M:%S%z)" "$repo" "$reason" >> "$ABORT_LOG"
+}
+
 # get all the directories in the current directory then iterate through them and pass the current dir to the function process_org
 function process_dirs_as_orgs() {
   # get all the directories in the current directory strip the / from the end
   dirs=$(ls -d */ | sed 's/[/]//')
-  # if iterate through the directories, check if the current directory exist if yes then pass the current directory to the function process_org
+  # iterate through the directories, check if the current directory exists and is a GitHub org
   for dir in $dirs; do
     if [ -d "$dir" ]; then
       limit=9999
-      # check if dir is a github organization if yes pass it to the function process_org if not skip
       if repos="$(gh repo list "$dir" -L $limit)"; then
         process_org "$dir"
       else
@@ -35,95 +57,257 @@ function process_org() {
   repos_complete=0
   repos_cloned=0
   repos_updated=0
+  repos_aborted=0
   current_dir=$(pwd)
+  # using global ABORT_LOG created at script start; do not re-init per-org
   echo
 
-  echo "$repos" | while read -r repo; do
-  repo_name="$(echo "$repo" | cut -f1)"
-  echo
-  # check if repo_name is a directory clone if no pull if yes
-  if [ -d "$repo_name" ]; then
+  # Use a here-string instead of a pipe so counters persist (no subshell loop).
+  while IFS= read -r repo; do
+    repo_name="$(echo "$repo" | cut -f1)"
     echo
-    echo "$repo_name exists pulling latest changes to:"
-    echo "$current_dir/$repo_name"
 
-    # Run repo ops without leaking cwd even when something fails
-    (
-      cd "$repo_name" || exit 1
+    # check if repo_name is a directory: update if yes, clone if no
+    if [ -d "$repo_name" ]; then
+      echo
+      echo "$repo_name exists pulling latest changes to:"
+      echo "$current_dir/$repo_name"
 
-      # If repo has no commits (empty GitHub repo), don't try to pull/switch branches
-      if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
-        echo "Repo has no commits yet (empty). Skipping pull/branch ops."
-        exit 0
-      fi
+      # Run repo ops without leaking cwd even when something fails.
+      # Return codes:
+      #   0 = updated/merged
+      #  20 = skipped/aborted (logged)
+      # run repository operations in a subshell but disable errexit so failures
+      # inside the subshell don't terminate the whole script; we capture rc.
+      set +e
+      (
+        cd "$repo_name" || exit 20
 
-      # Determine default branch from origin/HEAD when possible
-      default_branch="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')"
-      if [ -z "$default_branch" ]; then
-        # fallback guesses
-        if git show-ref --verify --quiet refs/heads/main; then
-          default_branch="main"
-        elif git show-ref --verify --quiet refs/heads/master; then
-          default_branch="master"
-        else
-          default_branch=""
+        if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+          _log_abort "$repo_name" "directory exists but is not a git repo"
+          exit 20
         fi
-      fi
 
-      git fetch --all --prune
+        # If repo has no commits (empty GitHub repo), don't try to pull/switch branches
+        if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
+          _log_abort "$repo_name" "empty repo (no commits): skipping pull/merge"
+          exit 20
+        fi
 
-      if [ -n "$default_branch" ]; then
+        # Don't stomp on your in-progress work. If there are uncommitted
+        # changes and we are currently on the `feedback` branch, commit them
+        # locally with a generic message so the script can continue. For any
+        # other branch with uncommitted work, log and skip the repo.
+        if ! git diff --quiet || ! git diff --cached --quiet; then
+          current_branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)"
+          if [ "$current_branch" = "feedback" ]; then
+            # Stage all changes and commit. If commit fails, log and abort this repo.
+            git add -A
+            if git commit -m "add feedback comments" >/dev/null 2>&1; then
+              echo "Committed local feedback changes in $repo_name"
+            else
+              _log_abort "$repo_name" "failed to commit local feedback changes"
+              exit 20
+            fi
+          else
+            _log_abort "$repo_name" "uncommitted changes present: skipping update/merge"
+            exit 20
+          fi
+        fi
+
+        # Determine default branch from origin/HEAD when possible
+        default_branch="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||')"
+        if [ -z "$default_branch" ]; then
+          # fallback guesses
+          if git show-ref --verify --quiet refs/heads/main || git show-ref --verify --quiet refs/remotes/origin/main; then
+            default_branch="main"
+          elif git show-ref --verify --quiet refs/heads/master || git show-ref --verify --quiet refs/remotes/origin/master; then
+            default_branch="master"
+          else
+            default_branch=""
+          fi
+        fi
+
+        if [ -z "$default_branch" ]; then
+          _log_abort "$repo_name" "could not determine default branch (origin/HEAD missing?)"
+          exit 20
+        fi
+
+        if ! git fetch --all --prune; then
+          _log_abort "$repo_name" "git fetch failed"
+          exit 20
+        fi
+
         # Ensure local default branch exists & tracks origin
-        git switch "$default_branch" >/dev/null 2>&1 || \
+        if ! git switch "$default_branch" >/dev/null 2>&1; then
           git switch -c "$default_branch" --track "origin/$default_branch" >/dev/null 2>&1 || true
+        fi
 
-          # Fast-forward only so you don’t create accidental merge commits
-          git pull --ff-only || echo "Pull failed (no upstream?) on $default_branch for $repo_name" >&2
+        # Fast-forward only so you don’t create accidental merge commits on the student's branch
+        if ! git pull --ff-only; then
+          # If the default branch has diverged (or no upstream), first back up
+          # the local default branch, replace it from origin, then handle
+          # backing up/replacing `feedback`. This ensures the default branch
+          # is preserved before we adjust `feedback`.
+          repo_ts="$(date +%Y%m%d-%H%M%S)"
+
+          # Backup the local default branch (e.g., master/main) if it exists
+          default_backup=""
+          if git show-ref --verify --quiet "refs/heads/$default_branch"; then
+            default_backup="${default_branch}-backup-${repo_ts}"
+            if git branch "$default_backup" "$default_branch" >/dev/null 2>&1; then
+              _log_abort "$repo_name" "diverged: backed up $default_branch -> $default_backup"
+            else
+              _log_abort "$repo_name" "diverged: failed to create backup branch $default_backup"
+              exit 20
+            fi
+          else
+            _log_abort "$repo_name" "diverged: default branch $default_branch not present locally; will create from origin/$default_branch"
+          fi
+
+          # Replace or create local default branch from the remote. Use a
+          # hard reset so the local branch points exactly at origin's commit
+          # (handles unrelated/diverged histories reliably).
+          # fetch first
+          git fetch origin --prune >/dev/null 2>&1 || true
+
+          # attempt to force-update the branch ref; some setups (worktrees)
+          # may cause `git branch -f` to fail even though a reset will work,
+          # so do not treat branch -f failure as fatal here.
+          git branch -f "$default_branch" "origin/$default_branch" >/dev/null 2>&1 || true
+
+          # ensure we can switch to the default branch and hard-reset to origin
+          if git switch "$default_branch" >/dev/null 2>&1 && git reset --hard "origin/$default_branch" >/dev/null 2>&1; then
+            echo "Replaced local $default_branch with origin/$default_branch (backup: ${default_backup:-none})"
+          else
+            _log_abort "$repo_name" "failed to replace $default_branch with origin/$default_branch after divergence"
+            exit 20
+          fi
+
+          # Now back up and/or create feedback, then replace it from remote default
+          backup=""
+          if git show-ref --verify --quiet refs/heads/feedback; then
+            backup="feedback-backup-${repo_ts}"
+            if git branch "$backup" feedback >/dev/null 2>&1; then
+              _log_abort "$repo_name" "diverged: backed up feedback -> $backup and replacing feedback with origin/$default_branch"
+            else
+              _log_abort "$repo_name" "diverged: failed to create backup branch $backup"
+              exit 20
+            fi
+          else
+            _log_abort "$repo_name" "diverged: feedback not present; creating from origin/$default_branch"
+          fi
+
+          # Replace or create local feedback from the remote default branch
+          if git branch -f feedback "origin/$default_branch" >/dev/null 2>&1 && git switch feedback >/dev/null 2>&1; then
+            echo "Replaced local feedback with origin/$default_branch (backup: ${backup:-none})"
+          else
+            _log_abort "$repo_name" "failed to replace feedback with origin/$default_branch after divergence"
+            exit 20
+          fi
+        fi
+
+        # Ensure feedback exists locally, then merge updated default into it.
+        if git show-ref --verify --quiet refs/heads/feedback; then
+          git switch feedback >/dev/null 2>&1 || true
         else
-          echo "Could not determine default branch; skipping pull."
-      fi
+          git switch -c feedback "$default_branch" >/dev/null 2>&1 || true
+        fi
 
-      # Ensure feedback branch exists, but don't die if commit does nothing
-      git switch feedback >/dev/null 2>&1 || git switch -c feedback >/dev/null 2>&1 || true
-      git commit -am "add feedback" >/dev/null 2>&1 || true
-    )
+        # Bring new student commits into your feedback branch.
+        # Prefer the default branch's content on conflicts so feedback commits
+        # remain in history but the working tree matches the default branch.
+        # If the merge fails because the histories are unrelated, back up
+        # `feedback` and replace it with the default branch from origin.
+        repo_ts="$(date +%Y%m%d-%H%M%S)"
+        merge_output=""
+        merge_rc=0
+        merge_output=$(git merge --no-edit -X theirs "$default_branch" 2>&1) || merge_rc=$?
+        if [ "$merge_rc" -ne 0 ]; then
+          # detect unrelated histories case
+          if echo "$merge_output" | grep -qi "refusing to merge unrelated histories"; then
+            fb_backup="feedback-backup-${repo_ts}"
+            if git show-ref --verify --quiet refs/heads/feedback; then
+              git branch "$fb_backup" feedback >/dev/null 2>&1 || true
+              _log_abort "$repo_name" "unrelated histories: backed up feedback -> $fb_backup and replacing feedback with origin/$default_branch"
+            else
+              _log_abort "$repo_name" "unrelated histories: feedback not present; creating from origin/$default_branch"
+            fi
 
-    repos_updated=$((repos_updated + 1))
-  else
-    echo "cloning $repo_name to:"
-    echo "$current_dir/$repo_name"
+            # Replace or create local feedback from origin's default branch
+            git fetch origin --prune >/dev/null 2>&1 || true
+            git branch -f feedback "origin/$default_branch" >/dev/null 2>&1 || true
+            git switch feedback >/dev/null 2>&1 || git switch -c feedback "origin/$default_branch" >/dev/null 2>&1 || true
+            git reset --hard "origin/$default_branch" >/dev/null 2>&1 || true
 
-    # Make sure parent dirs exist when repo_name includes owner/repo
-    mkdir -p "$(dirname "$repo_name")"
-    gh repo clone "$repo_name" "$repo_name"   # gh supports optional destination dir 
-    repos_cloned=$((repos_cloned + 1))
-
-    # Create feedback only if repo isn’t empty
-    (
-      cd "$repo_name" || exit 1
-      if git rev-parse --verify HEAD >/dev/null 2>&1; then
-        git switch -c feedback >/dev/null 2>&1 || true
+            echo "Replaced local feedback with origin/$default_branch (backup: ${fb_backup:-none})"
+          else
+            _log_abort "$repo_name" "merge failed merging $default_branch -> feedback with -X theirs (merge aborted): $merge_output"
+            git merge --abort >/dev/null 2>&1 || true
+            exit 20
+          fi
+        fi
+      )
+      rc=$?
+      set -e
+      if [ "$rc" -eq 0 ]; then
+        repos_updated=$((repos_updated + 1))
       else
-        echo "Cloned empty repo; not creating feedback branch yet."
+        repos_aborted=$((repos_aborted + 1))
       fi
-    )
-  fi
 
-  repos_complete=$((repos_complete + 1))
-  echo "Cloned $repos_cloned repos"
-  echo "Updated $repos_updated repos"
-  echo "Completed: $repos_complete/$repo_total repos"
+    else
+      echo "cloning $repo_name to:"
+      echo "$current_dir/$repo_name"
 
-  done
+      # Make sure parent dirs exist when repo_name includes owner/repo
+      mkdir -p "$(dirname "$repo_name")"
+
+      if ! gh repo clone "$repo_name" "$repo_name"; then   # gh supports optional destination dir
+        _log_abort "$repo_name" "gh repo clone failed"
+        repos_aborted=$((repos_aborted + 1))
+        repos_complete=$((repos_complete + 1))
+        echo "Cloned $repos_cloned repos"
+        echo "Updated $repos_updated repos"
+        echo "Aborted $repos_aborted repos"
+        echo "Completed: $repos_complete/$repo_total repos"
+        continue
+      fi
+
+      repos_cloned=$((repos_cloned + 1))
+
+      # Create feedback only if repo isn’t empty
+      # create feedback branch but don't let failures stop the run
+      set +e
+      (
+        cd "$repo_name" || exit 1
+        if git rev-parse --verify HEAD >/dev/null 2>&1; then
+          # Clone lands on default branch already; create feedback from there.
+          git switch -c feedback >/dev/null 2>&1 || true
+        else
+          _log_abort "$repo_name" "cloned empty repo (no commits): not creating feedback branch"
+        fi
+      )
+      set -e
+    fi
+
+    repos_complete=$((repos_complete + 1))
+    echo "Cloned $repos_cloned repos"
+    echo "Updated $repos_updated repos"
+    echo "Aborted $repos_aborted repos"
+    echo "Completed: $repos_complete/$repo_total repos"
+
+  done <<< "$repos"
 
   echo
   echo "Finished cloning/updating all $repo_total repos in $org."
+  echo "Aborted/Skipped log: $ABORT_LOG"
   echo
 }
 
 # run on one org if an argument is passed or all orgs in the current directory
 if [ "${1:-}" ]; then
-    process_org "$1"
+  process_org "$1"
 else
   process_dirs_as_orgs
 fi
