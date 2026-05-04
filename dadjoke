@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+
+# dadjoke
+# Fetches a dad joke, saves it to an archive, then displays it.
+# Optional display helpers:
+#   cowsay  - puts the joke in a cow speech bubble
+#   lolcat  - makes the output colorful
+#   fortune - unrelated, but spiritually compatible terminal foolishness
+
+set -u
+
+ARCHIVE_DIR="$HOME/Documents/joke-archive"
+ARCHIVE_FILE="$ARCHIVE_DIR/dad-jokes.txt"
+
+show_usage() {
+    cat <<'EOF'
+Usage:
+  dadjoke [option]
+
+Options:
+  -h, --help      Show this help message
+
+Description:
+  Fetches a dad joke from https://icanhazdadjoke.com/
+  Saves it to ~/Documents/joke-archive/dad-jokes.txt
+  Displays it in the terminal.
+
+Optional programs:
+  cowsay          Display the joke in a speech bubble
+  lolcat          Add rainbow coloring to the output
+
+Suggested installs:
+
+  Arch / Manjaro:
+    sudo pacman -S cowsay lolcat
+
+  Debian / Ubuntu:
+    sudo apt install cowsay lolcat
+
+  Fedora:
+    sudo dnf install cowsay rubygem-lolcat
+
+Examples:
+  dadjoke
+  dadjoke --help
+EOF
+}
+
+case "${1:-}" in
+    -h|--help)
+        show_usage
+        exit 0
+        ;;
+    "")
+        ;;
+    *)
+        printf 'Unknown option: %s\n\n' "$1" >&2
+        show_usage
+        exit 1
+        ;;
+esac
+
+mkdir -p "$ARCHIVE_DIR"
+
+joke="$(
+    curl \
+        --silent \
+        --show-error \
+        --fail \
+        --max-time 5 \
+        -H "Accept: text/plain" \
+        https://icanhazdadjoke.com/
+)"
+
+# If curl failed or returned nothing, quietly exit.
+# No joke is better than a broken shell startup, allegedly.
+if [[ -z "${joke:-}" ]]; then
+    exit 0
+fi
+
+timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
+
+{
+    printf '[%s]\n' "$timestamp"
+    printf '%s\n\n' "$joke"
+} >> "$ARCHIVE_FILE"
+
+output="$joke"
+
+if command -v cowsay >/dev/null 2>&1; then
+    output="$(printf '%s\n' "$output" | cowsay)"
+fi
+
+if command -v lolcat >/dev/null 2>&1; then
+    printf '%s\n' "$output" | lolcat
+else
+    printf '%s\n' "$output"
+fi
