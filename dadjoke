@@ -2,10 +2,22 @@
 
 # dadjoke
 # Fetches a dad joke, saves it to an archive, then displays it.
+# If the internet/API/curl fails, it displays a random joke from the archive.
+#
 # Optional display helpers:
 #   cowsay  - puts the joke in a cow speech bubble
 #   lolcat  - makes the output colorful
-#   fortune - unrelated, but spiritually compatible terminal foolishness
+#
+# Suggested installs:
+#
+#   Arch / Manjaro:
+#     sudo pacman -S cowsay lolcat
+#
+#   Debian / Ubuntu:
+#     sudo apt install cowsay lolcat
+#
+#   Fedora:
+#     sudo dnf install cowsay rubygem-lolcat
 
 set -u
 
@@ -24,6 +36,10 @@ Description:
   Fetches a dad joke from https://icanhazdadjoke.com/
   Saves it to ~/Documents/joke-archive/dad-jokes.txt
   Displays it in the terminal.
+
+Fallback behavior:
+  If the internet is down, curl fails, or the joke API is unavailable,
+  dadjoke will display a random joke from the local archive instead.
 
 Optional programs:
   cowsay          Display the joke in a speech bubble
@@ -46,6 +62,47 @@ Examples:
 EOF
 }
 
+get_random_archived_joke() {
+    if [[ ! -s "$ARCHIVE_FILE" ]]; then
+        return 1
+    fi
+
+    awk '
+        /^\[[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9] / {
+            getline
+            if ($0 != "") {
+                jokes[++count] = $0
+            }
+        }
+
+        END {
+            if (count > 0) {
+                srand()
+                print jokes[int(rand() * count) + 1]
+            } else {
+                exit 1
+            }
+        }
+    ' "$ARCHIVE_FILE"
+}
+
+display_joke() {
+    local joke="$1"
+    local output
+
+    output="$joke"
+
+    if command -v cowsay >/dev/null 2>&1; then
+        output="$(printf '%s\n' "$output" | cowsay)"
+    fi
+
+    if command -v lolcat >/dev/null 2>&1; then
+        printf '%s\n' "$output" | lolcat
+    else
+        printf '%s\n' "$output"
+    fi
+}
+
 case "${1:-}" in
     -h|--help)
         show_usage
@@ -65,34 +122,31 @@ mkdir -p "$ARCHIVE_DIR"
 joke="$(
     curl \
         --silent \
-        --show-error \
         --fail \
+        --connect-timeout 2 \
         --max-time 5 \
         -H "Accept: text/plain" \
-        https://icanhazdadjoke.com/
-)"
+        https://icanhazdadjoke.com/ 2>/dev/null
+)" || joke=""
 
-# If curl failed or returned nothing, quietly exit.
-# No joke is better than a broken shell startup, allegedly.
-if [[ -z "${joke:-}" ]]; then
+if [[ -n "${joke:-}" ]]; then
+    timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
+
+    {
+        printf '[%s]\n' "$timestamp"
+        printf '%s\n\n' "$joke"
+    } >> "$ARCHIVE_FILE"
+
+    display_joke "$joke"
     exit 0
 fi
 
-timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
+archived_joke="$(get_random_archived_joke)" || archived_joke=""
 
-{
-    printf '[%s]\n' "$timestamp"
-    printf '%s\n\n' "$joke"
-} >> "$ARCHIVE_FILE"
-
-output="$joke"
-
-if command -v cowsay >/dev/null 2>&1; then
-    output="$(printf '%s\n' "$output" | cowsay)"
+if [[ -n "${archived_joke:-}" ]]; then
+    display_joke "$archived_joke"
+    exit 0
 fi
 
-if command -v lolcat >/dev/null 2>&1; then
-    printf '%s\n' "$output" | lolcat
-else
-    printf '%s\n' "$output"
-fi
+# No internet and no archive. Truly, the machine has become humorless.
+exit 0
